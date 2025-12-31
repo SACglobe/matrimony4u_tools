@@ -81,15 +81,15 @@ export default function LegalMarriageAgePage() {
                 <div className="container">
                     <Breadcrumbs items={[{ name: 'Legal Marriage Age Checker' }]} />
 
-                    <div className="py-12">
+                    <div className="py-12 w-full">
                         {/* Page Header */}
-                        <div className="max-w-4xl mx-auto mb-12">
-                            <div className="text-center mb-8">
+                        <div className="max-w-4xl mx-auto mb-12 w-full">
+                            <div className="text-center mb-8 w-full px-4">
                                 <div className="text-5xl mb-4">⚖️</div>
                                 <h1 className="text-4xl md:text-5xl font-display font-bold mb-4">
                                     Legal Marriage Age Checker for India
                                 </h1>
-                                <p className="text-xl text-neutral-600">
+                                <p className="text-xl text-neutral-600 max-w-3xl mx-auto w-full">
                                     Verify if you meet the minimum legal age requirement to get married under Indian law
                                 </p>
                             </div>
@@ -99,7 +99,7 @@ export default function LegalMarriageAgePage() {
                         </div>
 
                         {/* Educational Content */}
-                        <div className="max-w-4xl mx-auto prose prose-lg">
+                        <div className="max-w-4xl mx-auto prose prose-lg w-full">
                             <section className="mb-12">
                                 <h2 className="text-3xl font-display font-semibold mb-6">Understanding Legal Marriage Age in India</h2>
 

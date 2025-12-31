@@ -77,15 +77,15 @@ export default function AgeDifferencePage() {
                 <div className="container">
                     <Breadcrumbs items={[{ name: 'Age Difference Calculator' }]} />
 
-                    <div className="py-12">
-                        <div className="max-w-4xl mx-auto">
+                    <div className="py-12 w-full">
+                        <div className="max-w-4xl mx-auto w-full">
                             {/* Header */}
-                            <div className="text-center mb-12">
+                            <div className="text-center mb-12 w-full px-4">
                                 <div className="text-5xl mb-4">💑</div>
                                 <h1 className="text-4xl md:text-5xl font-display font-bold mb-4">
                                     Marriage Age Difference Calculator
                                 </h1>
-                                <p className="text-xl text-neutral-600">
+                                <p className="text-xl text-neutral-600 max-w-3xl mx-auto w-full">
                                     Calculate the age gap between partners and understand social context for age differences in Indian marriages
                                 </p>
                             </div>

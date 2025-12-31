@@ -78,15 +78,15 @@ export default function MarriageDocumentsPage() {
                 <div className="container">
                     <Breadcrumbs items={[{ name: 'Marriage Registration Documents' }]} />
 
-                    <div className="py-12">
-                        <div className="max-w-5xl mx-auto">
+                    <div className="py-12 w-full">
+                        <div className="max-w-5xl mx-auto w-full">
                             {/* Header */}
-                            <div className="text-center mb-12">
+                            <div className="text-center mb-12 w-full px-4">
                                 <div className="text-5xl mb-4">📝</div>
                                 <h1 className="text-4xl md:text-5xl font-display font-bold mb-4">
                                     Marriage Registration Documents Checklist
                                 </h1>
-                                <p className="text-xl text-neutral-600 max-w-3xl mx-auto">
+                                <p className="text-xl text-neutral-600 max-w-3xl mx-auto w-full">
                                     Complete state-wise guide to documents required for marriage registration in India under different marriage acts
                                 </p>
                             </div>

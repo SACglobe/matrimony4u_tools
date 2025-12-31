@@ -78,15 +78,15 @@ export default function KundliMatchingPage() {
                 <div className="container">
                     <Breadcrumbs items={[{ name: 'Kundli Matching' }]} />
 
-                    <div className="py-12">
-                        <div className="max-w-4xl mx-auto">
+                    <div className="py-12 w-full">
+                        <div className="max-w-4xl mx-auto w-full">
                             {/* Header */}
-                            <div className="text-center mb-12">
+                            <div className="text-center mb-12 w-full px-4">
                                 <div className="text-5xl mb-4">🔮</div>
                                 <h1 className="text-4xl md:text-5xl font-display font-bold mb-4">
                                     Kundli Matching Calculator
                                 </h1>
-                                <p className="text-xl text-neutral-600">
+                                <p className="text-xl text-neutral-600 max-w-3xl mx-auto w-full">
                                     Educational tool to understand the traditional Ashtakoot Gun Milan system in Hindu marriages
                                 </p>
                             </div>
