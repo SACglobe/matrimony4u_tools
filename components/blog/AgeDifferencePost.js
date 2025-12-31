@@ -43,7 +43,7 @@ export default function AgeDifferencePost() {
                         <li>• Women with careers value equal partners</li>
                         <li>• Same-age couples report better communication</li>
                         <li>• Bride-older marriages increasingly accepted</li>
-                        <li>• Compatibility > age arithmetic</li>
+                        <li>• Compatibility &gt; age arithmetic</li>
                     </ul>
                 </div>
             </div>

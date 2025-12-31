@@ -10,64 +10,63 @@ export default function HomePage() {
 
       <main>
         {/* Hero Section */}
-        <section className="relative bg-gradient-to-br from-primary-600 via-primary-500 to-secondary-600 text-white py-20 md:py-28 overflow-hidden">
-          {/* Decorative elements */}
-          <div className="absolute top-0 right-0 w-96 h-96 bg-white/5 rounded-full -translate-y-1/2 translate-x-1/2 blur-3xl"></div>
-          <div className="absolute bottom-0 left-0 w-80 h-80 bg-accent-500/10 rounded-full translate-y-1/2 -translate-x-1/2 blur-3xl"></div>
-
-          <div className="container relative z-10">
-            <div className="max-w-4xl mx-auto text-center">
-              <div className="mb-8 flex justify-center">
-                <div className="inline-flex items-center space-x-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full border border-white/20">
-                  <span className="text-2xl">🪔</span>
-                  <span className="text-sm font-medium">Trusted by Indian families nationwide</span>
-                </div>
+        <section className="bg-gradient-primary text-white py-16 md:py-20 relative overflow-hidden">
+          <div className="container max-w-7xl mx-auto px-4">
+            <div className="mx-auto text-center">
+              {/* Trust Badge */}
+              <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur rounded-full mb-6">
+                <span className="text-2xl">✓</span>
+                <span className="text-sm font-medium">Trusted by Indian families nationwide</span>
               </div>
 
-              <h1 className="text-5xl md:text-6xl lg:text-7xl font-display font-bold mb-6 leading-tight">
-                Plan Your Dream<br />
-                <span className="text-accent-200">Indian Wedding</span>
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold mb-6 leading-tight">
+                Plan Your Dream<br />Indian Wedding
               </h1>
 
-              <p className="text-xl md:text-2xl mb-4 text-white/95 font-medium">
+              <p className="text-xl md:text-2xl mb-4 text-white/90 max-w-3xl mx-auto">
                 {SITE_CONFIG.tagline}
               </p>
 
-              <p className="text-lg md:text-xl text-white/85 mb-10 max-w-2xl mx-auto leading-relaxed">
+              <p className="text-base md:text-lg text-white/80 mb-8 max-w-2xl mx-auto leading-relaxed">
                 Free expert tools for marriage eligibility, budget planning, legal documentation, and cultural guidance
               </p>
 
-              <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+              {/* CTAs */}
+              <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
                 <Link
                   href="/tools/"
-                  className="group inline-flex items-center px-8 py-4 bg-white text-primary-600 font-semibold rounded-xl hover:bg-neutral-50 transition-all shadow-2xl hover:shadow-3xl hover:scale-105"
+                  className="inline-flex items-center px-8 py-3 bg-white text-primary-600 font-semibold rounded-lg hover:bg-neutral-50 transition-colors shadow-lg text-lg w-full sm:w-auto justify-center"
                 >
-                  <span>Explore All Tools</span>
-                  <svg className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                  Explore All Tools
+                  <svg className="w-5 h-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                   </svg>
                 </Link>
-
                 <Link
                   href="/legal-marriage-age-india/"
-                  className="inline-flex items-center px-8 py-4 bg-white/10 backdrop-blur-sm text-white font-semibold rounded-xl hover:bg-white/20 transition-all border border-white/30"
+                  className="inline-flex items-center px-8 py-3 bg-white/20 backdrop-blur text-white font-semibold rounded-lg hover:bg-white/30 transition-colors border border-white/30 w-full sm:w-auto justify-center"
                 >
                   Check Eligibility
                 </Link>
               </div>
 
-              <div className="mt-12 grid grid-cols-3 gap-6 max-w-2xl mx-auto">
-                <div className="text-center">
-                  <div className="text-3xl font-bold mb-1">5+</div>
+              {/* Quick Stats */}
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
+                <div>
+                  <div className="text-3xl md:text-4xl font-bold mb-1">5+</div>
                   <div className="text-sm text-white/80">Expert Tools</div>
                 </div>
-                <div className="text-center border-x border-white/20">
-                  <div className="text-3xl font-bold mb-1">100%</div>
+                <div>
+                  <div className="text-3xl md:text-4xl font-bold mb-1">100%</div>
                   <div className="text-sm text-white/80">Free Forever</div>
                 </div>
-                <div className="text-center">
-                  <div className="text-3xl font-bold mb-1">29</div>
-                  <div className="text-sm text-white/80">States Covered</div>
+                <div>
+                  <div className="text-3xl md:text-4xl font-bold mb-1">28</div>
+                  <div className="text-sm text-white/80">Indian States Covered</div>
+                </div>
+                <div>
+                  <div className="text-3xl md:text-4xl font-bold mb-1">5</div>
+                  <div className="text-sm text-white/80">Religions Covered</div>
                 </div>
               </div>
             </div>
@@ -161,14 +160,14 @@ export default function HomePage() {
           </div>
         </section>
 
-        {/* Tool Categories */}
-        <section className="py-20 bg-gradient-to-b from-neutral-50 to-white">
-          <div className="container">
-            <div className="text-center mb-16">
-              <h2 className="text-4xl md:text-5xl font-display font-bold mb-4">
+        {/* Tools by Category */}
+        <section className="py-16 bg-neutral-50">
+          <div className="container max-w-7xl mx-auto px-4">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl md:text-4xl font-display font-bold mb-4">
                 Tools By Category
               </h2>
-              <p className="text-lg text-neutral-600 max-w-2xl mx-auto">
+              <p className="text-lg text-neutral-600 max-w-2xl mx-auto leading-relaxed">
                 Explore our comprehensive suite of matrimonial planning tools organized by your needs
               </p>
             </div>
