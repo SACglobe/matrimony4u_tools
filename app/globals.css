@@ -1,0 +1,340 @@
+@import "tailwindcss";
+
+/**
+ * MATRIMONY4U - Design System
+ * Premium Indian matrimonial aesthetic with calm, trustworthy colors
+ */
+
+@theme {
+  /* ===== COLOR PALETTE ===== */
+  /* Primary: Vibrant Red (Marriage/Auspiciousness) */
+  --color-primary-50: oklch(0.97 0.01 25);
+  --color-primary-100: oklch(0.94 0.02 25);
+  --color-primary-200: oklch(0.88 0.05 25);
+  --color-primary-300: oklch(0.79 0.08 25);
+  --color-primary-400: oklch(0.68 0.12 25);
+  --color-primary-500: oklch(0.55 0.16 25);
+  /* Main #C41E3A equivalent */
+  --color-primary-600: oklch(0.45 0.15 25);
+  --color-primary-700: oklch(0.35 0.12 25);
+  --color-primary-800: oklch(0.28 0.09 25);
+  --color-primary-900: oklch(0.22 0.06 25);
+  --color-primary-950: oklch(0.15 0.04 25);
+
+  /* Secondary: Gold (Prosperity) */
+  --color-secondary-50: oklch(0.98 0.02 85);
+  --color-secondary-100: oklch(0.95 0.05 85);
+  --color-secondary-200: oklch(0.90 0.10 85);
+  --color-secondary-300: oklch(0.85 0.15 85);
+  --color-secondary-400: oklch(0.78 0.18 85);
+  --color-secondary-500: oklch(0.85 0.15 90);
+  /* Gold #FFD700 */
+  --color-secondary-600: oklch(0.75 0.14 85);
+  --color-secondary-700: oklch(0.62 0.12 85);
+  --color-secondary-800: oklch(0.48 0.10 85);
+  --color-secondary-900: oklch(0.38 0.08 85);
+  --color-secondary-950: oklch(0.25 0.05 85);
+
+  /* Accent: Marigold Orange */
+  --color-accent-50: oklch(0.97 0.02 45);
+  --color-accent-100: oklch(0.94 0.05 45);
+  --color-accent-200: oklch(0.88 0.10 45);
+  --color-accent-300: oklch(0.80 0.14 45);
+  --color-accent-400: oklch(0.71 0.16 45);
+  --color-accent-500: oklch(0.68 0.18 40);
+  /* #FF6B35 */
+  --color-accent-600: oklch(0.58 0.16 40);
+  --color-accent-700: oklch(0.48 0.14 40);
+  --color-accent-800: oklch(0.38 0.11 40);
+  --color-accent-900: oklch(0.30 0.08 40);
+  --color-accent-950: oklch(0.20 0.05 40);
+
+  /* Neutrals: Warm off-white and browns */
+  --color-neutral-50: oklch(0.99 0.005 70);
+  /* Cream #FFF8F0 */
+  --color-neutral-100: oklch(0.97 0.01 70);
+  --color-neutral-200: oklch(0.93 0.015 70);
+  --color-neutral-300: oklch(0.87 0.02 70);
+  --color-neutral-400: oklch(0.75 0.025 70);
+  --color-neutral-500: oklch(0.60 0.03 70);
+  --color-neutral-600: oklch(0.48 0.03 70);
+  --color-neutral-700: oklch(0.38 0.025 70);
+  --color-neutral-800: oklch(0.28 0.02 70);
+  /* Warm black #2C1810 */
+  --color-neutral-900: oklch(0.20 0.015 70);
+  --color-neutral-950: oklch(0.12 0.01 70);
+
+  /* Status Colors */
+  --color-success-500: oklch(0.55 0.12 150);
+  --color-warning-500: oklch(0.68 0.16 55);
+  --color-error-500: oklch(0.55 0.22 25);
+  --color-info-500: oklch(0.55 0.15 240);
+
+  /* ===== TYPOGRAPHY ===== */
+  --font-family-sans: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-family-display: 'Playfair Display', Georgia, serif;
+
+  /* Font Sizes */
+  --font-size-xs: 0.75rem;
+  /* 12px */
+  --font-size-sm: 0.875rem;
+  /* 14px */
+  --font-size-base: 1rem;
+  /* 16px */
+  --font-size-lg: 1.125rem;
+  /* 18px */
+  --font-size-xl: 1.25rem;
+  /* 20px */
+  --font-size-2xl: 1.5rem;
+  /* 24px */
+  --font-size-3xl: 1.875rem;
+  /* 30px */
+  --font-size-4xl: 2.25rem;
+  /* 36px */
+  --font-size-5xl: 3rem;
+  /* 48px */
+
+  /* ===== SPACING ===== */
+  --spacing-xs: 0.25rem;
+  /* 4px */
+  --spacing-sm: 0.5rem;
+  /* 8px */
+  --spacing-md: 1rem;
+  /* 16px */
+  --spacing-lg: 1.5rem;
+  /* 24px */
+  --spacing-xl: 2rem;
+  /* 32px */
+  --spacing-2xl: 3rem;
+  /* 48px */
+  --spacing-3xl: 4rem;
+  /* 64px */
+
+  /* ===== BORDER RADIUS ===== */
+  --radius-sm: 0.25rem;
+  /* 4px */
+  --radius-md: 0.5rem;
+  /* 8px */
+  --radius-lg: 0.75rem;
+  /* 12px */
+  --radius-xl: 1rem;
+  /* 16px */
+  --radius-full: 9999px;
+
+  /* ===== SHADOWS ===== */
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+  --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1);
+}
+
+
+/* ===== BASE STYLES ===== */
+* {
+  border-color: var(--color-neutral-200);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-neutral-50);
+  color: var(--color-neutral-800);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Headings use display font */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  color: var(--color-neutral-900);
+}
+
+h1 {
+  font-size: 2.25rem;
+  /* 36px */
+}
+
+@media (min-width: 768px) {
+  h1 {
+    font-size: 3rem;
+    /* 48px */
+  }
+}
+
+h2 {
+  font-size: 1.875rem;
+  /* 30px */
+}
+
+@media (min-width: 768px) {
+  h2 {
+    font-size: 2.25rem;
+    /* 36px */
+  }
+}
+
+h3 {
+  font-size: 1.5rem;
+  /* 24px */
+}
+
+@media (min-width: 768px) {
+  h3 {
+    font-size: 1.875rem;
+    /* 30px */
+  }
+}
+
+h4 {
+  font-size: 1.25rem;
+  /* 20px */
+}
+
+@media (min-width: 768px) {
+  h4 {
+    font-size: 1.5rem;
+    /* 24px */
+  }
+}
+
+/* Links */
+a {
+  color: var(--color-primary-600);
+  transition: color 0.2s;
+}
+
+a:hover {
+  color: var(--color-primary-700);
+}
+
+/* Focus styles for accessibility */
+*:focus-visible {
+  outline: 2px solid var(--color-primary-500);
+  outline-offset: 2px;
+}
+
+/* ===== UTILITY CLASSES ===== */
+.container {
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  max-width: 80rem;
+  /* 1280px */
+}
+
+@media (min-width: 640px) {
+  .container {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.375rem;
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  transition: colors 0.2s;
+}
+
+.btn:focus-visible {
+  outline: none;
+}
+
+.btn:disabled {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.375rem;
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  background-color: var(--color-primary-600);
+  color: white;
+  transition: background-color 0.2s;
+}
+
+.btn-primary:hover {
+  background-color: var(--color-primary-700);
+}
+
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.375rem;
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  background-color: var(--color-neutral-200);
+  color: var(--color-neutral-900);
+  transition: background-color 0.2s;
+}
+
+.btn-secondary:hover {
+  background-color: var(--color-neutral-300);
+}
+
+.card {
+  background-color: white;
+  border-radius: 0.5rem;
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--color-neutral-200);
+  padding: 1.5rem;
+}
+
+.card-hover {
+  background-color: white;
+  border-radius: 0.5rem;
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--color-neutral-200);
+  padding: 1.5rem;
+  transition: all 0.3s;
+}
+
+.card-hover:hover {
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-0.25rem);
+}
+
+/* Premium gradient backgrounds */
+.gradient-primary {
+  background: linear-gradient(to bottom right, var(--color-primary-500), var(--color-primary-700));
+}
+
+.gradient-gold {
+  background: linear-gradient(to bottom right, var(--color-secondary-400), var(--color-secondary-600));
+}
+
+/* Text gradients */
+.text-gradient-primary {
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  background-image: linear-gradient(to right, var(--color-primary-600), var(--color-accent-600));
+}
