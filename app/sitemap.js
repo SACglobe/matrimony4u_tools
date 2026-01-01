@@ -20,6 +20,11 @@ export default async function sitemap() {
         { url: '/age-difference-calculator', priority: 0.9 },
         { url: '/marriage-registration-documents', priority: 0.9 },
         { url: '/kundli-matching', priority: 0.9 },
+        { url: '/marriage-eligibility-checker', priority: 0.9 },
+        { url: '/wedding-savings-calculator', priority: 0.9 },
+        { url: '/wedding-expense-split-calculator', priority: 0.9 },
+        { url: '/marriage-date-calculator', priority: 0.9 },
+        { url: '/wedding-guest-list-planner', priority: 0.9 },
     ];
 
     // Category pages
