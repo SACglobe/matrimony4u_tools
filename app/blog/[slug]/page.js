@@ -31,12 +31,24 @@ export async function generateStaticParams() {
     ];
 }
 
-export async function generateMetadata({ params }) {
-    const { slug } = await params;
+export async function generateMetadata(props) {
+    const params = await props.params;
+
+    if (!params || !params.slug) {
+        return generatePageMetadata({
+            title: 'Blog Post',
+            description: 'Read the latest from MATRIMONY4U blog.',
+        });
+    }
+
+    const { slug } = params;
     const post = getBlogPost(slug);
 
     if (!post) {
-        return {};
+        return generatePageMetadata({
+            title: 'Post Not Found',
+            description: 'The requested blog post could not be found.',
+        });
     }
 
     return generatePageMetadata({
@@ -44,11 +56,18 @@ export async function generateMetadata({ params }) {
         description: post.excerpt,
         canonicalPath: `/blog/${post.slug}/`,
         keywords: [],
+        authors: [{ name: post.author || 'MATRIMONY4U Editorial Team' }],
     });
 }
 
-export default async function BlogPostPage({ params }) {
-    const { slug } = await params;
+export default async function BlogPostPage(props) {
+    const params = await props.params;
+
+    if (!params || !params.slug) {
+        notFound();
+    }
+
+    const { slug } = params;
     const post = getBlogPost(slug);
 
     if (!post) {
@@ -56,30 +75,30 @@ export default async function BlogPostPage({ params }) {
     }
 
     const PostContent = POST_COMPONENTS[slug];
-    const relatedPosts = getRelatedPosts(slug);
-    const category = BLOG_CATEGORIES[post.category];
+    const relatedPosts = getRelatedPosts(slug, 3);
+    const category = post.category ? (BLOG_CATEGORIES[post.category] || BLOG_CATEGORIES.legal) : BLOG_CATEGORIES.legal;
 
     const articleSchema = {
         '@context': 'https://schema.org',
         '@type': 'BlogPosting',
-        headline: post.title,
-        description: post.excerpt,
-        datePublished: post.publishDate,
+        headline: post.title || 'MATRIMONY4U Blog',
+        description: post.excerpt || '',
+        datePublished: post.publishDate || new Date().toISOString(),
         author: {
             '@type': 'Organization',
-            name: post.author,
+            name: post.author || 'MATRIMONY4U Editorial Team',
         },
     };
 
     return (
         <>
             <Header />
-            <JsonLd data={articleSchema} />
+            {articleSchema && <JsonLd data={articleSchema} />}
 
             <main>
                 <div className="container">
                     <Breadcrumbs items={[
-                        { name: 'Blog', path: '/blog/' },
+                        { name: 'Blog', href: '/blog/' },
                         { name: post.title },
                     ]} />
 
@@ -89,11 +108,11 @@ export default async function BlogPostPage({ params }) {
                             <div className="mb-8">
                                 <Link
                                     href="/blog/"
-                                    className={`inline-block text-xs font-semibold px-3 py-1 rounded-full mb-4 ${category.color === 'primary' ? 'bg-primary-100 text-primary-700' :
-                                        category.color === 'secondary' ? 'bg-secondary-100 text-secondary-700' :
-                                            category.color === 'accent' ? 'bg-accent-100 text-accent-700' :
-                                                category.color === 'purple' ? 'bg-purple-100 text-purple-700' :
-                                                    'bg-pink-100 text-pink-700'
+                                    className={`inline-block text-xs font-semibold px-3 py-1 rounded-full mb-4 ${category.color === 'secondary' ? 'bg-secondary-100 text-secondary-700' :
+                                        category.color === 'accent' ? 'bg-accent-100 text-accent-700' :
+                                            category.color === 'purple' ? 'bg-purple-100 text-purple-700' :
+                                                category.color === 'pink' ? 'bg-pink-100 text-pink-700' :
+                                                    'bg-primary-100 text-primary-700'
                                         }`}
                                 >
                                     {category.name}
@@ -174,3 +193,4 @@ export default async function BlogPostPage({ params }) {
         </>
     );
 }
+

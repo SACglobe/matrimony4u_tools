@@ -53,31 +53,13 @@ export default function Footer() {
                     <div>
                         <h4 className="text-white font-semibold mb-4">Categories</h4>
                         <ul className="space-y-2 text-sm">
-                            <li>
-                                <Link href="/legal-eligibility/" className="hover:text-primary-400 transition-colors">
-                                    Legal & Eligibility
-                                </Link>
-                            </li>
-                            <li>
-                                <Link href="/wedding-planning/" className="hover:text-primary-400 transition-colors">
-                                    Wedding Planning
-                                </Link>
-                            </li>
-                            <li>
-                                <Link href="/financial-planning/" className="hover:text-primary-400 transition-colors">
-                                    Financial Planning
-                                </Link>
-                            </li>
-                            <li>
-                                <Link href="/cultural-traditions/" className="hover:text-primary-400 transition-colors">
-                                    Cultural Traditions
-                                </Link>
-                            </li>
-                            <li>
-                                <Link href="/compatibility-assessment/" className="hover:text-primary-400 transition-colors">
-                                    Compatibility
-                                </Link>
-                            </li>
+                            {TOOL_CATEGORIES.map((category) => (
+                                <li key={category.id}>
+                                    <Link href={`/${category.slug}/`} className="hover:text-primary-400 transition-colors">
+                                        {category.name}
+                                    </Link>
+                                </li>
+                            ))}
                         </ul>
                     </div>
 

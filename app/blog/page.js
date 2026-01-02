@@ -12,8 +12,10 @@ export const metadata = generatePageMetadata({
     keywords: ['indian wedding blog', 'marriage advice india', 'wedding planning tips', 'marriage laws india'],
 });
 
-export default async function BlogPage({ searchParams }) {
-    const { category: categorySlug } = await searchParams;
+export default async function BlogPage(props) {
+    const searchParams = props ? (await props.searchParams) : {};
+    const categorySlug = searchParams?.category;
+
     const posts = categorySlug
         ? BLOG_POSTS.filter(post => post.category === categorySlug)
         : BLOG_POSTS;

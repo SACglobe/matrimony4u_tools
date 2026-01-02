@@ -45,13 +45,6 @@ export default function ToolsPage() {
                 icon: '👥',
                 status: 'active',
             },
-            {
-                slug: 'marriage-date-calculator',
-                name: 'Auspicious Marriage Date',
-                description: 'Find auspicious dates for wedding according to Hindu calendar',
-                icon: '📅',
-                status: 'active',
-            },
         ],
         'financial-planning': [
             {
@@ -73,6 +66,15 @@ export default function ToolsPage() {
                 name: 'Wedding Savings Calculator',
                 description: 'Plan how much to save monthly for your dream wedding',
                 icon: '🏦',
+                status: 'active',
+            },
+        ],
+        'date-timing': [
+            {
+                slug: 'marriage-date-calculator',
+                name: 'Auspicious Marriage Date',
+                description: 'Find auspicious dates for wedding according to Hindu calendar',
+                icon: '📅',
                 status: 'active',
             },
         ],
