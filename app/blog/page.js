@@ -12,7 +12,12 @@ export const metadata = generatePageMetadata({
     keywords: ['indian wedding blog', 'marriage advice india', 'wedding planning tips', 'marriage laws india'],
 });
 
-export default function BlogPage() {
+export default async function BlogPage({ searchParams }) {
+    const { category: categorySlug } = await searchParams;
+    const posts = categorySlug
+        ? BLOG_POSTS.filter(post => post.category === categorySlug)
+        : BLOG_POSTS;
+
     const breadcrumbSchema = generateBreadcrumbSchema([
         { name: 'Home', path: '/' },
         { name: 'Blog', path: '/blog/' },
@@ -71,7 +76,7 @@ export default function BlogPage() {
 
                             {/* Blog Posts Grid */}
                             <div className="grid md:grid-cols-2 gap-8">
-                                {BLOG_POSTS.map(post => (
+                                {posts.map(post => (
                                     <Link
                                         key={post.slug}
                                         href={`/blog/${post.slug}/`}

@@ -31,8 +31,9 @@ export async function generateStaticParams() {
     ];
 }
 
-export function generateMetadata({ params }) {
-    const post = getBlogPost(params.slug);
+export async function generateMetadata({ params }) {
+    const { slug } = await params;
+    const post = getBlogPost(slug);
 
     if (!post) {
         return {};
@@ -46,15 +47,16 @@ export function generateMetadata({ params }) {
     });
 }
 
-export default function BlogPostPage({ params }) {
-    const post = getBlogPost(params.slug);
+export default async function BlogPostPage({ params }) {
+    const { slug } = await params;
+    const post = getBlogPost(slug);
 
     if (!post) {
         notFound();
     }
 
-    const PostContent = POST_COMPONENTS[params.slug];
-    const relatedPosts = getRelatedPosts(params.slug);
+    const PostContent = POST_COMPONENTS[slug];
+    const relatedPosts = getRelatedPosts(slug);
     const category = BLOG_CATEGORIES[post.category];
 
     const articleSchema = {
@@ -88,10 +90,10 @@ export default function BlogPostPage({ params }) {
                                 <Link
                                     href="/blog/"
                                     className={`inline-block text-xs font-semibold px-3 py-1 rounded-full mb-4 ${category.color === 'primary' ? 'bg-primary-100 text-primary-700' :
-                                            category.color === 'secondary' ? 'bg-secondary-100 text-secondary-700' :
-                                                category.color === 'accent' ? 'bg-accent-100 text-accent-700' :
-                                                    category.color === 'purple' ? 'bg-purple-100 text-purple-700' :
-                                                        'bg-pink-100 text-pink-700'
+                                        category.color === 'secondary' ? 'bg-secondary-100 text-secondary-700' :
+                                            category.color === 'accent' ? 'bg-accent-100 text-accent-700' :
+                                                category.color === 'purple' ? 'bg-purple-100 text-purple-700' :
+                                                    'bg-pink-100 text-pink-700'
                                         }`}
                                 >
                                     {category.name}
