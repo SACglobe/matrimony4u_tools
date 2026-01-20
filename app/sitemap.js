@@ -43,6 +43,16 @@ export default async function sitemap() {
         { url: '/blog/marriage-registration-process-guide', date: '2025-01-03' },
         { url: '/blog/age-difference-marriage-significance', date: '2025-01-04' },
         { url: '/blog/kundli-matching-modern-perspective', date: '2025-01-05' },
+        { url: '/blog/hindu-wedding-rituals-complete-guide', date: '2025-01-06' },
+        { url: '/blog/regional-wedding-customs-comparison', date: '2025-01-07' },
+        { url: '/blog/wedding-budget-city-wise-breakdown', date: '2025-01-08' },
+        { url: '/blog/pre-wedding-ceremonies-explained', date: '2025-01-09' },
+        { url: '/blog/wedding-venue-selection-guide', date: '2025-01-10' },
+        { url: '/blog/indian-wedding-photography-guide', date: '2025-01-11' },
+        { url: '/blog/bridal-trousseau-essential-guide', date: '2025-01-12' },
+        { url: '/blog/destination-wedding-planning-india', date: '2025-01-13' },
+        { url: '/blog/wedding-entertainment-music-guide', date: '2025-01-14' },
+        { url: '/blog/post-wedding-rituals-traditions', date: '2025-01-15' },
     ];
 
     // Combine all URLs

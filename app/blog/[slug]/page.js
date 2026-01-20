@@ -12,6 +12,16 @@ import WeddingBudgetPost from '@/components/blog/WeddingBudgetPost';
 import MarriageRegistrationPost from '@/components/blog/MarriageRegistrationPost';
 import AgeDifferencePost from '@/components/blog/AgeDifferencePost';
 import KundliMatchingPost from '@/components/blog/KundliMatchingPost';
+import HinduWeddingRitualsPost from '@/components/blog/HinduWeddingRitualsPost';
+import RegionalWeddingCustomsPost from '@/components/blog/RegionalWeddingCustomsPost';
+import WeddingBudgetCityWisePost from '@/components/blog/WeddingBudgetCityWisePost';
+import PreWeddingCeremoniesPost from '@/components/blog/PreWeddingCeremoniesPost';
+import WeddingVenueSelectionPost from '@/components/blog/WeddingVenueSelectionPost';
+import IndianWeddingPhotographyPost from '@/components/blog/IndianWeddingPhotographyPost';
+import BridalTrousseauPost from '@/components/blog/BridalTrousseauPost';
+import DestinationWeddingPlanningPost from '@/components/blog/DestinationWeddingPlanningPost';
+import WeddingEntertainmentMusicPost from '@/components/blog/WeddingEntertainmentMusicPost';
+import PostWeddingRitualsPost from '@/components/blog/PostWeddingRitualsPost';
 
 const POST_COMPONENTS = {
     'legal-marriage-age-india-explained': LegalMarriageAgePost,
@@ -19,6 +29,16 @@ const POST_COMPONENTS = {
     'marriage-registration-process-guide': MarriageRegistrationPost,
     'age-difference-marriage-significance': AgeDifferencePost,
     'kundli-matching-modern-perspective': KundliMatchingPost,
+    'hindu-wedding-rituals-complete-guide': HinduWeddingRitualsPost,
+    'regional-wedding-customs-comparison': RegionalWeddingCustomsPost,
+    'wedding-budget-city-wise-breakdown': WeddingBudgetCityWisePost,
+    'pre-wedding-ceremonies-explained': PreWeddingCeremoniesPost,
+    'wedding-venue-selection-guide': WeddingVenueSelectionPost,
+    'indian-wedding-photography-guide': IndianWeddingPhotographyPost,
+    'bridal-trousseau-essential-guide': BridalTrousseauPost,
+    'destination-wedding-planning-india': DestinationWeddingPlanningPost,
+    'wedding-entertainment-music-guide': WeddingEntertainmentMusicPost,
+    'post-wedding-rituals-traditions': PostWeddingRitualsPost,
 };
 
 export async function generateStaticParams() {
@@ -28,6 +48,16 @@ export async function generateStaticParams() {
         { slug: 'marriage-registration-process-guide' },
         { slug: 'age-difference-marriage-significance' },
         { slug: 'kundli-matching-modern-perspective' },
+        { slug: 'hindu-wedding-rituals-complete-guide' },
+        { slug: 'regional-wedding-customs-comparison' },
+        { slug: 'wedding-budget-city-wise-breakdown' },
+        { slug: 'pre-wedding-ceremonies-explained' },
+        { slug: 'wedding-venue-selection-guide' },
+        { slug: 'indian-wedding-photography-guide' },
+        { slug: 'bridal-trousseau-essential-guide' },
+        { slug: 'destination-wedding-planning-india' },
+        { slug: 'wedding-entertainment-music-guide' },
+        { slug: 'post-wedding-rituals-traditions' },
     ];
 }
 
