@@ -7,7 +7,7 @@ import { generatePageMetadata } from '@/lib/seo';
 export const metadata = generatePageMetadata({
     title: 'About Us',
     description: `Learn about ${SITE_CONFIG.name}, our mission to provide free matrimonial planning tools and guidance for Indian couples and families.`,
-    canonicalPath: '/about/',
+    canonicalPath: '/about',
 });
 
 export default function AboutPage() {

@@ -27,22 +27,22 @@ export default function Footer() {
                         <h4 className="text-white font-semibold mb-4">Quick Links</h4>
                         <ul className="space-y-2 text-sm">
                             <li>
-                                <Link href="/tools/" className="hover:text-primary-400 transition-colors">
+                                <Link href="/tools" className="hover:text-primary-400 transition-colors">
                                     All Tools
                                 </Link>
                             </li>
                             <li>
-                                <Link href="/blog/" className="hover:text-primary-400 transition-colors">
+                                <Link href="/blog" className="hover:text-primary-400 transition-colors">
                                     Blog
                                 </Link>
                             </li>
                             <li>
-                                <Link href="/about/" className="hover:text-primary-400 transition-colors">
+                                <Link href="/about" className="hover:text-primary-400 transition-colors">
                                     About Us
                                 </Link>
                             </li>
                             <li>
-                                <Link href="/contact/" className="hover:text-primary-400 transition-colors">
+                                <Link href="/contact" className="hover:text-primary-400 transition-colors">
                                     Contact
                                 </Link>
                             </li>
@@ -55,7 +55,7 @@ export default function Footer() {
                         <ul className="space-y-2 text-sm">
                             {TOOL_CATEGORIES.map((category) => (
                                 <li key={category.id}>
-                                    <Link href={`/${category.slug}/`} className="hover:text-primary-400 transition-colors">
+                                    <Link href={`/${category.slug}`} className="hover:text-primary-400 transition-colors">
                                         {category.name}
                                     </Link>
                                 </li>
@@ -68,17 +68,17 @@ export default function Footer() {
                         <h4 className="text-white font-semibold mb-4">Legal & Policies</h4>
                         <ul className="space-y-2 text-sm">
                             <li>
-                                <Link href="/privacy-policy/" className="hover:text-primary-400 transition-colors">
+                                <Link href="/privacy-policy" className="hover:text-primary-400 transition-colors">
                                     Privacy Policy
                                 </Link>
                             </li>
                             <li>
-                                <Link href="/terms-of-service/" className="hover:text-primary-400 transition-colors">
+                                <Link href="/terms-of-service" className="hover:text-primary-400 transition-colors">
                                     Terms of Service
                                 </Link>
                             </li>
                             <li>
-                                <Link href="/disclaimer/" className="hover:text-primary-400 transition-colors">
+                                <Link href="/disclaimer" className="hover:text-primary-400 transition-colors">
                                     Disclaimer
                                 </Link>
                             </li>

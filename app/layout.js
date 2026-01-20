@@ -20,7 +20,7 @@ const playfair = Playfair_Display({
 export const metadata = generatePageMetadata({
   title: SITE_CONFIG.name,
   description: SITE_CONFIG.description,
-  canonicalPath: '/',
+  canonicalPath: '',
 });
 
 export default function RootLayout({ children }) {

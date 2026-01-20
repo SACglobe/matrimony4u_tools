@@ -7,7 +7,7 @@ import { generatePageMetadata, generateFAQSchema, generateBreadcrumbSchema, Json
 export const metadata = generatePageMetadata({
     title: 'Financial Planning for Marriage & Weddings in India',
     description: 'Expert guide to marriage financial planning - wedding budgets, savings strategies, post-marriage finances, and long-term wealth building for couples.',
-    canonicalPath: '/financial-planning/',
+    canonicalPath: '/financial-planning',
     keywords: ['wedding financial planning', 'marriage budget india', 'wedding savings', 'couple financial planning', 'marriage expenses'],
 });
 

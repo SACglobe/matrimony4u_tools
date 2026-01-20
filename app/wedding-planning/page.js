@@ -13,7 +13,7 @@ import Link from 'next/link';
 export const metadata = generatePageMetadata({
     title: 'Wedding Planning Tools & Resources for Indian Weddings',
     description: 'Comprehensive Indian wedding planning guide with budget calculators, guest list planners, timeline management, and vendor coordination tools.',
-    canonicalPath: '/wedding-planning/',
+    canonicalPath: '/wedding-planning',
     keywords: [
         'indian wedding planning',
         'wedding budget calculator',

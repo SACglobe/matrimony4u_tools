@@ -54,7 +54,7 @@ export default function Header() {
                             <div className="absolute left-0 mt-2 w-80 bg-white rounded-lg shadow-xl border border-neutral-200 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
                                 <div className="p-4">
                                     <Link
-                                        href="/tools/"
+                                        href="/tools"
                                         className="block px-4 py-2 text-sm font-semibold text-primary-600 hover:bg-primary-50 rounded-md transition-colors"
                                     >
                                         View All Tools →
@@ -63,7 +63,7 @@ export default function Header() {
                                         {TOOL_CATEGORIES.map((category) => (
                                             <Link
                                                 key={category.id}
-                                                href={`/${category.slug}/`}
+                                                href={`/${category.slug}`}
                                                 className="block px-4 py-2 hover:bg-neutral-50 rounded-md transition-colors group/item"
                                             >
                                                 <div className="flex items-start space-x-3">
@@ -85,21 +85,21 @@ export default function Header() {
                         </div>
 
                         <Link
-                            href="/blog/"
+                            href="/blog"
                             className="text-neutral-700 hover:text-primary-600 transition-colors font-medium"
                         >
                             Blog
                         </Link>
 
                         <Link
-                            href="/about/"
+                            href="/about"
                             className="text-neutral-700 hover:text-primary-600 transition-colors font-medium"
                         >
                             About
                         </Link>
 
                         <Link
-                            href="/contact/"
+                            href="/contact"
                             className="text-neutral-700 hover:text-primary-600 transition-colors font-medium"
                         >
                             Contact
@@ -145,7 +145,7 @@ export default function Header() {
                                 {TOOL_CATEGORIES.map((category) => (
                                     <Link
                                         key={category.id}
-                                        href={`/${category.slug}/`}
+                                        href={`/${category.slug}`}
                                         className="flex items-center space-x-3 p-3 bg-neutral-50 rounded-xl"
                                     >
                                         <span className="text-2xl">{category.icon}</span>
@@ -153,7 +153,7 @@ export default function Header() {
                                     </Link>
                                 ))}
                                 <Link
-                                    href="/tools/"
+                                    href="/tools"
                                     className="flex items-center justify-center p-3 text-primary-600 font-bold bg-primary-50 rounded-xl"
                                 >
                                     View All Tools →
@@ -163,19 +163,19 @@ export default function Header() {
 
                         <div className="pt-4 border-t border-neutral-100 space-y-6">
                             <Link
-                                href="/blog/"
+                                href="/blog"
                                 className="block text-2xl font-display font-bold text-neutral-900"
                             >
                                 Blog
                             </Link>
                             <Link
-                                href="/about/"
+                                href="/about"
                                 className="block text-2xl font-display font-bold text-neutral-900"
                             >
                                 About Us
                             </Link>
                             <Link
-                                href="/contact/"
+                                href="/contact"
                                 className="block text-2xl font-display font-bold text-neutral-900"
                             >
                                 Contact

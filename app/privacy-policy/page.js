@@ -7,7 +7,7 @@ import { generatePageMetadata } from '@/lib/seo';
 export const metadata = generatePageMetadata({
     title: 'Privacy Policy',
     description: `${SITE_CONFIG.name} Privacy Policy. Learn how we protect your privacy, handle data, and use cookies. GDPR compliant.`,
-    canonicalPath: '/privacy-policy/',
+    canonicalPath: '/privacy-policy',
     noindex: false,
 });
 

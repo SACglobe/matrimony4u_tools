@@ -7,7 +7,7 @@ import { generatePageMetadata } from '@/lib/seo';
 export const metadata = generatePageMetadata({
     title: 'Terms of Service',
     description: `${SITE_CONFIG.name} Terms of Service. Read our terms and conditions for using our free matrimonial planning tools.`,
-    canonicalPath: '/terms-of-service/',
+    canonicalPath: '/terms-of-service',
 });
 
 export default function TermsOfServicePage() {

@@ -7,7 +7,7 @@ import { generatePageMetadata, generateFAQSchema, generateBreadcrumbSchema, Json
 export const metadata = generatePageMetadata({
     title: 'Cultural Traditions & Customs in Indian Marriages',
     description: 'Complete guide to Hindu, Muslim, Christian, Sikh marriage traditions, rituals, regional customs, and modern adaptations in Indian weddings.',
-    canonicalPath: '/cultural-traditions/',
+    canonicalPath: '/cultural-traditions',
     keywords: ['indian wedding traditions', 'hindu marriage rituals', 'wedding customs india', 'marriage ceremonies', 'indian wedding culture'],
 });
 

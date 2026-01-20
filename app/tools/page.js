@@ -8,7 +8,7 @@ import Link from 'next/link';
 export const metadata = generatePageMetadata({
     title: 'All Tools',
     description: 'Browse all free matrimonial planning tools for Indian weddings. Legal guides, budget calculators, cultural tools, and more.',
-    canonicalPath: '/tools/',
+    canonicalPath: '/tools',
 });
 
 export default function ToolsPage() {

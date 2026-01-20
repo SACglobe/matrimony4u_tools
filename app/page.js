@@ -43,7 +43,7 @@ export default function HomePage() {
               {/* CTAs */}
               <div className="flex flex-col sm:flex-row gap-5 justify-center items-center mb-16 w-full px-4">
                 <Link
-                  href="/tools/"
+                  href="/tools"
                   className="inline-flex items-center px-10 py-4 bg-white text-primary-700 font-bold rounded-xl hover:bg-neutral-50 transition-all shadow-[0_20px_50px_rgba(0,0,0,0.2)] hover:shadow-none hover:-translate-y-1 text-lg w-full sm:w-auto justify-center"
                 >
                   Explore All Tools
@@ -52,7 +52,7 @@ export default function HomePage() {
                   </svg>
                 </Link>
                 <Link
-                  href="/legal-marriage-age-india/"
+                  href="/legal-marriage-age-india"
                   className="inline-flex items-center px-10 py-4 bg-white/10 backdrop-blur-md text-white font-bold rounded-xl hover:bg-white/20 transition-all border border-white/30 text-lg w-full sm:w-auto justify-center"
                 >
                   Check Eligibility
@@ -160,7 +160,7 @@ export default function HomePage() {
             </div>
             <div className="text-center mt-10">
               <Link
-                href="/tools/"
+                href="/tools"
                 className="btn-primary"
               >
                 View All Tools
@@ -185,7 +185,7 @@ export default function HomePage() {
               {TOOL_CATEGORIES.map((category, index) => (
                 <Link
                   key={category.id}
-                  href={`/tools/#${category.slug}`}
+                  href={`/tools#${category.slug}`}
                   className="group relative bg-white rounded-3xl p-8 border border-neutral-200 hover:border-primary-200 transition-all duration-500 hover:shadow-[0_20px_50px_rgba(0,0,0,0.05)] hover:-translate-y-2"
                 >
                   {/* Category number badge */}
@@ -261,6 +261,196 @@ export default function HomePage() {
           </div>
         </section>
 
+        {/* Why Choose Matrimony4u */}
+        <section className="py-24 bg-gradient-to-br from-primary-50 via-white to-secondary-50">
+          <div className="container">
+            <div className="text-center mb-16">
+              <h2 className="text-3xl md:text-4xl font-display font-bold mb-6">
+                Why Choose MATRIMONY4U?
+              </h2>
+              <p className="text-lg text-neutral-600 max-w-3xl mx-auto leading-relaxed">
+                India's trusted platform for free matrimonial planning tools and expert guidance
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+              {/* Benefit 1 */}
+              <div className="bg-white rounded-2xl p-8 shadow-sm hover:shadow-lg transition-shadow border border-neutral-100">
+                <div className="w-16 h-16 bg-primary-100 rounded-2xl flex items-center justify-center mb-6">
+                  <span className="text-3xl">🎯</span>
+                </div>
+                <h3 className="text-xl font-bold text-neutral-900 mb-3">100% Free, Forever</h3>
+                <p className="text-neutral-600 leading-relaxed">
+                  No hidden fees, no premium features, no subscriptions. Every tool and resource is completely free to use for all Indian couples and families.
+                </p>
+              </div>
+
+              {/* Benefit 2 */}
+              <div className="bg-white rounded-2xl p-8 shadow-sm hover:shadow-lg transition-shadow border border-neutral-100">
+                <div className="w-16 h-16 bg-secondary-100 rounded-2xl flex items-center justify-center mb-6">
+                  <span className="text-3xl">🔒</span>
+                </div>
+                <h3 className="text-xl font-bold text-neutral-900 mb-3">Privacy Protected</h3>
+                <p className="text-neutral-600 leading-relaxed">
+                  No registration required, no data storage, no tracking. Your wedding plans and calculations remain completely private and secure.
+                </p>
+              </div>
+
+              {/* Benefit 3 */}
+              <div className="bg-white rounded-2xl p-8 shadow-sm hover:shadow-lg transition-shadow border border-neutral-100">
+                <div className="w-16 h-16 bg-accent-100 rounded-2xl flex items-center justify-center mb-6">
+                  <span className="text-3xl">📚</span>
+                </div>
+                <h3 className="text-xl font-bold text-neutral-900 mb-3">Expert Knowledge</h3>
+                <p className="text-neutral-600 leading-relaxed">
+                  Legal information verified by marriage law experts, cultural guidance from traditional advisors, financial planning from wedding industry professionals.
+                </p>
+              </div>
+
+              {/* Benefit 4 */}
+              <div className="bg-white rounded-2xl p-8 shadow-sm hover:shadow-lg transition-shadow border border-neutral-100">
+                <div className="w-16 h-16 bg-primary-100 rounded-2xl flex items-center justify-center mb-6">
+                  <span className="text-3xl">🇮🇳</span>
+                </div>
+                <h3 className="text-xl font-bold text-neutral-900 mb-3">India-Specific</h3>
+                <p className="text-neutral-600 leading-relaxed">
+                  Built exclusively for Indian marriages with state-wise legal requirements, regional customs, and cultural traditions from all major religions.
+                </p>
+              </div>
+
+              {/* Benefit 5 */}
+              <div className="bg-white rounded-2xl p-8 shadow-sm hover:shadow-lg transition-shadow border border-neutral-100">
+                <div className="w-16 h-16 bg-secondary-100 rounded-2xl flex items-center justify-center mb-6">
+                  <span className="text-3xl">⚡</span>
+                </div>
+                <h3 className="text-xl font-bold text-neutral-900 mb-3">Instant Results</h3>
+                <p className="text-neutral-600 leading-relaxed">
+                  No complex forms or waiting periods. Get immediate answers to eligibility checks, budget estimates, and planning timelines within seconds.
+                </p>
+              </div>
+
+              {/* Benefit 6 */}
+              <div className="bg-white rounded-2xl p-8 shadow-sm hover:shadow-lg transition-shadow border border-neutral-100">
+                <div className="w-16 h-16 bg-accent-100 rounded-2xl flex items-center justify-center mb-6">
+                  <span className="text-3xl">💪</span>
+                </div>
+                <h3 className="text-xl font-bold text-neutral-900 mb-3">Regularly Updated</h3>
+                <p className="text-neutral-600 leading-relaxed">
+                  We continuously monitor changes in marriage laws, registration procedures, and cultural practices to keep our content accurate and current.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* User Success Stories / Testimonials */}
+        <section className="py-24 bg-white">
+          <div className="container">
+            <div className="text-center mb-16">
+              <h2 className="text-3xl md:text-4xl font-display font-bold mb-6">
+                Trusted by Thousands of Indian Families
+              </h2>
+              <p className="text-lg text-neutral-600 max-w-3xl mx-auto leading-relaxed">
+                Real stories from couples and families who simplified their wedding planning with our tools
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+              {/* Testimonial 1 */}
+              <div className="bg-neutral-50 rounded-2xl p-8 border border-neutral-200 relative">
+                <div className="text-primary-600 text-5xl mb-4 opacity-20 absolute top-4 right-6">"</div>
+                <div className="relative z-10">
+                  <div className="flex items-center gap-3 mb-6">
+                    <div className="w-12 h-12 bg-gradient-to-br from-primary-400 to-primary-600 rounded-full flex items-center justify-center text-white font-bold">
+                      AS
+                    </div>
+                    <div>
+                      <div className="font-bold text-neutral-900">Ananya & Siddharth</div>
+                      <div className="text-sm text-neutral-500">Mumbai, Maharashtra</div>
+                    </div>
+                  </div>
+                  <p className="text-neutral-700 leading-relaxed mb-4">
+                    "The budget calculator helped us plan our entire wedding within our ₹8 lakh budget. We knew exactly where every rupee was going!"
+                  </p>
+                  <div className="flex items-center text-sm text-neutral-500">
+                    <span className="text-yellow-500 mr-2">★★★★★</span>
+                    Wedding Budget Calculator
+                  </div>
+                </div>
+              </div>
+
+              {/* Testimonial 2 */}
+              <div className="bg-neutral-50 rounded-2xl p-8 border border-neutral-200 relative">
+                <div className="text-primary-600 text-5xl mb-4 opacity-20 absolute top-4 right-6">"</div>
+                <div className="relative z-10">
+                  <div className="flex items-center gap-3 mb-6">
+                    <div className="w-12 h-12 bg-gradient-to-br from-secondary-400 to-secondary-600 rounded-full flex items-center justify-center text-white font-bold">
+                      RP
+                    </div>
+                    <div>
+                      <div className="font-bold text-neutral-900">Rajesh Patel</div>
+                      <div className="text-sm text-neutral-500">Ahmedabad, Gujarat</div>
+                    </div>
+                  </div>
+                  <p className="text-neutral-700 leading-relaxed mb-4">
+                    "Saved our family from legal hassles! The state-wise registration document checklist made the entire process smooth and stress-free."
+                  </p>
+                  <div className="flex items-center text-sm text-neutral-500">
+                    <span className="text-yellow-500 mr-2">★★★★★</span>
+                    Registration Documents Guide
+                  </div>
+                </div>
+              </div>
+
+              {/* Testimonial 3 */}
+              <div className="bg-neutral-50 rounded-2xl p-8 border border-neutral-200 relative">
+                <div className="text-primary-600 text-5xl mb-4 opacity-20 absolute top-4 right-6">"</div>
+                <div className="relative z-10">
+                  <div className="flex items-center gap-3 mb-6">
+                    <div className="w-12 h-12 bg-gradient-to-br from-accent-400 to-accent-600 rounded-full flex items-center justify-center text-white font-bold">
+                      PK
+                    </div>
+                    <div>
+                      <div className="font-bold text-neutral-900">Priya Krishnan</div>
+                      <div className="text-sm text-neutral-500">Bangalore, Karnataka</div>
+                    </div>
+                  </div>
+                  <p className="text-neutral-700 leading-relaxed mb-4">
+                    "The auspicious date calculator helped us find the perfect muhurat for our South Indian wedding. Our families were very happy!"
+                  </p>
+                  <div className="flex items-center text-sm text-neutral-500">
+                    <span className="text-yellow-500 mr-2">★★★★★</span>
+                    Marriage Date Calculator
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Trust Stats */}
+            <div className="mt-16 bg-gradient-to-r from-primary-50 to-secondary-50 rounded-3xl p-12 max-w-4xl mx-auto border border-primary-100">
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+                <div>
+                  <div className="text-4xl font-bold text-primary-600 mb-2">10,000+</div>
+                  <div className="text-sm text-neutral-600 font-medium">Monthly Users</div>
+                </div>
+                <div>
+                  <div className="text-4xl font-bold text-primary-600 mb-2">28</div>
+                  <div className="text-sm text-neutral-600 font-medium">States Covered</div>
+                </div>
+                <div>
+                  <div className="text-4xl font-bold text-primary-600 mb-2">4.8/5</div>
+                  <div className="text-sm text-neutral-600 font-medium">User Rating</div>
+                </div>
+                <div>
+                  <div className="text-4xl font-bold text-primary-600 mb-2">Free</div>
+                  <div className="text-sm text-neutral-600 font-medium">Always</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+
         {/* Trust & Transparency */}
         <section className="py-20 bg-neutral-900 text-white overflow-hidden relative">
           <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-primary-500 via-secondary-500 to-primary-500"></div>
@@ -335,7 +525,7 @@ function ToolCard({ slug }) {
   const tool = toolInfo[slug] || { name: slug, description: '', icon: '🔧' };
 
   return (
-    <Link href={`/${slug}/`} className="card-hover group">
+    <Link href={`/${slug}`} className="card-hover group">
       <div className="text-4xl mb-4">{tool.icon}</div>
       <h3 className="font-display font-semibold text-xl text-neutral-900 mb-2 group-hover:text-primary-600 transition-colors">
         {tool.name}

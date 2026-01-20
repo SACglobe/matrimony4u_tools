@@ -7,7 +7,7 @@ import { generatePageMetadata, generateFAQSchema, generateBreadcrumbSchema, Json
 export const metadata = generatePageMetadata({
     title: 'Compatibility Assessment Tools for Indian Marriages',
     description: 'Modern and traditional compatibility assessment tools - age difference calculator, Kundli matching guide, personality compatibility analysis for Indian couples.',
-    canonicalPath: '/compatibility-assessment/',
+    canonicalPath: '/compatibility-assessment',
     keywords: ['marriage compatibility india', 'kundli matching', 'age difference marriage', 'couple compatibility assessment', 'ashtakoot matching'],
 });
 

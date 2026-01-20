@@ -13,7 +13,7 @@ import Link from 'next/link';
 export const metadata = generatePageMetadata({
     title: 'Legal & Eligibility Requirements for Marriage in India',
     description: 'Complete guide to legal marriage requirements, age eligibility, documentation, and compliance with Indian marriage laws across all states.',
-    canonicalPath: '/legal-eligibility/',
+    canonicalPath: '/legal-eligibility',
     keywords: [
         'legal marriage age india',
         'marriage eligibility india',

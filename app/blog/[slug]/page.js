@@ -84,7 +84,7 @@ export async function generateMetadata(props) {
     return generatePageMetadata({
         title: post.title,
         description: post.excerpt,
-        canonicalPath: `/blog/${post.slug}/`,
+        canonicalPath: `/blog/${post.slug}`,
         keywords: [],
         authors: [{ name: post.author || 'MATRIMONY4U Editorial Team' }],
     });

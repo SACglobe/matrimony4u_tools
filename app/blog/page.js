@@ -8,7 +8,7 @@ import { generatePageMetadata, generateBreadcrumbSchema, JsonLd } from '@/lib/se
 export const metadata = generatePageMetadata({
     title: 'Marriage & Wedding Planning Blog - Expert Guides & Tips',
     description: 'Expert articles on Indian marriage laws, wedding planning, budgeting, cultural traditions, and relationship advice from MATRIMONY4U.',
-    canonicalPath: '/blog/',
+    canonicalPath: '/blog',
     keywords: ['indian wedding blog', 'marriage advice india', 'wedding planning tips', 'marriage laws india'],
 });
 

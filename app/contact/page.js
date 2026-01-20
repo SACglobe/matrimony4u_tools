@@ -7,7 +7,7 @@ import { generatePageMetadata } from '@/lib/seo';
 export const metadata = generatePageMetadata({
     title: 'Contact Us',
     description: `Get in touch with ${SITE_CONFIG.name}. Share feedback, report errors, or suggest new tools. We respond within 24-48 hours.`,
-    canonicalPath: '/contact/',
+    canonicalPath: '/contact',
 });
 
 export default function ContactPage() {

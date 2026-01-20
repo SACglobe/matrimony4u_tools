@@ -7,7 +7,7 @@ import { generatePageMetadata } from '@/lib/seo';
 export const metadata = generatePageMetadata({
     title: 'Disclaimer',
     description: `${SITE_CONFIG.name} Disclaimer. Important information about the limitations of our tools and content.`,
-    canonicalPath: '/disclaimer/',
+    canonicalPath: '/disclaimer',
 });
 
 export default function DisclaimerPage() {
