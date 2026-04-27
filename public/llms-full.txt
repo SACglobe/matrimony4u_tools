@@ -1,0 +1,37 @@
+# MATRIMONY4U - Full Index
+
+## Platform Overview
+MATRIMONY4U is a comprehensive suite of tools and educational resources designed for Indian couples and families.
+
+## Tool Index
+
+### Legal & Eligibility
+- [Legal Marriage Age India](https://matrimony4u.com/legal-marriage-age-india/): Detailed compliance check for PCMA 2006.
+- [Marriage Registration Documents](https://matrimony4u.com/marriage-registration-documents/): State-wise documentation requirements.
+- [Marriage Eligibility Checker](https://matrimony4u.com/marriage-eligibility-checker/): Comprehensive legal readiness audit.
+
+### Wedding Planning
+- [Wedding Budget Calculator](https://matrimony4u.com/wedding-budget-calculator/): Itemized expense tracking and allocation.
+- [Wedding Guest List Planner](https://matrimony4u.com/wedding-guest-list-planner/): Management tool for guest counts and categories.
+- [Marriage Date Calculator](https://matrimony4u.com/marriage-date-calculator/): Auspicious timing and date planning.
+
+### Financial Tools
+- [Wedding Savings Calculator](https://matrimony4u.com/wedding-savings-calculator/): Goal-based savings planning.
+- [Wedding Expense Splitter](https://matrimony4u.com/wedding-expense-split-calculator/): Multi-party cost sharing logic.
+
+### Relationship & Culture
+- [Age Difference Calculator](https://matrimony4u.com/age-difference-calculator/): Statistical and cultural age gap analysis.
+- [Compatibility Assessment](https://matrimony4u.com/compatibility-assessment/): Qualitative relationship readiness tool.
+- [Kundli Matching](https://matrimony4u.com/kundli-matching/): Modern perspective on Ashtakoot matching.
+
+## Educational Resources (Blog)
+- [Legal Marriage Age Guide 2025](https://matrimony4u.com/blog/legal-marriage-age-india-explained/)
+- [Marriage Registration Process Guide](https://matrimony4u.com/blog/marriage-registration-process-guide/)
+- [Indian Wedding Budget Breakdown](https://matrimony4u.com/blog/indian-wedding-budget-breakdown/)
+- [Hindu Wedding Rituals Guide](https://matrimony4u.com/blog/hindu-wedding-rituals-complete-guide/)
+
+## Technical Standards
+- Framework: Next.js 16 (Turbopack)
+- SEO: Semantic Schema.org markup (Organization, Person, FAQ, Tool, Breadcrumb)
+- Accessibility: WCAG 2.1 compliant
+- Privacy: Privacy-first architecture (No user registration or tracking)

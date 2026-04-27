@@ -29,15 +29,31 @@ export default function AboutPage() {
                                 <h2 className="text-2xl font-display font-semibold mb-4">Who We Are</h2>
                                 <p className="text-neutral-700 leading-relaxed mb-4">
                                     {SITE_CONFIG.name} is India's premier platform for matrimonial planning tools and guidance.
-                                    We are a team of legal experts, cultural advisors, and technology professionals dedicated
-                                    to simplifying the complex journey of marriage planning in India.
+                                    Founded by <strong>{SITE_CONFIG.author.name}</strong>, {SITE_CONFIG.author.role}, our platform is built on 
+                                    a foundation of technical excellence and domain expertise in Indian matrimonial laws.
                                 </p>
-                                <p className="text-neutral-700 leading-relaxed">
-                                    Founded with the vision of empowering couples and families with accurate, accessible information,
-                                    we provide free tools that combine traditional wisdom with modern technology. Our platform serves
-                                    thousands of users every month, helping them make informed decisions about one of life's most
-                                    important milestones.
+                                <p className="text-neutral-700 leading-relaxed mb-6">
+                                    {SITE_CONFIG.author.bio} Our team consists of legal experts, cultural advisors, and 
+                                    technology professionals dedicated to simplifying the complex journey of marriage planning in India.
                                 </p>
+                                
+                                <div className="flex items-center gap-6 p-6 bg-neutral-50 rounded-xl border border-neutral-100">
+                                    <div className="w-20 h-20 bg-primary-100 rounded-full flex items-center justify-center text-3xl">
+                                        👨‍💻
+                                    </div>
+                                    <div>
+                                        <h3 className="font-bold text-xl">{SITE_CONFIG.author.name}</h3>
+                                        <p className="text-primary-600 text-sm font-medium mb-2">{SITE_CONFIG.author.role}</p>
+                                        <div className="flex gap-3">
+                                            <a href={SITE_CONFIG.author.social.linkedin} target="_blank" rel="noopener noreferrer" className="text-neutral-500 hover:text-primary-600">
+                                                LinkedIn
+                                            </a>
+                                            <a href={SITE_CONFIG.author.social.twitter} target="_blank" rel="noopener noreferrer" className="text-neutral-500 hover:text-primary-600">
+                                                Twitter
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
                             </section>
 
                             <section className="mb-12">

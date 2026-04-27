@@ -1,0 +1,25 @@
+# MATRIMONY4U
+
+> India's premier platform for marriage planning tools and guidance.
+
+## Description
+MATRIMONY4U provides high-authority calculators, legal guides, and wedding planning resources. The platform specializes in Indian matrimonial laws, cultural traditions, and financial planning for weddings.
+
+## Primary Tools
+- [Legal Marriage Age Checker](https://matrimony4u.com/legal-marriage-age-india/)
+- [Wedding Budget Calculator](https://matrimony4u.com/wedding-budget-calculator/)
+- [Marriage Registration Documents](https://matrimony4u.com/marriage-registration-documents/)
+- [Age Difference Calculator](https://matrimony4u.com/age-difference-calculator/)
+- [Auspicious Date Finder](https://matrimony4u.com/marriage-date-calculator/)
+- [Guest List Planner](https://matrimony4u.com/wedding-guest-list-planner/)
+
+## Core Content Categories
+- **Legal & Eligibility**: Detailed guides on PCMA 2006, Hindu Marriage Act, and Special Marriage Act.
+- **Financial Planning**: Budgeting, savings, and expense splitting tools.
+- **Cultural Traditions**: Ritual guides, Kundli matching, and regional customs.
+- **Wedding Logistics**: Venue selection, photography trends, and vendor management.
+
+## Contact & E-E-A-T
+- Founder: Chithrai Selvan (Technical Architect & Legal Consultant)
+- Email: contact@matrimony4u.in
+- Authority: All tools are reviewed against the Prohibition of Child Marriage Act, 2006 and other relevant Indian statutes.
