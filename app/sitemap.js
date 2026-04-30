@@ -1,3 +1,6 @@
+export const runtime = 'edge';
+export const revalidate = 86400; // 24 hours
+
 export default async function sitemap() {
     const baseUrl = 'https://matrimony4u.com'; // Update with actual domain when deployed
 
