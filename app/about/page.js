@@ -2,17 +2,23 @@ import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import Breadcrumbs from '@/components/layout/Breadcrumbs';
 import { SITE_CONFIG } from '@/lib/config';
-import { generatePageMetadata } from '@/lib/seo';
+import { generatePageMetadata, generateBreadcrumbSchema, JsonLd } from '@/lib/seo';
 
 export const metadata = generatePageMetadata({
-    title: 'About Us',
+    title: 'About MATRIMONY4U - Premium Wedding Planning Tools',
     description: `Learn about ${SITE_CONFIG.name}, our mission to provide free matrimonial planning tools and guidance for Indian couples and families.`,
     canonicalPath: '/about',
 });
 
 export default function AboutPage() {
+    const breadcrumbSchema = generateBreadcrumbSchema([
+        { name: 'Home', path: '/' },
+        { name: 'About Us', path: '/about' },
+    ]);
+
     return (
         <>
+            <JsonLd data={breadcrumbSchema} />
             <Header />
 
             <main>

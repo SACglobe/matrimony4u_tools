@@ -2,6 +2,7 @@ import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import Breadcrumbs from '@/components/layout/Breadcrumbs';
 import WeddingBudgetCalculator from '@/components/tools/WeddingBudgetCalculator';
+import WeddingBudgetGuide from '@/components/WeddingBudgetGuide';
 import { SITE_CONFIG } from '@/lib/config';
 import {
     generateToolMetadata,
@@ -14,7 +15,7 @@ import Link from 'next/link';
 
 export const metadata = generateToolMetadata({
     toolName: 'Indian Wedding Budget Calculator',
-    toolDescription: 'Free wedding budget calculator for Indian weddings. Plan expenses across venue, catering, photography, decoration, clothing, jewelry, and more. Get per-guest costs and budget breakdowns.',
+    toolDescription: 'Free wedding budget calculator for Indian weddings. Plan expenses across venue, catering, photography, decoration, clothing, jewelry, and more.',
     toolSlug: 'wedding-budget-calculator',
     keywords: [
         'indian wedding budget calculator',
@@ -94,6 +95,8 @@ export default function WeddingBudgetPage() {
 
                             {/* Calculator */}
                             <WeddingBudgetCalculator />
+
+                            <WeddingBudgetGuide />
 
                             {/* Educational Content */}
                             <div className="mt-16 prose prose-lg max-w-none">

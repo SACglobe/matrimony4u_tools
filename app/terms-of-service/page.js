@@ -2,19 +2,24 @@ import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import Breadcrumbs from '@/components/layout/Breadcrumbs';
 import { SITE_CONFIG } from '@/lib/config';
-import { generatePageMetadata } from '@/lib/seo';
+import { generatePageMetadata, generateBreadcrumbSchema, JsonLd } from '@/lib/seo';
 
 export const metadata = generatePageMetadata({
-    title: 'Terms of Service',
+    title: 'Terms of Service & Usage Agreement | MATRIMONY4U',
     description: `${SITE_CONFIG.name} Terms of Service. Read our terms and conditions for using our free matrimonial planning tools.`,
     canonicalPath: '/terms-of-service',
 });
 
 export default function TermsOfServicePage() {
     const lastUpdated = "December 23, 2025";
+    const breadcrumbSchema = generateBreadcrumbSchema([
+        { name: 'Home', path: '/' },
+        { name: 'Terms of Service', path: '/terms-of-service' },
+    ]);
 
     return (
         <>
+            <JsonLd data={breadcrumbSchema} />
             <Header />
 
             <main>

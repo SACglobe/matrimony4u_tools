@@ -118,6 +118,21 @@ export default function WeddingExpenseSplitPage() {
                                     </div>
                                 </section>
 
+                                <section className="mb-12">
+                                    <h3 className="text-2xl font-display font-semibold mb-4">
+                                        How to Have the "Money Talk"
+                                    </h3>
+                                    <p className="text-neutral-700 leading-relaxed mb-4">
+                                        Discussing finances with future in-laws can be culturally sensitive in India. Traditionally, families avoided discussing money directly, leading to unspoken expectations, resentment, or massive financial strain. To avoid this, modern couples are acting as the bridge between both families. 
+                                    </p>
+                                    <p className="text-neutral-700 leading-relaxed mb-4">
+                                        First, the couple should sit down privately and decide on their total maximum budget. Determine how much you can contribute yourselves. Next, speak to your respective parents individually to understand what they are comfortable contributing without going into debt. Only after both partners have a clear picture of their family's financial boundaries should a joint meeting be arranged. 
+                                    </p>
+                                    <p className="text-neutral-700 leading-relaxed mb-4">
+                                        During the joint meeting, focus the conversation on logistics rather than obligations. Frame the discussion around guest counts, desired venues, and shared goals. Use an expense split calculator or a shared spreadsheet to make the math objective, rather than emotional. Remember, the goal is a beautiful wedding and a harmonious start to a marriage, not a competition of wealth.
+                                    </p>
+                                </section>
+
                                 {/* FAQs */}
                                 <section className="mb-12">
                                     <h2 className="text-3xl font-display font-semibold mb-6">Frequently Asked Questions</h2>

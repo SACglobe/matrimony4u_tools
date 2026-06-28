@@ -13,7 +13,7 @@ import Link from 'next/link';
 
 export const metadata = generateToolMetadata({
     toolName: 'Auspicious Marriage Date Calculator',
-    toolDescription: 'Find auspicious dates for your Hindu wedding according to the traditional calendar, panchang, and muhurat. Calculate shubh vivah muhurat for your marriage ceremony.',
+    toolDescription: 'Find auspicious dates for your Hindu wedding according to the traditional calendar and panchang. Calculate shubh vivah muhurat online.',
     toolSlug: 'marriage-date-calculator',
     keywords: [
         'marriage date calculator',

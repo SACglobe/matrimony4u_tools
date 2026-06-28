@@ -14,7 +14,7 @@ import Link from 'next/link';
 
 export const metadata = generateToolMetadata({
     toolName: 'Kundli Matching Calculator - Gun Milan for Marriage',
-    toolDescription: 'Educational tool demonstrating the traditional Ashtakoot Kundli matching system used in Hindu marriages. Learn about Gun Milan, compatibility factors, and cultural significance.',
+    toolDescription: 'Demonstrates the traditional Ashtakoot Kundli matching system used in Hindu marriages. Learn about Gun Milan and compatibility factors.',
     toolSlug: 'kundli-matching',
     keywords: [
         'kundli matching',

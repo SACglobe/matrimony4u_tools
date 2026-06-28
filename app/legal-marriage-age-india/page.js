@@ -13,7 +13,7 @@ import {
 
 export const metadata = generateToolMetadata({
     toolName: 'Legal Marriage Age Checker for India',
-    toolDescription: 'Free tool to verify if you meet the legal minimum age requirement to get married in India. Check compliance with Prohibition of Child Marriage Act, 2006 and Hindu Marriage Act, 1955.',
+    toolDescription: 'Verify if you meet the legal minimum age requirements for marriage in India. Check compliance under Prohibition of Child Marriage Act and Hindu Marriage Act.',
     toolSlug: 'legal-marriage-age-india',
     keywords: [
         'legal marriage age india',
@@ -21,7 +21,7 @@ export const metadata = generateToolMetadata({
         'marriage age calculator',
         'child marriage act',
         'legal age to marry',
-        'hindu marriage act age',
+        'hindu marriage age',
         'marriage eligibility india'
     ],
 });
@@ -65,6 +65,22 @@ export default function LegalMarriageAgePage() {
 
     const faqSchema = generateFAQSchema(faqs);
 
+    const articleFaqs = [
+        {
+            question: '1. Legal Frameworks: Age Requirements in India',
+            answer: 'Under Indian family law, the legal age for marriage is stringently defined. The Hindu Marriage Act (1955) Section 5(iii) and the Special Marriage Act (1954) Section 4(c) both explicitly state that the bridegroom must have completed 21 years of age, and the bride must have completed 18 years at the time of the marriage.'
+        },
+        {
+            question: '2. Proposed Updates: Uniform Legal Age Adjustments',
+            answer: 'In recent parliamentary debates, there has been a significant push to harmonize the legal marriage age across genders. The Prohibition of Child Marriage (Amendment) Bill proposes raising the legal age of marriage for women from 18 to 21 years, matching that of men, to promote gender equality and female empowerment.'
+        },
+        {
+            question: '3. Step-by-Step Process: Filing a Declaration Notice',
+            answer: 'For civil marriages, parties must submit a written notice to the Marriage Officer of the district where at least one party has resided for 30 days. The officer publishes this notice, initiating a mandatory 30-day objection window. If no valid objections are raised, the marriage can be solemnized in the presence of three witnesses.'
+        }
+    ];
+    const articleFaqSchema = generateFAQSchema(articleFaqs);
+
     const breadcrumbSchema = generateBreadcrumbSchema([
         { name: 'Home', path: '/' },
         { name: 'Legal Marriage Age Checker', path: '/legal-marriage-age-india/' },
@@ -75,6 +91,7 @@ export default function LegalMarriageAgePage() {
             <Header />
             <JsonLd data={toolSchema} />
             <JsonLd data={faqSchema} />
+            <JsonLd data={articleFaqSchema} />
             <JsonLd data={breadcrumbSchema} />
 
             <main>
@@ -96,6 +113,54 @@ export default function LegalMarriageAgePage() {
 
                             {/* Calculator */}
                             <LegalAgeCalculator />
+                        </div>
+
+                        {/* Expert Article Block: Legal Frameworks & Procedures */}
+                        <div className="max-w-4xl mx-auto w-full mb-12">
+                            <h2 className="text-3xl font-display font-semibold mb-6">Expert Legal Guide & Procedures</h2>
+                            <div className="space-y-4">
+                                <details className="group border border-neutral-200 rounded-lg bg-white overflow-hidden shadow-sm">
+                                    <summary className="cursor-pointer p-5 font-semibold text-lg bg-neutral-50 flex justify-between items-center list-none hover:bg-neutral-100 transition-colors [&::-webkit-details-marker]:hidden">
+                                        <span>1. Legal Frameworks: Age Requirements in India</span>
+                                        <span className="text-primary-600 group-open:rotate-180 transition-transform duration-200">▼</span>
+                                    </summary>
+                                    <div className="p-5 border-t border-neutral-200 text-neutral-700 leading-relaxed bg-white">
+                                        <p className="mb-3">Under Indian family law, the legal age for marriage is stringently defined to ensure the protection and maturity of the individuals involved. Two primary acts govern these requirements:</p>
+                                        <ul className="list-disc pl-5 space-y-2 mb-3">
+                                            <li><strong>Hindu Marriage Act (1955):</strong> Section 5(iii) explicitly states that the bridegroom must have completed 21 years of age, and the bride must have completed 18 years at the time of the marriage.</li>
+                                            <li><strong>Special Marriage Act (1954):</strong> Governing civil marriages and inter-faith unions, Section 4(c) enforces the identical mandate—21 years for men and 18 years for women.</li>
+                                        </ul>
+                                        <p>These laws operate in tandem with the Prohibition of Child Marriage Act (2006), ensuring uniform legal compliance across different communities.</p>
+                                    </div>
+                                </details>
+                                
+                                <details className="group border border-neutral-200 rounded-lg bg-white overflow-hidden shadow-sm">
+                                    <summary className="cursor-pointer p-5 font-semibold text-lg bg-neutral-50 flex justify-between items-center list-none hover:bg-neutral-100 transition-colors [&::-webkit-details-marker]:hidden">
+                                        <span>2. Proposed Updates: Uniform Legal Age Adjustments</span>
+                                        <span className="text-primary-600 group-open:rotate-180 transition-transform duration-200">▼</span>
+                                    </summary>
+                                    <div className="p-5 border-t border-neutral-200 text-neutral-700 leading-relaxed bg-white">
+                                        <p className="mb-3">In recent parliamentary debates, there has been a significant push to harmonize the legal marriage age across genders. The Prohibition of Child Marriage (Amendment) Bill proposes raising the legal age of marriage for women from 18 to 21 years, matching that of men.</p>
+                                        <p>From a socio-cultural perspective, this adjustment aims to promote gender equality, enhance female participation in higher education and the workforce, and reduce maternal mortality. While currently under review by parliamentary committees, this paradigm shift underscores a modernizing approach to Indian family law.</p>
+                                    </div>
+                                </details>
+
+                                <details className="group border border-neutral-200 rounded-lg bg-white overflow-hidden shadow-sm">
+                                    <summary className="cursor-pointer p-5 font-semibold text-lg bg-neutral-50 flex justify-between items-center list-none hover:bg-neutral-100 transition-colors [&::-webkit-details-marker]:hidden">
+                                        <span>3. Step-by-Step Process: Filing a Declaration Notice</span>
+                                        <span className="text-primary-600 group-open:rotate-180 transition-transform duration-200">▼</span>
+                                    </summary>
+                                    <div className="p-5 border-t border-neutral-200 text-neutral-700 leading-relaxed bg-white">
+                                        <p className="mb-3">For couples registering their union under the Special Marriage Act (1954), the legal procedure is meticulously structured:</p>
+                                        <ol className="list-decimal pl-5 space-y-2">
+                                            <li><strong>Filing the Notice:</strong> Both parties must jointly submit a written notice of intended marriage to the Marriage Officer of the district where at least one party has resided for a minimum of 30 days prior.</li>
+                                            <li><strong>Publication of Notice:</strong> The Marriage Officer publishes this notice in a conspicuous place in their office to invite any legal objections.</li>
+                                            <li><strong>30-Day Objection Window:</strong> A mandatory 30-day period is observed. During this time, anyone can object to the marriage on specific legal grounds (e.g., underage, existing spouse, prohibited degree of relationship).</li>
+                                            <li><strong>Solemnization:</strong> If no valid objections are raised within 30 days, the marriage can be solemnized in the presence of the Marriage Officer and three witnesses.</li>
+                                        </ol>
+                                    </div>
+                                </details>
+                            </div>
                         </div>
 
                         {/* Educational Content */}

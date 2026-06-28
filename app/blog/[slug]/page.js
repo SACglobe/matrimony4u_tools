@@ -22,6 +22,11 @@ import BridalTrousseauPost from '@/components/blog/BridalTrousseauPost';
 import DestinationWeddingPlanningPost from '@/components/blog/DestinationWeddingPlanningPost';
 import WeddingEntertainmentMusicPost from '@/components/blog/WeddingEntertainmentMusicPost';
 import PostWeddingRitualsPost from '@/components/blog/PostWeddingRitualsPost';
+import TamilMarriagePlanningPost from '@/components/blog/TamilMarriagePlanningPost';
+import TamilTraditionalRitualsPost from '@/components/blog/TamilTraditionalRitualsPost';
+import TamilMuhurthamSelectionPost from '@/components/blog/TamilMuhurthamSelectionPost';
+import TamilWeddingBudgetPost from '@/components/blog/TamilWeddingBudgetPost';
+import TamilPoruthamImportancePost from '@/components/blog/TamilPoruthamImportancePost';
 
 const POST_COMPONENTS = {
     'legal-marriage-age-india-explained': LegalMarriageAgePost,
@@ -39,6 +44,11 @@ const POST_COMPONENTS = {
     'destination-wedding-planning-india': DestinationWeddingPlanningPost,
     'wedding-entertainment-music-guide': WeddingEntertainmentMusicPost,
     'post-wedding-rituals-traditions': PostWeddingRitualsPost,
+    'tamil-6-month-marriage-planning-guide': TamilMarriagePlanningPost,
+    'tamil-traditional-marriage-rituals-kasi-yatra': TamilTraditionalRitualsPost,
+    'tamil-subha-muhurtham-selection-panchangam': TamilMuhurthamSelectionPost,
+    'tamil-wedding-budget-planning-tips': TamilWeddingBudgetPost,
+    'tamil-marriage-porutham-importance': TamilPoruthamImportancePost,
 };
 
 export async function generateStaticParams() {
@@ -58,6 +68,11 @@ export async function generateStaticParams() {
         { slug: 'destination-wedding-planning-india' },
         { slug: 'wedding-entertainment-music-guide' },
         { slug: 'post-wedding-rituals-traditions' },
+        { slug: 'tamil-6-month-marriage-planning-guide' },
+        { slug: 'tamil-traditional-marriage-rituals-kasi-yatra' },
+        { slug: 'tamil-subha-muhurtham-selection-panchangam' },
+        { slug: 'tamil-wedding-budget-planning-tips' },
+        { slug: 'tamil-marriage-porutham-importance' },
     ];
 }
 
@@ -66,8 +81,8 @@ export async function generateMetadata(props) {
 
     if (!params || !params.slug) {
         return generatePageMetadata({
-            title: 'Blog Post',
-            description: 'Read the latest from MATRIMONY4U blog.',
+            title: 'Wedding & Matrimonial Articles - MATRIMONY4U Blog',
+            description: 'Read our expert guides, legal advice, budget tips, and cultural insights on Indian wedding planning.',
         });
     }
 

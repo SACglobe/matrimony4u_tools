@@ -1,6 +1,7 @@
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import Breadcrumbs from '@/components/layout/Breadcrumbs';
+import MarriageEligibilityGuide from '@/components/MarriageEligibilityGuide';
 import { SITE_CONFIG } from '@/lib/config';
 import {
     generateToolMetadata,
@@ -13,7 +14,7 @@ import Link from 'next/link';
 
 export const metadata = generateToolMetadata({
     toolName: 'Marriage Eligibility Checker - Indian Laws',
-    toolDescription: 'Check your legal eligibility for marriage in India under Hindu Marriage Act, Special Marriage Act, and other personal laws. Verify age, relationship constraints, and more.',
+    toolDescription: 'Check your legal eligibility for marriage in India under Hindu Marriage Act and Special Marriage Act. Verify age limits, relationship constraints, and rules.',
     toolSlug: 'marriage-eligibility-checker',
     keywords: [
         'marriage eligibility india',
@@ -94,6 +95,8 @@ export default function MarriageEligibilityPage() {
                                     </p>
                                 </div>
                             </div>
+
+                            <MarriageEligibilityGuide />
 
                             {/* Educational Content */}
                             <div className="prose prose-lg max-w-none w-full">

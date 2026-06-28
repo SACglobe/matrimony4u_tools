@@ -2,10 +2,23 @@ import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import { SITE_CONFIG, TOOL_CATEGORIES, FEATURED_TOOLS } from '@/lib/config';
 import Link from 'next/link';
+import { generatePageMetadata, generateWebSiteSchema, generateOrganizationSchema, JsonLd } from '@/lib/seo';
+
+export const metadata = generatePageMetadata({
+  title: 'Indian Wedding Planner & Free Marriage Tools',
+  description: 'Plan your dream Indian wedding with our free planning tools: budget calculator, marriage age checker, Kundli matching guide, and guest list planner.',
+  canonicalPath: '/',
+  keywords: ['indian wedding planner', 'marriage planning tools', 'wedding calculator', 'kundli matching', 'legal marriage age']
+});
 
 export default function HomePage() {
+  const websiteSchema = generateWebSiteSchema();
+  const organizationSchema = generateOrganizationSchema();
+
   return (
     <>
+      <JsonLd data={websiteSchema} />
+      <JsonLd data={organizationSchema} />
       <Header />
 
       <main>

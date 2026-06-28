@@ -2,10 +2,10 @@ import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import Breadcrumbs from '@/components/layout/Breadcrumbs';
 import { SITE_CONFIG } from '@/lib/config';
-import { generatePageMetadata } from '@/lib/seo';
+import { generatePageMetadata, generateBreadcrumbSchema, JsonLd } from '@/lib/seo';
 
 export const metadata = generatePageMetadata({
-    title: 'Privacy Policy',
+    title: 'Privacy Policy & Data Security | MATRIMONY4U',
     description: `${SITE_CONFIG.name} Privacy Policy. Learn how we protect your privacy, handle data, and use cookies. GDPR compliant.`,
     canonicalPath: '/privacy-policy',
     noindex: false,
@@ -13,9 +13,14 @@ export const metadata = generatePageMetadata({
 
 export default function PrivacyPolicyPage() {
     const lastUpdated = "December 23, 2025";
+    const breadcrumbSchema = generateBreadcrumbSchema([
+        { name: 'Home', path: '/' },
+        { name: 'Privacy Policy', path: '/privacy-policy' },
+    ]);
 
     return (
         <>
+            <JsonLd data={breadcrumbSchema} />
             <Header />
 
             <main>

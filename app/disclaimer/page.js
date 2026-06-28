@@ -2,17 +2,23 @@ import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import Breadcrumbs from '@/components/layout/Breadcrumbs';
 import { SITE_CONFIG } from '@/lib/config';
-import { generatePageMetadata } from '@/lib/seo';
+import { generatePageMetadata, generateBreadcrumbSchema, JsonLd } from '@/lib/seo';
 
 export const metadata = generatePageMetadata({
-    title: 'Disclaimer',
+    title: 'Disclaimer & Conditions of Use | MATRIMONY4U',
     description: `${SITE_CONFIG.name} Disclaimer. Important information about the limitations of our tools and content.`,
     canonicalPath: '/disclaimer',
 });
 
 export default function DisclaimerPage() {
+    const breadcrumbSchema = generateBreadcrumbSchema([
+        { name: 'Home', path: '/' },
+        { name: 'Disclaimer', path: '/disclaimer' },
+    ]);
+
     return (
         <>
+            <JsonLd data={breadcrumbSchema} />
             <Header />
 
             <main>

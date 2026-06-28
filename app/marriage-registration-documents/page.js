@@ -13,8 +13,8 @@ import {
 import Link from 'next/link';
 
 export const metadata = generateToolMetadata({
-    toolName: 'Marriage Registration Documents Checklist - State Wise India',
-    toolDescription: 'Complete checklist of documents required for marriage registration in India. State-wise requirements for Hindu Marriage Act, Special Marriage Act, Muslim and Christian marriages.',
+    toolName: 'Marriage Registration Documents India',
+    toolDescription: 'Complete state-wise checklist of documents required for marriage registration in India under Hindu, Special, and Christian marriage laws.',
     toolSlug: 'marriage-registration-documents',
     keywords: [
         'marriage registration documents india',

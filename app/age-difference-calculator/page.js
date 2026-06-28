@@ -2,6 +2,7 @@ import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import Breadcrumbs from '@/components/layout/Breadcrumbs';
 import AgeDifferenceCalculator from '@/components/tools/AgeDifferenceCalculator';
+import AgeDifferenceGuide from '@/components/AgeDifferenceGuide';
 import { SITE_CONFIG } from '@/lib/config';
 import {
     generateToolMetadata,
@@ -92,6 +93,8 @@ export default function AgeDifferencePage() {
 
                             {/* Calculator */}
                             <AgeDifferenceCalculator />
+
+                            <AgeDifferenceGuide />
 
                             {/* Educational Content */}
                             <div className="mt-16 prose prose-lg max-w-none">

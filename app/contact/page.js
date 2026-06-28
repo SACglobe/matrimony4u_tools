@@ -2,17 +2,23 @@ import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import Breadcrumbs from '@/components/layout/Breadcrumbs';
 import { SITE_CONFIG } from '@/lib/config';
-import { generatePageMetadata } from '@/lib/seo';
+import { generatePageMetadata, generateBreadcrumbSchema, JsonLd } from '@/lib/seo';
 
 export const metadata = generatePageMetadata({
-    title: 'Contact Us',
+    title: 'Contact MATRIMONY4U - Suggest Tools & Share Feedback',
     description: `Get in touch with ${SITE_CONFIG.name}. Share feedback, report errors, or suggest new tools. We respond within 24-48 hours.`,
     canonicalPath: '/contact',
 });
 
 export default function ContactPage() {
+    const breadcrumbSchema = generateBreadcrumbSchema([
+        { name: 'Home', path: '/' },
+        { name: 'Contact Us', path: '/contact' },
+    ]);
+
     return (
         <>
+            <JsonLd data={breadcrumbSchema} />
             <Header />
 
             <main>
@@ -100,28 +106,37 @@ export default function ContactPage() {
                                 </div>
                             </div>
 
-                            {/* Contact Form Placeholder */}
                             <div>
                                 <h2 className="text-2xl font-display font-semibold mb-6">Send a Message</h2>
-                                <div className="bg-white border border-neutral-200 rounded-lg shadow-sm p-6">
-                                    <p className="text-neutral-600 mb-6">
+                                <form className="bg-white border border-neutral-200 rounded-lg shadow-sm p-6 space-y-4">
+                                    <p className="text-neutral-600 mb-4">
                                         For immediate assistance, please email us directly at{' '}
                                         <a href={`mailto:${SITE_CONFIG.email}`} className="text-primary-600 hover:text-primary-700 font-medium">
                                             {SITE_CONFIG.email}
                                         </a>
                                     </p>
-
-                                    <div className="text-center py-8 bg-neutral-50 rounded-lg">
-                                        <p className="text-neutral-500 mb-4">Contact form coming soon</p>
-                                        <a
-                                            href={`mailto:${SITE_CONFIG.email}`}
-                                            className="btn-primary"
-                                        >
-                                            Email Us Directly
-                                        </a>
+                                    <div>
+                                        <label className="block text-sm font-medium text-neutral-700 mb-1">Your Name</label>
+                                        <input type="text" required className="w-full px-4 py-2 border border-neutral-300 rounded-lg focus:ring-primary-500 focus:border-primary-500" placeholder="Enter your full name" />
                                     </div>
-                                </div>
-
+                                    <div>
+                                        <label className="block text-sm font-medium text-neutral-700 mb-1">Email Address</label>
+                                        <input type="email" required className="w-full px-4 py-2 border border-neutral-300 rounded-lg focus:ring-primary-500 focus:border-primary-500" placeholder="name@example.com" />
+                                    </div>
+                                    <div>
+                                        <label className="block text-sm font-medium text-neutral-700 mb-1">Subject</label>
+                                        <input type="text" required className="w-full px-4 py-2 border border-neutral-300 rounded-lg focus:ring-primary-500 focus:border-primary-500" placeholder="What is this about?" />
+                                    </div>
+                                    <div>
+                                        <label className="block text-sm font-medium text-neutral-700 mb-1">Message</label>
+                                        <textarea required rows={4} className="w-full px-4 py-2 border border-neutral-300 rounded-lg focus:ring-primary-500 focus:border-primary-500" placeholder="Write your message here..."></textarea>
+                                    </div>
+                                    <button type="submit" className="w-full inline-flex justify-center items-center px-6 py-3 bg-primary-600 text-white font-bold rounded-lg hover:bg-primary-700 transition-colors">
+                                        Send Message
+                                    </button>
+                                </form>
+                            </div>
+                            <div>
                                 <div className="mt-8 p-6 bg-primary-50 border-l-4 border-primary-500 rounded">
                                     <h3 className="font-semibold text-primary-900 mb-2">Important Note</h3>
                                     <p className="text-sm text-primary-800">

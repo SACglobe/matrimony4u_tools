@@ -2,16 +2,20 @@ import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import Breadcrumbs from '@/components/layout/Breadcrumbs';
 import { SITE_CONFIG, TOOL_CATEGORIES } from '@/lib/config';
-import { generatePageMetadata } from '@/lib/seo';
+import { generatePageMetadata, generateBreadcrumbSchema, JsonLd } from '@/lib/seo';
 import Link from 'next/link';
 
 export const metadata = generatePageMetadata({
-    title: 'All Tools',
+    title: 'Free Online Wedding Planning & Matchmaking Tools',
     description: 'Browse all free matrimonial planning tools for Indian weddings. Legal guides, budget calculators, cultural tools, and more.',
     canonicalPath: '/tools',
 });
 
 export default function ToolsPage() {
+    const breadcrumbSchema = generateBreadcrumbSchema([
+        { name: 'Home', path: '/' },
+        { name: 'Tools', path: '/tools' },
+    ]);
     // Tool registry
     const toolsByCategory = {
         'legal-eligibility': [
@@ -100,6 +104,7 @@ export default function ToolsPage() {
 
     return (
         <>
+            <JsonLd data={breadcrumbSchema} />
             <Header />
 
             <main>
@@ -146,6 +151,20 @@ export default function ToolsPage() {
                                 </section>
                             );
                         })}
+
+                        {/* SEO Section to boost word count */}
+                        <div className="mt-16 prose prose-lg max-w-none w-full text-neutral-700">
+                            <h2 className="text-2xl font-display font-semibold mb-4">Why Use Our Matrimonial Planning Tools?</h2>
+                            <p className="mb-4">
+                                Planning an Indian wedding involves navigating a complex web of legal requirements, financial decisions, and cultural traditions. Our suite of free matrimonial planning tools is designed to simplify this process for couples and their families across India. Whether you are figuring out the exact legal marriage age requirements, looking for a state-specific marriage registration document checklist, or calculating your entire wedding budget, these calculators provide precise, localized, and culturally relevant guidance.
+                            </p>
+                            <p className="mb-4">
+                                We regularly update our database to reflect the latest changes in the Hindu Marriage Act, Special Marriage Act, and state-level registration portals. Our financial tools, including the expense split calculator and savings planner, are built specifically for the unique dynamics of modern Indian weddings, where traditional expectations meet contemporary financial realities.
+                            </p>
+                            <p>
+                                Bookmark this page as your central hub for wedding planning. All our tools are completely free to use, require no sign-up, and are built with privacy in mind. By leveraging these resources, you can ensure that your journey to marriage is legally compliant, financially sound, and stress-free.
+                            </p>
+                        </div>
 
                         {/* More Coming Soon */}
                         <div className="mt-16 text-center bg-primary-50 rounded-lg p-12 w-full">
