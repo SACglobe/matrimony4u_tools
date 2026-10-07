@@ -5,8 +5,9 @@ const nextConfig = {
   // Optimization: Compress images and use modern formats
   images: {
     formats: ['image/avif', 'image/webp'],
-    minimumCacheTTL: 60,
+    minimumCacheTTL: 604800,
   },
+  poweredByHeader: false,
   // Optimization: Production source maps can be heavy, usually better off
   productionBrowserSourceMaps: false,
   async redirects() {

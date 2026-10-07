@@ -12,6 +12,9 @@ import {
 } from '@/lib/seo';
 import Link from 'next/link';
 
+export const revalidate = 604800;
+export const dynamic = 'force-static';
+
 export const metadata = generateToolMetadata({
     toolName: 'Marriage Registration Documents India',
     toolDescription: 'Complete state-wise checklist of documents required for marriage registration in India under Hindu, Special, and Christian marriage laws.',
@@ -58,13 +61,13 @@ export default function MarriageDocumentsPage() {
     const toolSchema = generateToolSchema({
         name: 'Marriage Registration Documents Checklist',
         description: 'Generate state-wise checklist of documents required for marriage registration in India under different marriage acts.',
-        url: '/marriage-registration-documents/',
+        url: '/marriage-registration-documents',
     });
 
     const faqSchema = generateFAQSchema(faqs);
     const breadcrumbSchema = generateBreadcrumbSchema([
         { name: 'Home', path: '/' },
-        { name: 'Marriage Registration Documents', path: '/marriage-registration-documents/' },
+        { name: 'Marriage Registration Documents', path: '/marriage-registration-documents' },
     ]);
 
     return (
@@ -152,7 +155,7 @@ export default function MarriageDocumentsPage() {
 
                                     <p className="text-neutral-700 leading-relaxed mb-4">
                                         While the overarching marriage acts apply nationwide, <strong>states have their own registration procedures,
-                                            fees, and timelines</strong>. Here's what varies by state:
+                                            fees, and timelines</strong>. Here&apos;s what varies by state:
                                     </p>
 
                                     <h3 className="text-2xl font-semibold mb-4">Registration Timelines</h3>
@@ -311,7 +314,7 @@ export default function MarriageDocumentsPage() {
                                     <h3 className="text-2xl font-semibold mb-4">For Inter-Faith Marriages</h3>
                                     <p className="text-neutral-700 leading-relaxed mb-4">
                                         Must register under <strong>Special Marriage Act</strong>. In some conservative states, may face additional
-                                        scrutiny. Recent "anti-conversion" laws in UP, Haryana, MP require prior permission notification in some cases.
+                                        scrutiny. Recent &quot;anti-conversion&quot; laws in UP, Haryana, MP require prior permission notification in some cases.
                                         Legal advice recommended.
                                     </p>
                                 </section>
@@ -366,18 +369,49 @@ export default function MarriageDocumentsPage() {
                                     </div>
                                 </section>
 
+                                {/* State-Specific Marriage Registration Guides */}
+                                <section className="mb-12">
+                                    <h2 className="text-3xl font-display font-semibold mb-6">State Marriage Registration Guides</h2>
+                                    <p className="text-neutral-700 leading-relaxed mb-6">
+                                        Registration rules, official portals, tatkal services, and appointment booking systems differ significantly by state government. Explore our comprehensive step-by-step state guides:
+                                    </p>
+                                    <div className="grid md:grid-cols-3 gap-6">
+                                        <Link href="/registration/tamil-nadu" className="card-hover">
+                                            <div className="text-3xl mb-3">🏛️</div>
+                                            <h3 className="font-semibold text-lg mb-2">Tamil Nadu Guide</h3>
+                                            <p className="text-neutral-600 text-sm">
+                                                Complete TNreginet portal token booking, registrar appointment, documents, and fee structure.
+                                            </p>
+                                        </Link>
+                                        <Link href="/registration/delhi" className="card-hover">
+                                            <div className="text-3xl mb-3">🏛️</div>
+                                            <h3 className="font-semibold text-lg mb-2">Delhi Guide</h3>
+                                            <p className="text-neutral-600 text-sm">
+                                                e-District Delhi online application, SDM office document verification, and Tatkal certificate steps.
+                                            </p>
+                                        </Link>
+                                        <Link href="/registration/maharashtra" className="card-hover">
+                                            <div className="text-3xl mb-3">🏛️</div>
+                                            <h3 className="font-semibold text-lg mb-2">Maharashtra Guide</h3>
+                                            <p className="text-neutral-600 text-sm">
+                                                IGR Maharashtra portal registration, 30-day notice under SMA, and BMC municipal requirements.
+                                            </p>
+                                        </Link>
+                                    </div>
+                                </section>
+
                                 {/* Related Tools */}
                                 <section>
                                     <h2 className="text-3xl font-display font-semibold mb-6">Related Tools</h2>
                                     <div className="grid md:grid-cols-2 gap-6">
-                                        <Link href="/legal-marriage-age-india/" className="card-hover">
+                                        <Link href="/legal-marriage-age-india" className="card-hover">
                                             <div className="text-3xl mb-3">⚖️</div>
                                             <h3 className="font-semibold text-lg mb-2">Legal Marriage Age Checker</h3>
                                             <p className="text-neutral-600 text-sm">
                                                 Verify if you meet the minimum legal age for marriage in India
-                                            </p>
+                                             </p>
                                         </Link>
-                                        <Link href="/marriage-eligibility-checker/" className="card-hover">
+                                        <Link href="/marriage-eligibility-checker" className="card-hover">
                                             <div className="text-3xl mb-3">✓</div>
                                             <h3 className="font-semibold text-lg mb-2">Marriage Eligibility Checker</h3>
                                             <p className="text-neutral-600 text-sm">

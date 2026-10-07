@@ -72,6 +72,7 @@ export default function LegalAgeCalculator() {
                         value={birthDate}
                         onChange={(e) => setBirthDate(e.target.value)}
                         max={new Date().toISOString().split('T')[0]}
+                        suppressHydrationWarning
                         className="w-full px-4 py-3 border border-neutral-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent"
                         required
                     />

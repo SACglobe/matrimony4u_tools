@@ -4,6 +4,9 @@ import Breadcrumbs from '@/components/layout/Breadcrumbs';
 import Link from 'next/link';
 import { generatePageMetadata, generateFAQSchema, generateBreadcrumbSchema, JsonLd } from '@/lib/seo';
 
+export const revalidate = 604800;
+export const dynamic = 'force-static';
+
 export const metadata = generatePageMetadata({
     title: 'Compatibility Assessment Tools for Indian Marriages',
     description: 'Modern and traditional compatibility assessment tools - age difference calculator, Kundli matching guide, personality compatibility analysis for Indian couples.',
@@ -34,7 +37,7 @@ export default function CompatibilityAssessmentPage() {
     const faqSchema = generateFAQSchema(faqs);
     const breadcrumbSchema = generateBreadcrumbSchema([
         { name: 'Home', path: '/' },
-        { name: 'Compatibility Assessment', path: '/compatibility-assessment/' },
+        { name: 'Compatibility Assessment', path: '/compatibility-assessment' },
     ]);
 
     return (
@@ -336,7 +339,7 @@ export default function CompatibilityAssessmentPage() {
                                 </div>
 
                                 <p className="text-neutral-700 leading-relaxed">
-                                    Use our <Link href="/age-difference-calculator/" className="text-primary-600 hover:underline">Age Difference Calculator</Link> to understand your specific age gap and social context.
+                                    Use our <Link href="/age-difference-calculator" className="text-primary-600 hover:underline">Age Difference Calculator</Link> to understand your specific age gap and social context.
                                 </p>
                             </section>
 
@@ -358,10 +361,10 @@ export default function CompatibilityAssessmentPage() {
                                     Use our tools to evaluate age difference and understand Kundli matching traditions
                                 </p>
                                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                                    <Link href="/age-difference-calculator/" className="inline-flex items-center px-6 py-3 bg-white text-primary-600 font-semibold rounded-lg hover:bg-neutral-50 transition-colors">
+                                    <Link href="/age-difference-calculator" className="inline-flex items-center px-6 py-3 bg-white text-primary-600 font-semibold rounded-lg hover:bg-neutral-50 transition-colors">
                                         Age Difference Tool
                                     </Link>
-                                    <Link href="/kundli-matching/" className="inline-flex items-center px-6 py-3 bg-white/20 backdrop-blur text-white font-semibold rounded-lg hover:bg-white/30 transition-colors border border-white/30">
+                                    <Link href="/kundli-matching" className="inline-flex items-center px-6 py-3 bg-white/20 backdrop-blur text-white font-semibold rounded-lg hover:bg-white/30 transition-colors border border-white/30">
                                         Kundli Matching Guide
                                     </Link>
                                 </div>

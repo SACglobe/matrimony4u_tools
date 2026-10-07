@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import Link from 'next/link';
 
 export default function DocumentsChecklist() {
     const [selectedState, setSelectedState] = useState('');
@@ -89,6 +90,21 @@ export default function DocumentsChecklist() {
         'Telangana': 'Online registration system. Fee: ₹200-500.',
     };
 
+    const regionalGuideMap = {
+        'Tamil Nadu': {
+            href: '/registration/tamil-nadu',
+            label: 'Tamil Nadu Registration Portal (TNreginet) Guide',
+        },
+        'Delhi': {
+            href: '/registration/delhi',
+            label: 'Delhi e-District Marriage Registration Guide',
+        },
+        'Maharashtra': {
+            href: '/registration/maharashtra',
+            label: 'Maharashtra IGR Marriage Registration Guide',
+        },
+    };
+
     const selectedDocuments = selectedAct ? commonDocuments[selectedAct] : null;
     const stateNote = selectedState && stateSpecificNotes[selectedState] ? stateSpecificNotes[selectedState] : null;
 
@@ -142,8 +158,34 @@ export default function DocumentsChecklist() {
                         <p className="text-sm text-primary-800">
                             <strong>{selectedState} Specific Information:</strong> {stateNote}
                         </p>
+                        {regionalGuideMap[selectedState] && (
+                            <div className="mt-3 pt-3 border-t border-primary-200">
+                                <Link
+                                    href={regionalGuideMap[selectedState].href}
+                                    className="inline-flex items-center text-sm font-semibold text-primary-700 hover:text-primary-900 underline"
+                                >
+                                    🏛️ View In-Depth {regionalGuideMap[selectedState].label} →
+                                </Link>
+                            </div>
+                        )}
                     </div>
                 )}
+
+                {/* Available Detailed Regional Guides List */}
+                <div className="mt-6 pt-4 border-t border-neutral-100 flex flex-wrap items-center gap-2 text-xs text-neutral-600">
+                    <span className="font-semibold text-neutral-700">Detailed State Portal Guides:</span>
+                    <Link href="/registration/tamil-nadu" className="text-primary-600 hover:underline">
+                        Tamil Nadu (TNreginet)
+                    </Link>
+                    <span>•</span>
+                    <Link href="/registration/delhi" className="text-primary-600 hover:underline">
+                        Delhi (e-District)
+                    </Link>
+                    <span>•</span>
+                    <Link href="/registration/maharashtra" className="text-primary-600 hover:underline">
+                        Maharashtra (IGR)
+                    </Link>
+                </div>
             </div>
 
             {/* Documents Checklist */}

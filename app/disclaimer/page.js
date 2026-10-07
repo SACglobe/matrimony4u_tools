@@ -4,6 +4,9 @@ import Breadcrumbs from '@/components/layout/Breadcrumbs';
 import { SITE_CONFIG } from '@/lib/config';
 import { generatePageMetadata, generateBreadcrumbSchema, JsonLd } from '@/lib/seo';
 
+export const revalidate = 604800;
+export const dynamic = 'force-static';
+
 export const metadata = generatePageMetadata({
     title: 'Disclaimer & Conditions of Use | MATRIMONY4U',
     description: `${SITE_CONFIG.name} Disclaimer. Important information about the limitations of our tools and content.`,

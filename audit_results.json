@@ -218,7 +218,7 @@
     },
     {
       "url": "/contact",
-      "wordCount": 309,
+      "wordCount": 823,
       "title": "Contact MATRIMONY4U - Suggest Tools & Share Feedback | MATRIMONY4U",
       "hasMetaDesc": true,
       "hasH1": true,
@@ -290,7 +290,7 @@
     },
     {
       "url": "/marriage-date-calculator",
-      "wordCount": 667,
+      "wordCount": 1221,
       "title": "Auspicious Marriage Date Calculator | MATRIMONY4U",
       "hasMetaDesc": true,
       "hasH1": true,
@@ -299,7 +299,7 @@
     },
     {
       "url": "/marriage-eligibility-checker",
-      "wordCount": 1220,
+      "wordCount": 1412,
       "title": "Marriage Eligibility Checker - Indian Laws | MATRIMONY4U",
       "hasMetaDesc": true,
       "hasH1": true,
@@ -308,7 +308,7 @@
     },
     {
       "url": "/marriage-registration-documents",
-      "wordCount": 1352,
+      "wordCount": 1418,
       "title": "Marriage Registration Documents India | MATRIMONY4U",
       "hasMetaDesc": true,
       "hasH1": true,
@@ -327,7 +327,7 @@
     {
       "url": "/registration/delhi",
       "wordCount": 411,
-      "title": "Marriage Registration in Delhi (NCT) | Complete Guide",
+      "title": "Marriage Registration in Delhi (NCT) - Complete Guide | MATRIMONY4U",
       "hasMetaDesc": true,
       "hasH1": true,
       "passed": true,
@@ -336,7 +336,7 @@
     {
       "url": "/registration/maharashtra",
       "wordCount": 429,
-      "title": "Marriage Registration in Maharashtra | Complete Guide",
+      "title": "Marriage Registration in Maharashtra - Complete Guide | MATRIMONY4U",
       "hasMetaDesc": true,
       "hasH1": true,
       "passed": true,
@@ -345,7 +345,7 @@
     {
       "url": "/registration/tamil-nadu",
       "wordCount": 512,
-      "title": "Marriage Registration in Tamil Nadu | Complete Guide",
+      "title": "Marriage Registration in Tamil Nadu - Complete Guide | MATRIMONY4U",
       "hasMetaDesc": true,
       "hasH1": true,
       "passed": true,
@@ -362,7 +362,7 @@
     },
     {
       "url": "/tools",
-      "wordCount": 387,
+      "wordCount": 450,
       "title": "Free Online Wedding Planning & Matchmaking Tools | MATRIMONY4U",
       "hasMetaDesc": true,
       "hasH1": true,
@@ -380,7 +380,7 @@
     },
     {
       "url": "/wedding-expense-split-calculator",
-      "wordCount": 444,
+      "wordCount": 716,
       "title": "Wedding Expense Split Calculator | MATRIMONY4U",
       "hasMetaDesc": true,
       "hasH1": true,
@@ -389,8 +389,8 @@
     },
     {
       "url": "/wedding-guest-list-planner",
-      "wordCount": 973,
-      "title": "Wedding Guest List Planner | MATRIMONY4U",
+      "wordCount": 638,
+      "title": "Wedding Guest List Planner & Calculator | MATRIMONY4U",
       "hasMetaDesc": true,
       "hasH1": true,
       "passed": true,
@@ -407,8 +407,17 @@
     },
     {
       "url": "/wedding-savings-calculator",
-      "wordCount": 303,
-      "title": "Wedding Savings Calculator - Plan Your Dream Budget | MATRIMONY4U",
+      "wordCount": 1196,
+      "title": "Wedding Savings Calculator & Target Planner | MATRIMONY4U",
+      "hasMetaDesc": true,
+      "hasH1": true,
+      "passed": true,
+      "errors": []
+    },
+    {
+      "url": "/wedding-timeline-planner",
+      "wordCount": 1691,
+      "title": "Indian Wedding Timeline Planner & 12-Month Checklist | MATRIMONY4U",
       "hasMetaDesc": true,
       "hasH1": true,
       "passed": true,

@@ -2,7 +2,10 @@ import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import { SITE_CONFIG, TOOL_CATEGORIES, FEATURED_TOOLS } from '@/lib/config';
 import Link from 'next/link';
-import { generatePageMetadata, generateWebSiteSchema, generateOrganizationSchema, JsonLd } from '@/lib/seo';
+import { generatePageMetadata } from '@/lib/seo';
+
+export const revalidate = 604800;
+export const dynamic = 'force-static';
 
 export const metadata = generatePageMetadata({
   title: 'Indian Wedding Planner & Free Marriage Tools',
@@ -12,13 +15,8 @@ export const metadata = generatePageMetadata({
 });
 
 export default function HomePage() {
-  const websiteSchema = generateWebSiteSchema();
-  const organizationSchema = generateOrganizationSchema();
-
   return (
     <>
-      <JsonLd data={websiteSchema} />
-      <JsonLd data={organizationSchema} />
       <Header />
 
       <main>
@@ -198,7 +196,7 @@ export default function HomePage() {
               {TOOL_CATEGORIES.map((category, index) => (
                 <Link
                   key={category.id}
-                  href={`/tools#${category.slug}`}
+                  href={`/${category.slug}`}
                   className="group relative bg-white rounded-3xl p-8 border border-neutral-200 hover:border-primary-200 transition-all duration-500 hover:shadow-[0_20px_50px_rgba(0,0,0,0.05)] hover:-translate-y-2"
                 >
                   {/* Category number badge */}
@@ -282,7 +280,7 @@ export default function HomePage() {
                 Why Choose MATRIMONY4U?
               </h2>
               <p className="text-lg text-neutral-600 max-w-3xl mx-auto leading-relaxed">
-                India's trusted platform for free matrimonial planning tools and expert guidance
+                India&apos;s trusted platform for free matrimonial planning tools and expert guidance
               </p>
             </div>
 
@@ -371,7 +369,7 @@ export default function HomePage() {
             <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
               {/* Testimonial 1 */}
               <div className="bg-neutral-50 rounded-2xl p-8 border border-neutral-200 relative">
-                <div className="text-primary-600 text-5xl mb-4 opacity-20 absolute top-4 right-6">"</div>
+                <div className="text-primary-600 text-5xl mb-4 opacity-20 absolute top-4 right-6">&quot;</div>
                 <div className="relative z-10">
                   <div className="flex items-center gap-3 mb-6">
                     <div className="w-12 h-12 bg-gradient-to-br from-primary-400 to-primary-600 rounded-full flex items-center justify-center text-white font-bold">
@@ -383,7 +381,7 @@ export default function HomePage() {
                     </div>
                   </div>
                   <p className="text-neutral-700 leading-relaxed mb-4">
-                    "The budget calculator helped us plan our entire wedding within our ₹8 lakh budget. We knew exactly where every rupee was going!"
+                    &quot;The budget calculator helped us plan our entire wedding within our ₹8 lakh budget. We knew exactly where every rupee was going!&quot;
                   </p>
                   <div className="flex items-center text-sm text-neutral-500">
                     <span className="text-yellow-500 mr-2">★★★★★</span>
@@ -394,7 +392,7 @@ export default function HomePage() {
 
               {/* Testimonial 2 */}
               <div className="bg-neutral-50 rounded-2xl p-8 border border-neutral-200 relative">
-                <div className="text-primary-600 text-5xl mb-4 opacity-20 absolute top-4 right-6">"</div>
+                <div className="text-primary-600 text-5xl mb-4 opacity-20 absolute top-4 right-6">&quot;</div>
                 <div className="relative z-10">
                   <div className="flex items-center gap-3 mb-6">
                     <div className="w-12 h-12 bg-gradient-to-br from-secondary-400 to-secondary-600 rounded-full flex items-center justify-center text-white font-bold">
@@ -406,7 +404,7 @@ export default function HomePage() {
                     </div>
                   </div>
                   <p className="text-neutral-700 leading-relaxed mb-4">
-                    "Saved our family from legal hassles! The state-wise registration document checklist made the entire process smooth and stress-free."
+                    &quot;Saved our family from legal hassles! The state-wise registration document checklist made the entire process smooth and stress-free.&quot;
                   </p>
                   <div className="flex items-center text-sm text-neutral-500">
                     <span className="text-yellow-500 mr-2">★★★★★</span>
@@ -417,7 +415,7 @@ export default function HomePage() {
 
               {/* Testimonial 3 */}
               <div className="bg-neutral-50 rounded-2xl p-8 border border-neutral-200 relative">
-                <div className="text-primary-600 text-5xl mb-4 opacity-20 absolute top-4 right-6">"</div>
+                <div className="text-primary-600 text-5xl mb-4 opacity-20 absolute top-4 right-6">&quot;</div>
                 <div className="relative z-10">
                   <div className="flex items-center gap-3 mb-6">
                     <div className="w-12 h-12 bg-gradient-to-br from-accent-400 to-accent-600 rounded-full flex items-center justify-center text-white font-bold">
@@ -429,7 +427,7 @@ export default function HomePage() {
                     </div>
                   </div>
                   <p className="text-neutral-700 leading-relaxed mb-4">
-                    "The auspicious date calculator helped us find the perfect muhurat for our South Indian wedding. Our families were very happy!"
+                    &quot;The auspicious date calculator helped us find the perfect muhurat for our South Indian wedding. Our families were very happy!&quot;
                   </p>
                   <div className="flex items-center text-sm text-neutral-500">
                     <span className="text-yellow-500 mr-2">★★★★★</span>
@@ -482,7 +480,7 @@ export default function HomePage() {
                 <div className="bg-white/5 backdrop-blur-sm p-8 rounded-2xl border border-white/10 hover:bg-white/10 transition-colors">
                   <div className="text-secondary-400 text-4xl mb-4">🛡️</div>
                   <div className="text-white text-xl font-bold mb-3">Privacy First</div>
-                  <p className="text-neutral-400 text-sm leading-relaxed">We don't collect personal data, require account creation, or track your tool usage. Your calculations stay private.</p>
+                  <p className="text-neutral-400 text-sm leading-relaxed">We don&apos;t collect personal data, require account creation, or track your tool usage. Your calculations stay private.</p>
                 </div>
                 <div className="bg-white/5 backdrop-blur-sm p-8 rounded-2xl border border-white/10 hover:bg-white/10 transition-colors">
                   <div className="text-secondary-400 text-4xl mb-4">📜</div>

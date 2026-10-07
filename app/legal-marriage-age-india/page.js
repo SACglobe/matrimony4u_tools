@@ -11,6 +11,9 @@ import {
     JsonLd
 } from '@/lib/seo';
 
+export const revalidate = 604800;
+export const dynamic = 'force-static';
+
 export const metadata = generateToolMetadata({
     toolName: 'Legal Marriage Age Checker for India',
     toolDescription: 'Verify if you meet the legal minimum age requirements for marriage in India. Check compliance under Prohibition of Child Marriage Act and Hindu Marriage Act.',
@@ -59,7 +62,7 @@ export default function LegalMarriageAgePage() {
     const toolSchema = generateToolSchema({
         name: 'Legal Marriage Age Checker - India',
         description: 'Check if you meet the legal minimum age requirement for marriage in India under current Indian law.',
-        url: '/legal-marriage-age-india/',
+        url: '/legal-marriage-age-india',
         applicationCategory: 'UtilityApplication',
     });
 
@@ -83,7 +86,7 @@ export default function LegalMarriageAgePage() {
 
     const breadcrumbSchema = generateBreadcrumbSchema([
         { name: 'Home', path: '/' },
-        { name: 'Legal Marriage Age Checker', path: '/legal-marriage-age-india/' },
+        { name: 'Legal Marriage Age Checker', path: '/legal-marriage-age-india' },
     ]);
 
     return (

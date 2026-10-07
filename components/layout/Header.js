@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { SITE_CONFIG, TOOL_CATEGORIES } from '@/lib/config';
 
@@ -9,10 +10,12 @@ export default function Header() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const pathname = usePathname();
 
-    // Close mobile menu when route changes
-    useEffect(() => {
+    // Close mobile menu when route changes (render-phase state adjustment per React docs)
+    const [prevPathname, setPrevPathname] = useState(pathname);
+    if (prevPathname !== pathname) {
+        setPrevPathname(pathname);
         setIsMenuOpen(false);
-    }, [pathname]);
+    }
 
     // Prevent scrolling when mobile menu is open
     useEffect(() => {
@@ -32,10 +35,13 @@ export default function Header() {
                         href="/"
                         className="flex items-center space-x-3 hover:opacity-90 transition-opacity z-50"
                     >
-                        <img
+                        <Image
                             src="/logo.png"
                             alt={SITE_CONFIG.name}
+                            width={160}
+                            height={40}
                             className="h-10 w-auto"
+                            priority
                         />
                     </Link>
 
@@ -184,7 +190,7 @@ export default function Header() {
                     </nav>
 
                     <div className="mt-auto pt-10 text-center">
-                        <p className="text-sm text-neutral-400">
+                        <p className="text-sm text-neutral-400" suppressHydrationWarning>
                             © {new Date().getFullYear()} {SITE_CONFIG.name}
                         </p>
                     </div>

@@ -45,7 +45,7 @@ export default function Breadcrumbs({ items = [] }) {
                             ) : (
                                 <Link
                                     href={item.href}
-                                    className="hoverset-primary-600 transition-colors"
+                                    className="hover:text-primary-600 transition-colors"
                                 >
                                     {item.name}
                                 </Link>

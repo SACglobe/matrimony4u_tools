@@ -4,6 +4,9 @@ import Breadcrumbs from '@/components/layout/Breadcrumbs';
 import Link from 'next/link';
 import { generatePageMetadata, generateFAQSchema, generateBreadcrumbSchema, JsonLd } from '@/lib/seo';
 
+export const revalidate = 604800;
+export const dynamic = 'force-static';
+
 export const metadata = generatePageMetadata({
     title: 'Financial Planning for Marriage & Weddings in India',
     description: 'Expert guide to marriage financial planning - wedding budgets, savings strategies, post-marriage finances, and long-term wealth building for couples.',
@@ -34,7 +37,7 @@ export default function FinancialPlanningPage() {
     const faqSchema = generateFAQSchema(faqs);
     const breadcrumbSchema = generateBreadcrumbSchema([
         { name: 'Home', path: '/' },
-        { name: 'Financial Planning', path: '/financial-planning/' },
+        { name: 'Financial Planning', path: '/financial-planning' },
     ]);
 
     return (
@@ -243,7 +246,7 @@ export default function FinancialPlanningPage() {
                                 <p className="text-neutral-700 mb-6">
                                     Use our free budget calculator to plan expenses and avoid overspending
                                 </p>
-                                <Link href="/wedding-budget-calculator/" className="btn-primary">
+                                <Link href="/wedding-budget-calculator" className="btn-primary">
                                     Calculate Wedding Budget
                                 </Link>
                             </section>

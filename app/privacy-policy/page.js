@@ -4,6 +4,9 @@ import Breadcrumbs from '@/components/layout/Breadcrumbs';
 import { SITE_CONFIG } from '@/lib/config';
 import { generatePageMetadata, generateBreadcrumbSchema, JsonLd } from '@/lib/seo';
 
+export const revalidate = 604800;
+export const dynamic = 'force-static';
+
 export const metadata = generatePageMetadata({
     title: 'Privacy Policy & Data Security | MATRIMONY4U',
     description: `${SITE_CONFIG.name} Privacy Policy. Learn how we protect your privacy, handle data, and use cookies. GDPR compliant.`,

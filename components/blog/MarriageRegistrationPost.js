@@ -1,3 +1,5 @@
+import Link from 'next/link';
+
 export default function MarriageRegistrationPost() {
     return (
         <>
@@ -24,7 +26,7 @@ export default function MarriageRegistrationPost() {
             <div className="bg-yellow-50 border-l-4 border-yellow-500 p-6 my-6">
                 <h4 className="font-semibold text-yellow-900 mb-2">⚠️ Is Registration Mandatory?</h4>
                 <p className="text-sm text-yellow-800">
-                    Varies by state. Maharashtra, Karnataka, Himachal Pradesh have made registration compulsory with penalties for non-compliance. Other states "encourage" it. Regardless, registration is highly recommended everywhere for legal protection.
+                    Varies by state. Maharashtra, Karnataka, Himachal Pradesh have made registration compulsory with penalties for non-compliance. Other states &quot;encourage&quot; it. Regardless, registration is highly recommended everywhere for legal protection.
                 </p>
             </div>
 
@@ -70,7 +72,7 @@ export default function MarriageRegistrationPost() {
                     <div>
                         <h4 className="font-semibold mb-2">Collect Required Documents</h4>
                         <p className="text-sm text-neutral-600">
-                            Gather all documents listed below based on your marriage act. Make photocopies - you'll need 2-3 sets.
+                            Gather all documents listed below based on your marriage act. Make photocopies - you&apos;ll need 2-3 sets.
                         </p>
                     </div>
                 </div>
@@ -207,7 +209,7 @@ export default function MarriageRegistrationPost() {
                 </div>
                 <div className="bg-red-50 border-l-4 border-red-500 p-4">
                     <p className="text-sm text-red-800"><strong>Mistake:</strong> Forgetting witness requirements</p>
-                    <p className="text-sm text-red-700"><strong>Solution:</strong> Bring 3 witnesses with ORIGINAL IDs - photocopies won't suffice</p>
+                    <p className="text-sm text-red-700"><strong>Solution:</strong> Bring 3 witnesses with ORIGINAL IDs - photocopies won&apos;t suffice</p>
                 </div>
                 <div className="bg-red-50 border-l-4 border-red-500 p-4">
                     <p className="text-sm text-red-800"><strong>Mistake:</strong> Not checking state-specific requirements</p>
@@ -220,9 +222,9 @@ export default function MarriageRegistrationPost() {
                 <p className="mb-6 text-white/90">
                     Use our state-specific tool to know exactly what you need for marriage registration
                 </p>
-                <a href="/marriage-registration-documents/" className="inline-flex items-center px-8 py-3 bg-white text-primary-600 font-semibold rounded-lg hover:bg-neutral-50 transition-colors">
+                <Link href="/marriage-registration-documents" className="inline-flex items-center px-8 py-3 bg-white text-primary-600 font-semibold rounded-lg hover:bg-neutral-50 transition-colors">
                     View Documents Checklist
-                </a>
+                </Link>
             </div>
         </>
     );

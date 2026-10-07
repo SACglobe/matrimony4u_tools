@@ -4,6 +4,9 @@ import Breadcrumbs from '@/components/layout/Breadcrumbs';
 import Link from 'next/link';
 import { generatePageMetadata, generateFAQSchema, generateBreadcrumbSchema, JsonLd } from '@/lib/seo';
 
+export const revalidate = 604800;
+export const dynamic = 'force-static';
+
 export const metadata = generatePageMetadata({
     title: 'Cultural Traditions & Customs in Indian Marriages',
     description: 'Complete guide to Hindu, Muslim, Christian, Sikh marriage traditions, rituals, regional customs, and modern adaptations in Indian weddings.',
@@ -34,7 +37,7 @@ export default function CulturalTraditionsPage() {
     const faqSchema = generateFAQSchema(faqs);
     const breadcrumbSchema = generateBreadcrumbSchema([
         { name: 'Home', path: '/' },
-        { name: 'Cultural Traditions', path: '/cultural-traditions/' },
+        { name: 'Cultural Traditions', path: '/cultural-traditions' },
     ]);
 
     return (
@@ -331,7 +334,7 @@ export default function CulturalTraditionsPage() {
                                 <p className="mb-6 text-white/90">
                                     Find auspicious dates, understand customs, and plan your culturally appropriate celebration
                                 </p>
-                                <Link href="/tools/" className="inline-flex items-center px-8 py-3 bg-white text-primary-600 font-semibold rounded-lg hover:bg-neutral-50 transition-colors">
+                                <Link href="/tools" className="inline-flex items-center px-8 py-3 bg-white text-primary-600 font-semibold rounded-lg hover:bg-neutral-50 transition-colors">
                                     Browse All Tools
                                 </Link>
                             </section>

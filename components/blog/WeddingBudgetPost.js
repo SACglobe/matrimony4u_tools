@@ -1,3 +1,5 @@
+import Link from 'next/link';
+
 export default function WeddingBudgetPost() {
     return (
         <>
@@ -8,7 +10,7 @@ export default function WeddingBudgetPost() {
             <h2 className="text-3xl font-display font-semibold mb-4 mt-8">Average Indian Wedding Costs (2025)</h2>
 
             <p className="text-neutral-700 leading-relaxed mb-4">
-                Indian wedding costs vary dramatically based on location, guest count, and celebration style. Here's what to expect:
+                Indian wedding costs vary dramatically based on location, guest count, and celebration style. Here&apos;s what to expect:
             </p>
 
             <div className="grid md:grid-cols-3 gap-4 my-6">
@@ -32,7 +34,7 @@ export default function WeddingBudgetPost() {
             <h2 className="text-3xl font-display font-semibold mb-4 mt-8">Expense Breakdown by Category</h2>
 
             <p className="text-neutral-700 leading-relaxed mb-4">
-                For a typical ₹20 lakh wedding (250 guests, 4 events), here's the recommended budget distribution:
+                For a typical ₹20 lakh wedding (250 guests, 4 events), here&apos;s the recommended budget distribution:
             </p>
 
             <div className="bg-neutral-50 rounded-lg p-6 my-6">
@@ -225,9 +227,9 @@ export default function WeddingBudgetPost() {
                 <p className="mb-6 text-white/90">
                     Use our interactive calculator to plan category-wise expenses and track your wedding budget
                 </p>
-                <a href="/wedding-budget-calculator/" className="inline-flex items-center px-8 py-3 bg-white text-primary-600 font-semibold rounded-lg hover:bg-neutral-50 transition-colors">
+                <Link href="/wedding-budget-calculator" className="inline-flex items-center px-8 py-3 bg-white text-primary-600 font-semibold rounded-lg hover:bg-neutral-50 transition-colors">
                     Start Budget Planning
-                </a>
+                </Link>
             </div>
         </>
     );

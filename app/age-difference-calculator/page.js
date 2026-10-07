@@ -13,6 +13,9 @@ import {
 } from '@/lib/seo';
 import Link from 'next/link';
 
+export const revalidate = 604800;
+export const dynamic = 'force-static';
+
 export const metadata = generateToolMetadata({
     toolName: 'Marriage Age Difference Calculator',
     toolDescription: 'Calculate age gap between partners and understand social context for age differences in Indian marriages. Get insights on compatibility and cultural acceptance.',
@@ -58,13 +61,13 @@ export default function AgeDifferencePage() {
     const toolSchema = generateToolSchema({
         name: 'Marriage Age Difference Calculator',
         description: 'Calculate the exact age difference between marriage partners and understand social and cultural context for age gaps in Indian marriages.',
-        url: '/age-difference-calculator/',
+        url: '/age-difference-calculator',
     });
 
     const faqSchema = generateFAQSchema(faqs);
     const breadcrumbSchema = generateBreadcrumbSchema([
         { name: 'Home', path: '/' },
-        { name: 'Age Difference Calculator', path: '/age-difference-calculator/' },
+        { name: 'Age Difference Calculator', path: '/age-difference-calculator' },
     ]);
 
     return (
@@ -322,14 +325,14 @@ export default function AgeDifferencePage() {
                                 <section>
                                     <h2 className="text-3xl font-display font-semibold mb-6">Related Tools</h2>
                                     <div className="grid md:grid-cols-2 gap-6">
-                                        <Link href="/legal-marriage-age-india/" className="card-hover">
+                                        <Link href="/legal-marriage-age-india" className="card-hover">
                                             <div className="text-3xl mb-3">⚖️</div>
                                             <h3 className="font-semibold text-lg mb-2">Legal Marriage Age Checker</h3>
                                             <p className="text-neutral-600 text-sm">
                                                 Verify if you meet the legal minimum age for marriage in India
                                             </p>
                                         </Link>
-                                        <Link href="/marriage-eligibility-checker/" className="card-hover">
+                                        <Link href="/marriage-eligibility-checker" className="card-hover">
                                             <div className="text-3xl mb-3">✓</div>
                                             <h3 className="font-semibold text-lg mb-2">Marriage Eligibility Checker</h3>
                                             <p className="text-neutral-600 text-sm">

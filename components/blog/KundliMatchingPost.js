@@ -1,3 +1,5 @@
+import Link from 'next/link';
+
 export default function KundliMatchingPost() {
     return (
         <>
@@ -72,7 +74,7 @@ export default function KundliMatchingPost() {
                             <span className="font-bold text-primary-600">5 pts</span>
                         </div>
                         <p className="text-sm text-neutral-600">
-                            Psychological compatibility, communication ease, intellectual match. Based on moon sign lords' relationship.
+                            Psychological compatibility, communication ease, intellectual match. Based on moon sign lords&apos; relationship.
                         </p>
                     </div>
 
@@ -92,7 +94,7 @@ export default function KundliMatchingPost() {
                             <span className="font-bold text-primary-600">7 pts</span>
                         </div>
                         <p className="text-sm text-neutral-600">
-                            Moon sign compatibility. Evaluates emotional bonding, financial prosperity, children's wellbeing. Heavy weightage in decision-making.
+                            Moon sign compatibility. Evaluates emotional bonding, financial prosperity, children&apos;s wellbeing. Heavy weightage in decision-making.
                         </p>
                     </div>
 
@@ -154,7 +156,7 @@ export default function KundliMatchingPost() {
                     <h4 className="font-semibold mb-2">Why Families Insist</h4>
                     <ul className="text-sm text-neutral-600 space-y-1">
                         <li>• Religious tradition (thousands of years old)</li>
-                        <li>• Psychological reassurance ("we did everything possible")</li>
+                        <li>• Psychological reassurance (&quot;we did everything possible&quot;)</li>
                         <li>• Social conformity (everyone does it)</li>
                         <li>• Fear of unknown (arranged marriage context)</li>
                         <li>• Priest/elder authority</li>
@@ -163,8 +165,8 @@ export default function KundliMatchingPost() {
                 <div className="card">
                     <h4 className="font-semibold mb-2">Modern Challenges</h4>
                     <ul className="text-sm text-neutral-600 space-y-1">
-                        <li>• Conflicts when couple is compatible but Kundlis "don't match"</li>
-                        <li>• Expensive "remedies" (pujas, gemstones, donations)</li>
+                        <li>• Conflicts when couple is compatible but Kundlis &quot;don&apos;t match&quot;</li>
+                        <li>• Expensive &quot;remedies&quot; (pujas, gemstones, donations)</li>
                         <li>• Delays/rejections of good prospects due to Dosha</li>
                         <li>• Creates unnecessary anxiety</li>
                         <li>• Can be used to manipulate/control</li>
@@ -176,15 +178,15 @@ export default function KundliMatchingPost() {
 
             <div className="space-y-6 my-6">
                 <div className="bg-green-50 rounded-lg p-6">
-                    <h4 className="font-semibold text-green-900 mb-3">Option 1: Honor Tradition, Don't Let It Decide</h4>
+                    <h4 className="font-semibold text-green-900 mb-3">Option 1: Honor Tradition, Don&apos;t Let It Decide</h4>
                     <p className="text-sm text-green-800 mb-2">
                         Many couples get Kundlis matched to satisfy family but make the final decision based on real compatibility:
                     </p>
                     <ul className="text-sm text-green-800 space-y-1">
                         <li>✓ Go through the process to respect elders</li>
                         <li>✓ If scores are good, bonus reassurance for family</li>
-                        <li>✓ If scores are low but relationship is strong, discuss with family (most priests find "remedies")</li>
-                        <li>✓ Don't reject a compatible partner solely due to low Gunas</li>
+                        <li>✓ If scores are low but relationship is strong, discuss with family (most priests find &quot;remedies&quot;)</li>
+                        <li>✓ Don&apos;t reject a compatible partner solely due to low Gunas</li>
                     </ul>
                 </div>
 
@@ -208,7 +210,7 @@ export default function KundliMatchingPost() {
                     </p>
                     <ul className="text-sm text-purple-800 space-y-1">
                         <li>✓ Different astrologers often give different interpretations</li>
-                        <li>✓ "Doshas" frequently have "remedies" (pujas, prayers, gemstones)</li>
+                        <li>✓ &quot;Doshas&quot; frequently have &quot;remedies&quot; (pujas, prayers, gemstones)</li>
                         <li>✓ Finding an astrologer who will approve is usually possible</li>
                         <li>✓ But consider: if you need to shop for opinions, is it really divine guidance?</li>
                     </ul>
@@ -227,7 +229,7 @@ export default function KundliMatchingPost() {
                 <li><strong>Conflict resolution</strong> - Fight fair, compromise, apologize when wrong</li>
                 <li><strong>Emotional intelligence</strong> - Self-awareness, empathy, emotional regulation</li>
                 <li><strong>Financial compatibility</strong> - Spending/saving philosophy, transparency</li>
-                <li><strong>Mutual respect</strong> - Equal partnership, value each other's opinions</li>
+                <li><strong>Mutual respect</strong> - Equal partnership, value each other&apos;s opinions</li>
             </ul>
 
             <div className="bg-primary-50 border-l-4 border-primary-500 p-6 my-6">
@@ -242,9 +244,9 @@ export default function KundliMatchingPost() {
                 <p className="mb-6 text-white/90">
                     Understand the Ashtakoot system and calculate Guna scores for cultural awareness
                 </p>
-                <a href="/kundli-matching/" className="inline-flex items-center px-8 py-3 bg-white text-primary-600 font-semibold rounded-lg hover:bg-neutral-50 transition-colors">
+                <Link href="/kundli-matching" className="inline-flex items-center px-8 py-3 bg-white text-primary-600 font-semibold rounded-lg hover:bg-neutral-50 transition-colors">
                     Explore Kundli Matching Tool
-                </a>
+                </Link>
             </div>
         </>
     );

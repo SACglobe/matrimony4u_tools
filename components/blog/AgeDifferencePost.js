@@ -1,3 +1,5 @@
+import Link from 'next/link';
+
 export default function AgeDifferencePost() {
     return (
         <>
@@ -32,7 +34,7 @@ export default function AgeDifferencePost() {
                     <h4 className="font-semibold mb-2">Traditional View</h4>
                     <ul className="text-sm text-neutral-600 space-y-1">
                         <li>• Older husband provides stability, maturity</li>
-                        <li>• Financial security (man's career established first)</li>
+                        <li>• Financial security (man&apos;s career established first)</li>
                         <li>• Patriarchal dynamics (elder = authority)</li>
                         <li>• Biological considerations (fertility windows)</li>
                     </ul>
@@ -116,7 +118,7 @@ export default function AgeDifferencePost() {
                     <ul className="text-sm text-orange-800 space-y-1">
                         <li>• Significant life stage differences (energy, health, interests)</li>
                         <li>• Caretaking responsibilities may arise earlier</li>
-                        <li>• Women's fertility window vs men's retirement</li>
+                        <li>• Women&apos;s fertility window vs men&apos;s retirement</li>
                         <li>• Social stigma and family resistance common</li>
                     </ul>
                 </div>
@@ -174,7 +176,7 @@ export default function AgeDifferencePost() {
             <h2 className="text-3xl font-display font-semibold mb-4 mt-8">Bottom Line: Age Matters, But Not Most</h2>
 
             <p className="text-neutral-700 leading-relaxed mb-6">
-                Research consistently shows that while age gaps correlate with certain challenges, they don't doom marriages. What matters far more:
+                Research consistently shows that while age gaps correlate with certain challenges, they don&apos;t doom marriages. What matters far more:
             </p>
 
             <ul className="list-disc list-inside space-y-2 text-neutral-700 mb-6 ml-4">
@@ -193,9 +195,9 @@ export default function AgeDifferencePost() {
                 <p className="mb-6 text-white/90">
                     Use our tool to calculate your exact age gap and understand social context
                 </p>
-                <a href="/age-difference-calculator/" className="inline-flex items-center px-8 py-3 bg-white text-primary-600 font-semibold rounded-lg hover:bg-neutral-50 transition-colors">
+                <Link href="/age-difference-calculator" className="inline-flex items-center px-8 py-3 bg-white text-primary-600 font-semibold rounded-lg hover:bg-neutral-50 transition-colors">
                     Check Age Compatibility
-                </a>
+                </Link>
             </div>
         </>
     );

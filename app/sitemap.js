@@ -1,10 +1,12 @@
-export const runtime = 'edge';
-export const revalidate = 86400; // 24 hours
+import { BLOG_POSTS } from '@/lib/blog';
+import { regionalGuides } from '@/lib/data/regionalGuides';
+
+export const revalidate = 604800; // 7 days (weekly revalidation)
 
 export default async function sitemap() {
-    const baseUrl = 'https://matrimony4u.com'; // Update with actual domain when deployed
+    const baseUrl = 'https://matrimony4u.com';
 
-    // Static pages
+    // Static pages (8)
     const staticPages = [
         { url: '', changeFrequency: 'weekly', priority: 1.0 },
         { url: '/about', changeFrequency: 'monthly', priority: 0.8 },
@@ -16,7 +18,7 @@ export default async function sitemap() {
         { url: '/blog', changeFrequency: 'weekly', priority: 0.9 },
     ];
 
-    // Tool pages
+    // Tool pages (10)
     const tools = [
         { url: '/legal-marriage-age-india', priority: 0.9 },
         { url: '/wedding-budget-calculator', priority: 0.9 },
@@ -28,9 +30,10 @@ export default async function sitemap() {
         { url: '/wedding-expense-split-calculator', priority: 0.9 },
         { url: '/marriage-date-calculator', priority: 0.9 },
         { url: '/wedding-guest-list-planner', priority: 0.9 },
+        { url: '/wedding-timeline-planner', priority: 0.9 },
     ];
 
-    // Category pages
+    // Category pages (5)
     const categories = [
         { url: '/legal-eligibility', priority: 0.8 },
         { url: '/wedding-planning', priority: 0.8 },
@@ -39,51 +42,44 @@ export default async function sitemap() {
         { url: '/compatibility-assessment', priority: 0.8 },
     ];
 
-    // Blog posts
-    const blogPosts = [
-        { url: '/blog/legal-marriage-age-india-explained', date: '2025-01-01' },
-        { url: '/blog/indian-wedding-budget-breakdown', date: '2025-01-02' },
-        { url: '/blog/marriage-registration-process-guide', date: '2025-01-03' },
-        { url: '/blog/age-difference-marriage-significance', date: '2025-01-04' },
-        { url: '/blog/kundli-matching-modern-perspective', date: '2025-01-05' },
-        { url: '/blog/hindu-wedding-rituals-complete-guide', date: '2025-01-06' },
-        { url: '/blog/regional-wedding-customs-comparison', date: '2025-01-07' },
-        { url: '/blog/wedding-budget-city-wise-breakdown', date: '2025-01-08' },
-        { url: '/blog/pre-wedding-ceremonies-explained', date: '2025-01-09' },
-        { url: '/blog/wedding-venue-selection-guide', date: '2025-01-10' },
-        { url: '/blog/indian-wedding-photography-guide', date: '2025-01-11' },
-        { url: '/blog/bridal-trousseau-essential-guide', date: '2025-01-12' },
-        { url: '/blog/destination-wedding-planning-india', date: '2025-01-13' },
-        { url: '/blog/wedding-entertainment-music-guide', date: '2025-01-14' },
-        { url: '/blog/post-wedding-rituals-traditions', date: '2025-01-15' },
-    ];
+    // Regional guides (3)
+    const regionalPages = regionalGuides.map((guide) => ({
+        url: `${baseUrl}/registration/${guide.slug}`,
+        lastModified: new Date(),
+        changeFrequency: 'monthly',
+        priority: 0.8,
+    }));
 
-    // Combine all URLs
+    // Blog posts (20)
+    const blogPageEntries = BLOG_POSTS.map((post) => ({
+        url: `${baseUrl}/blog/${post.slug}`,
+        lastModified: post.publishDate ? new Date(post.publishDate) : new Date(),
+        changeFrequency: 'monthly',
+        priority: 0.7,
+    }));
+
+    // Combine all 46 URLs
     const allPages = [
-        ...staticPages.map(page => ({
+        ...staticPages.map((page) => ({
             url: `${baseUrl}${page.url}`,
             lastModified: new Date(),
             changeFrequency: page.changeFrequency,
             priority: page.priority,
         })),
-        ...tools.map(tool => ({
+        ...tools.map((tool) => ({
             url: `${baseUrl}${tool.url}`,
             lastModified: new Date(),
             changeFrequency: 'monthly',
             priority: tool.priority,
         })),
-        ...categories.map(cat => ({
+        ...categories.map((cat) => ({
             url: `${baseUrl}${cat.url}`,
             lastModified: new Date(),
             changeFrequency: 'monthly',
             priority: cat.priority,
         })),
-        ...blogPosts.map(post => ({
-            url: `${baseUrl}${post.url}`,
-            lastModified: new Date(post.date),
-            changeFrequency: 'monthly',
-            priority: 0.7,
-        })),
+        ...regionalPages,
+        ...blogPageEntries,
     ];
 
     return allPages;

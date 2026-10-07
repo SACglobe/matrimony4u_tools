@@ -8,7 +8,7 @@ export default function Footer() {
         <footer className="bg-neutral-900 text-neutral-300">
             <div className="container">
                 {/* Main Footer Content */}
-                <div className="py-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div className="py-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
                     {/* About Section */}
                     <div>
                         <h3 className="text-white font-display font-semibold text-lg mb-4">
@@ -63,6 +63,28 @@ export default function Footer() {
                         </ul>
                     </div>
 
+                    {/* State Registration Guides */}
+                    <div>
+                        <h4 className="text-white font-semibold mb-4">State Guides</h4>
+                        <ul className="space-y-2 text-sm">
+                            <li>
+                                <Link href="/registration/tamil-nadu" className="hover:text-primary-400 transition-colors">
+                                    Tamil Nadu Registration
+                                </Link>
+                            </li>
+                            <li>
+                                <Link href="/registration/delhi" className="hover:text-primary-400 transition-colors">
+                                    Delhi Registration
+                                </Link>
+                            </li>
+                            <li>
+                                <Link href="/registration/maharashtra" className="hover:text-primary-400 transition-colors">
+                                    Maharashtra Registration
+                                </Link>
+                            </li>
+                        </ul>
+                    </div>
+
                     {/* Legal & Policies */}
                     <div>
                         <h4 className="text-white font-semibold mb-4">Legal & Policies</h4>
@@ -89,7 +111,7 @@ export default function Footer() {
                 {/* Bottom Bar */}
                 <div className="border-t border-neutral-800 py-6">
                     <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-                        <div className="text-sm text-neutral-400">
+                        <div className="text-sm text-neutral-400" suppressHydrationWarning>
                             © {currentYear} {SITE_CONFIG.name}. All rights reserved.
                         </div>
                         <div className="text-sm text-neutral-400">

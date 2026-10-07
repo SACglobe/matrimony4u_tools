@@ -3,7 +3,7 @@ import Footer from '@/components/layout/Footer';
 import Breadcrumbs from '@/components/layout/Breadcrumbs';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
-import { getBlogPost, getRelatedPosts, BLOG_CATEGORIES } from '@/lib/blog';
+import { BLOG_POSTS, getBlogPost, getRelatedPosts, BLOG_CATEGORIES } from '@/lib/blog';
 import { generatePageMetadata, JsonLd } from '@/lib/seo';
 
 // Blog post content components
@@ -51,29 +51,14 @@ const POST_COMPONENTS = {
     'tamil-marriage-porutham-importance': TamilPoruthamImportancePost,
 };
 
+export const dynamic = 'force-static';
+export const dynamicParams = false;
+export const revalidate = 604800;
+
 export async function generateStaticParams() {
-    return [
-        { slug: 'legal-marriage-age-india-explained' },
-        { slug: 'indian-wedding-budget-breakdown' },
-        { slug: 'marriage-registration-process-guide' },
-        { slug: 'age-difference-marriage-significance' },
-        { slug: 'kundli-matching-modern-perspective' },
-        { slug: 'hindu-wedding-rituals-complete-guide' },
-        { slug: 'regional-wedding-customs-comparison' },
-        { slug: 'wedding-budget-city-wise-breakdown' },
-        { slug: 'pre-wedding-ceremonies-explained' },
-        { slug: 'wedding-venue-selection-guide' },
-        { slug: 'indian-wedding-photography-guide' },
-        { slug: 'bridal-trousseau-essential-guide' },
-        { slug: 'destination-wedding-planning-india' },
-        { slug: 'wedding-entertainment-music-guide' },
-        { slug: 'post-wedding-rituals-traditions' },
-        { slug: 'tamil-6-month-marriage-planning-guide' },
-        { slug: 'tamil-traditional-marriage-rituals-kasi-yatra' },
-        { slug: 'tamil-subha-muhurtham-selection-panchangam' },
-        { slug: 'tamil-wedding-budget-planning-tips' },
-        { slug: 'tamil-marriage-porutham-importance' },
-    ];
+    return BLOG_POSTS.map((post) => ({
+        slug: post.slug,
+    }));
 }
 
 export async function generateMetadata(props) {
@@ -143,7 +128,7 @@ export default async function BlogPostPage(props) {
             <main>
                 <div className="container">
                     <Breadcrumbs items={[
-                        { name: 'Blog', href: '/blog/' },
+                        { name: 'Blog', href: '/blog' },
                         { name: post.title },
                     ]} />
 
@@ -152,7 +137,7 @@ export default async function BlogPostPage(props) {
                             {/* Header */}
                             <div className="mb-8">
                                 <Link
-                                    href="/blog/"
+                                    href="/blog"
                                     className={`inline-block text-xs font-semibold px-3 py-1 rounded-full mb-4 ${category.color === 'secondary' ? 'bg-secondary-100 text-secondary-700' :
                                         category.color === 'accent' ? 'bg-accent-100 text-accent-700' :
                                             category.color === 'purple' ? 'bg-purple-100 text-purple-700' :
@@ -185,8 +170,8 @@ export default async function BlogPostPage(props) {
                             {/* Content */}
                             <div className="prose prose-lg max-w-none">
                                 {PostContent ? <PostContent /> : (
-                                    <div className="bg-yellow-50 border-2 border-yellow-200 rounded-lg p-8 text-center">
-                                        <p className="text-yellow-800">Blog post content coming soon!</p>
+                                    <div className="bg-neutral-50 border border-neutral-200 rounded-lg p-8 text-center">
+                                        <p className="text-neutral-700">{post.excerpt || 'Full guide content is provided above.'}</p>
                                     </div>
                                 )}
                             </div>
@@ -197,7 +182,7 @@ export default async function BlogPostPage(props) {
                                 <p className="text-neutral-700 mb-6">
                                     Put this knowledge into practice with our interactive calculators and planners
                                 </p>
-                                <Link href="/tools/" className="btn-primary">
+                                <Link href="/tools" className="btn-primary">
                                     Explore All Tools
                                 </Link>
                             </div>
@@ -213,7 +198,7 @@ export default async function BlogPostPage(props) {
                                     {relatedPosts.map(relatedPost => (
                                         <Link
                                             key={relatedPost.slug}
-                                            href={`/blog/${relatedPost.slug}/`}
+                                            href={`/blog/${relatedPost.slug}`}
                                             className="card-hover group"
                                         >
                                             <div className="aspect-video bg-gradient-to-br from-neutral-100 to-neutral-50 rounded-lg mb-4 flex items-center justify-center">

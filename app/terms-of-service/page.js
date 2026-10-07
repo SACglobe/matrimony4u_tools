@@ -4,6 +4,9 @@ import Breadcrumbs from '@/components/layout/Breadcrumbs';
 import { SITE_CONFIG } from '@/lib/config';
 import { generatePageMetadata, generateBreadcrumbSchema, JsonLd } from '@/lib/seo';
 
+export const revalidate = 604800;
+export const dynamic = 'force-static';
+
 export const metadata = generatePageMetadata({
     title: 'Terms of Service & Usage Agreement | MATRIMONY4U',
     description: `${SITE_CONFIG.name} Terms of Service. Read our terms and conditions for using our free matrimonial planning tools.`,

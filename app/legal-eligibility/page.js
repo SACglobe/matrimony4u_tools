@@ -10,6 +10,9 @@ import {
 } from '@/lib/seo';
 import Link from 'next/link';
 
+export const revalidate = 604800;
+export const dynamic = 'force-static';
+
 export const metadata = generatePageMetadata({
     title: 'Legal & Eligibility Requirements for Marriage in India',
     description: 'Complete guide to legal marriage requirements, age eligibility, documentation, and compliance with Indian marriage laws across all states.',
@@ -67,7 +70,7 @@ export default function LegalEligibilityPage() {
     const faqSchema = generateFAQSchema(faqs);
     const breadcrumbSchema = generateBreadcrumbSchema([
         { name: 'Home', path: '/' },
-        { name: 'Legal & Eligibility', path: '/legal-eligibility/' },
+        { name: 'Legal & Eligibility', path: '/legal-eligibility' },
     ]);
 
     return (
@@ -340,7 +343,7 @@ export default function LegalEligibilityPage() {
                                     <p className="text-neutral-700 mb-6">
                                         Use our free tools to check your eligibility and prepare the right documents
                                     </p>
-                                    <Link href="/tools/" className="btn-primary">
+                                    <Link href="/tools" className="btn-primary">
                                         Explore All Legal Tools
                                     </Link>
                                 </section>

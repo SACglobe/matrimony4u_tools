@@ -10,6 +10,9 @@ import {
 } from '@/lib/seo';
 import Link from 'next/link';
 
+export const revalidate = 604800;
+export const dynamic = 'force-static';
+
 export const metadata = generatePageMetadata({
     title: 'Wedding Planning Tools & Resources for Indian Weddings',
     description: 'Comprehensive Indian wedding planning guide with budget calculators, guest list planners, timeline management, and vendor coordination tools.',
@@ -73,7 +76,7 @@ export default function WeddingPlanningPage() {
     const faqSchema = generateFAQSchema(faqs);
     const breadcrumbSchema = generateBreadcrumbSchema([
         { name: 'Home', path: '/' },
-        { name: 'Wedding Planning', path: '/wedding-planning/' },
+        { name: 'Wedding Planning', path: '/wedding-planning' },
     ]);
 
     return (
@@ -104,7 +107,7 @@ export default function WeddingPlanningPage() {
                                 <h2 className="text-3xl font-display font-semibold mb-6">Planning Tools</h2>
                                 <div className="grid md:grid-cols-2 gap-6">
                                     {tools.map(tool => (
-                                        <Link key={tool.slug} href={`/${tool.slug}/`} className="card-hover group">
+                                        <Link key={tool.slug} href={`/${tool.slug}`} className="card-hover group">
                                             <div className="text-4xl mb-3">{tool.icon}</div>
                                             <h3 className="font-semibold text-lg mb-2 group-hover:text-primary-600 transition-colors">
                                                 {tool.name}
@@ -215,7 +218,7 @@ export default function WeddingPlanningPage() {
                                     </h2>
 
                                     <p className="text-neutral-700 leading-relaxed mb-6">
-                                        A well-planned budget prevents overspending and family stress. Here's how to allocate your wedding
+                                        A well-planned budget prevents overspending and family stress. Here&apos;s how to allocate your wedding
                                         budget across major categories:
                                     </p>
 
@@ -313,7 +316,7 @@ export default function WeddingPlanningPage() {
                                         </div>
                                         <div className="card">
                                             <h4 className="font-semibold mb-2">💄 Makeup Artist</h4>
-                                            <p className="text-sm text-neutral-600">Bridal makeup, hair styling, saree draping. Often handles bride's family members too.</p>
+                                            <p className="text-sm text-neutral-600">Bridal makeup, hair styling, saree draping. Often handles bride&apos;s family members too.</p>
                                         </div>
                                         <div className="card">
                                             <h4 className="font-semibold mb-2">🎵 DJ/Band</h4>
@@ -347,7 +350,7 @@ export default function WeddingPlanningPage() {
                                     <p className="mb-6 text-white/90">
                                         Use our expert tools to calculate budgets, manage guests, and stay organized
                                     </p>
-                                    <Link href="/wedding-budget-calculator/" className="inline-flex items-center px-8 py-3 bg-white text-primary-600 font-semibold rounded-lg hover:bg-neutral-50 transition-colors">
+                                    <Link href="/wedding-budget-calculator" className="inline-flex items-center px-8 py-3 bg-white text-primary-600 font-semibold rounded-lg hover:bg-neutral-50 transition-colors">
                                         Calculate Wedding Budget
                                     </Link>
                                 </section>

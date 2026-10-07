@@ -5,6 +5,9 @@ import BlogListClient from '@/components/blog/BlogListClient';
 import { BLOG_POSTS, BLOG_CATEGORIES } from '@/lib/blog';
 import { generatePageMetadata, generateBreadcrumbSchema, JsonLd } from '@/lib/seo';
 
+export const revalidate = 604800;
+export const dynamic = 'force-static';
+
 export const metadata = generatePageMetadata({
     title: 'Marriage & Wedding Planning Blog - Expert Guides & Tips',
     description: 'Expert articles on Indian marriage laws, wedding planning, budgeting, cultural traditions, and relationship advice from MATRIMONY4U.',
@@ -15,7 +18,7 @@ export const metadata = generatePageMetadata({
 export default function BlogPage() {
     const breadcrumbSchema = generateBreadcrumbSchema([
         { name: 'Home', path: '/' },
-        { name: 'Blog', path: '/blog/' },
+        { name: 'Blog', path: '/blog' },
     ]);
 
     return (

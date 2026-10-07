@@ -5,6 +5,9 @@ import { SITE_CONFIG, TOOL_CATEGORIES } from '@/lib/config';
 import { generatePageMetadata, generateBreadcrumbSchema, JsonLd } from '@/lib/seo';
 import Link from 'next/link';
 
+export const revalidate = 604800;
+export const dynamic = 'force-static';
+
 export const metadata = generatePageMetadata({
     title: 'Free Online Wedding Planning & Matchmaking Tools',
     description: 'Browse all free matrimonial planning tools for Indian weddings. Legal guides, budget calculators, cultural tools, and more.',
@@ -40,6 +43,27 @@ export default function ToolsPage() {
                 icon: '✓',
                 status: 'active',
             },
+            {
+                slug: 'registration/tamil-nadu',
+                name: 'Tamil Nadu Marriage Registration Guide',
+                description: 'TNreginet portal online registration, token booking, documents, and fees',
+                icon: '🏛️',
+                status: 'active',
+            },
+            {
+                slug: 'registration/delhi',
+                name: 'Delhi Marriage Registration Guide',
+                description: 'e-District Delhi online portal appointment, tatkal certificate, and SDM verification',
+                icon: '🏛️',
+                status: 'active',
+            },
+            {
+                slug: 'registration/maharashtra',
+                name: 'Maharashtra Marriage Registration Guide',
+                description: 'IGR Maharashtra online application, notice period under SMA, and BMC guidelines',
+                icon: '🏛️',
+                status: 'active',
+            },
         ],
         'wedding-planning': [
             {
@@ -47,6 +71,13 @@ export default function ToolsPage() {
                 name: 'Wedding Guest List Planner',
                 description: 'Organize your guest list by categories and manage RSVPs efficiently',
                 icon: '👥',
+                status: 'active',
+            },
+            {
+                slug: 'wedding-timeline-planner',
+                name: 'Wedding Timeline Planner & Checklist',
+                description: 'Month-by-month planning checklist and milestone tracker for stress-free preparation',
+                icon: '📅',
                 status: 'active',
             },
         ],
@@ -119,7 +150,7 @@ export default function ToolsPage() {
                             </h1>
                             <p className="text-xl text-neutral-600 max-w-3xl mx-auto w-full">
                                 Free, accurate, and easy-to-use tools for planning your Indian wedding.
-                                From legal requirements to budget planning, we've got you covered.
+                                From legal requirements to budget planning, we&apos;ve got you covered.
                             </p>
                         </div>
 
@@ -166,17 +197,17 @@ export default function ToolsPage() {
                             </p>
                         </div>
 
-                        {/* More Coming Soon */}
-                        <div className="mt-16 text-center bg-primary-50 rounded-lg p-12 w-full">
-                            <h3 className="text-2xl font-display font-semibold mb-4">
-                                More Tools Coming Soon
+                        {/* Suggest a Tool / Planning Feedback */}
+                        <div className="mt-16 text-center bg-primary-50 rounded-lg p-12 w-full border border-primary-100">
+                            <h3 className="text-2xl font-display font-semibold mb-4 text-primary-900">
+                                Need a Custom Wedding Planning Tool?
                             </h3>
                             <p className="text-neutral-700 mb-6 max-w-2xl mx-auto w-full">
-                                We're continuously adding new tools to help you with every aspect of marriage planning.
-                                Have a suggestion? We'd love to hear it!
+                                We are continuously enhancing our suite of Indian wedding planning resources.
+                                Have a specific regional custom, astrological calculator, or legal question you would like us to support? Share your ideas with our editorial team.
                             </p>
-                            <Link href="/contact/" className="btn-primary">
-                                Suggest a Tool
+                            <Link href="/contact" className="btn-primary">
+                                Suggest a Feature
                             </Link>
                         </div>
                     </div>
@@ -189,29 +220,8 @@ export default function ToolsPage() {
 }
 
 function ToolCardComponent({ tool }) {
-    const isComingSoon = tool.status === 'coming-soon';
-
-    if (isComingSoon) {
-        return (
-            <div className="card opacity-75">
-                <div className="flex items-start justify-between mb-4">
-                    <div className="text-4xl">{tool.icon}</div>
-                    <span className="text-xs bg-neutral-200 text-neutral-700 px-2 py-1 rounded-full font-medium">
-                        Coming Soon
-                    </span>
-                </div>
-                <h3 className="font-display font-semibold text-xl text-neutral-900 mb-2">
-                    {tool.name}
-                </h3>
-                <p className="text-neutral-600 text-sm">
-                    {tool.description}
-                </p>
-            </div>
-        );
-    }
-
     return (
-        <Link href={`/${tool.slug}/`} className="card-hover group">
+        <Link href={`/${tool.slug}`} className="card-hover group">
             <div className="text-4xl mb-4">{tool.icon}</div>
             <h3 className="font-display font-semibold text-xl text-neutral-900 mb-2 group-hover:text-primary-600 transition-colors">
                 {tool.name}

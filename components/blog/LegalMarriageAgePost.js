@@ -1,3 +1,5 @@
+import Link from 'next/link';
+
 export default function LegalMarriageAgePost() {
     return (
         <>
@@ -61,7 +63,7 @@ export default function LegalMarriageAgePost() {
             <h3 className="text-2xl font-semibold mb-3">Traditional Reasoning</h3>
             <ul className="list-disc list-inside space-y-2 text-neutral-700 mb-6 ml-4">
                 <li>Assumption that men need more time to establish careers before marriage</li>
-                <li>Patriarchal norms assuming women's primary role is domestic</li>
+                <li>Patriarchal norms assuming women&apos;s primary role is domestic</li>
                 <li>Biological considerations (women can bear children earlier)</li>
                 <li>Historical practice of early marriages for girls</li>
             </ul>
@@ -71,7 +73,7 @@ export default function LegalMarriageAgePost() {
                 <li>Perpetuates gender inequality in legal framework</li>
                 <li>Assumes different maturity timelines for men and women (no scientific basis)</li>
                 <li>Contradicts other laws (voting age 18 for both, adulthood at 18)</li>
-                <li>Limits women's educational and career opportunities</li>
+                <li>Limits women&apos;s educational and career opportunities</li>
             </ul>
 
             <h2 className="text-3xl font-display font-semibold mb-4 mt-8">Penalties for Child Marriage</h2>
@@ -88,7 +90,7 @@ export default function LegalMarriageAgePost() {
                         <ul className="list-disc list-inside ml-4 space-y-1">
                             <li>Imprisonment up to 2 years</li>
                             <li>Fine up to ₹1 lakh, or both</li>
-                            <li>Applies even if he was unaware of bride's true age (strict liability)</li>
+                            <li>Applies even if he was unaware of bride&apos;s true age (strict liability)</li>
                         </ul>
                     </div>
                     <div>
@@ -158,7 +160,7 @@ export default function LegalMarriageAgePost() {
             <h2 className="text-3xl font-display font-semibold mb-4 mt-8">How to Verify Legal Age for Marriage</h2>
 
             <p className="text-neutral-700 leading-relaxed mb-4">
-                Before marriage registration, you'll need to prove your age. Acceptable documents include:
+                Before marriage registration, you&apos;ll need to prove your age. Acceptable documents include:
             </p>
 
             <div className="bg-blue-50 rounded-lg p-6 my-6">
@@ -186,7 +188,7 @@ export default function LegalMarriageAgePost() {
                 <div className="card">
                     <h4 className="font-semibold text-lg mb-2">Q: Can I get engaged before turning 21/18?</h4>
                     <p className="text-sm text-neutral-600">
-                        Yes, engagement is legal at any age as it's not a legally binding contract. However, the actual marriage ceremony and registration must wait until both parties meet age requirements.
+                        Yes, engagement is legal at any age as it&apos;s not a legally binding contract. However, the actual marriage ceremony and registration must wait until both parties meet age requirements.
                     </p>
                 </div>
 
@@ -207,7 +209,7 @@ export default function LegalMarriageAgePost() {
                 <div className="card">
                     <h4 className="font-semibold text-lg mb-2">Q: What if we  marry abroad where the age limit is lower?</h4>
                     <p className="text-sm text-neutral-600">
-                        Marriages contracted abroad are generally recognized in India if valid in that country. However, if you're Indian citizens, you may still face legal issues under Indian law. Consult a lawyer for specific cases.
+                        Marriages contracted abroad are generally recognized in India if valid in that country. However, if you&apos;re Indian citizens, you may still face legal issues under Indian law. Consult a lawyer for specific cases.
                     </p>
                 </div>
             </div>
@@ -217,9 +219,9 @@ export default function LegalMarriageAgePost() {
                 <p className="mb-6 text-white/90">
                     Use our free Legal Marriage Age Calculator to verify if you meet the age requirements
                 </p>
-                <a href="/legal-marriage-age-india/" className="inline-flex items-center px-8 py-3 bg-white text-primary-600 font-semibold rounded-lg hover:bg-neutral-50 transition-colors">
+                <Link href="/legal-marriage-age-india" className="inline-flex items-center px-8 py-3 bg-white text-primary-600 font-semibold rounded-lg hover:bg-neutral-50 transition-colors">
                     Calculate Age Eligibility
-                </a>
+                </Link>
             </div>
         </>
     );

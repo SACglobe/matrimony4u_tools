@@ -12,6 +12,9 @@ import {
 } from '@/lib/seo';
 import Link from 'next/link';
 
+export const revalidate = 604800;
+export const dynamic = 'force-static';
+
 export const metadata = generateToolMetadata({
     toolName: 'Kundli Matching Calculator - Gun Milan for Marriage',
     toolDescription: 'Demonstrates the traditional Ashtakoot Kundli matching system used in Hindu marriages. Learn about Gun Milan and compatibility factors.',
@@ -58,13 +61,13 @@ export default function KundliMatchingPage() {
     const toolSchema = generateToolSchema({
         name: 'Kundli Matching Calculator',
         description: 'Educational tool demonstrating traditional Ashtakoot Kundli matching system for understanding Hindu marriage compatibility traditions.',
-        url: '/kundli-matching/',
+        url: '/kundli-matching',
     });
 
     const faqSchema = generateFAQSchema(faqs);
     const breadcrumbSchema = generateBreadcrumbSchema([
         { name: 'Home', path: '/' },
-        { name: 'Kundli Matching', path: '/kundli-matching/' },
+        { name: 'Kundli Matching', path: '/kundli-matching' },
     ]);
 
     return (
@@ -345,14 +348,14 @@ export default function KundliMatchingPage() {
                                 <section>
                                     <h2 className="text-3xl font-display font-semibold mb-6">Related Tools</h2>
                                     <div className="grid md:grid-cols-2 gap-6">
-                                        <Link href="/age-difference-calculator/" className="card-hover">
+                                        <Link href="/age-difference-calculator" className="card-hover">
                                             <div className="text-3xl mb-3">💑</div>
                                             <h3 className="font-semibold text-lg mb-2">Age Difference Calculator</h3>
                                             <p className="text-neutral-600 text-sm">
                                                 Calculate age gap and understand compatibility beyond astrology
                                             </p>
                                         </Link>
-                                        <Link href="/marriage-registration-documents/" className="card-hover">
+                                        <Link href="/marriage-registration-documents" className="card-hover">
                                             <div className="text-3xl mb-3">📝</div>
                                             <h3 className="font-semibold text-lg mb-2">Marriage Documents Checklist</h3>
                                             <p className="text-neutral-600 text-sm">

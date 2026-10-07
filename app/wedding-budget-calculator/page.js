@@ -13,6 +13,9 @@ import {
 } from '@/lib/seo';
 import Link from 'next/link';
 
+export const revalidate = 604800;
+export const dynamic = 'force-static';
+
 export const metadata = generateToolMetadata({
     toolName: 'Indian Wedding Budget Calculator',
     toolDescription: 'Free wedding budget calculator for Indian weddings. Plan expenses across venue, catering, photography, decoration, clothing, jewelry, and more.',
@@ -59,13 +62,13 @@ export default function WeddingBudgetPage() {
     const toolSchema = generateToolSchema({
         name: 'Indian Wedding Budget Calculator',
         description: 'Calculate and plan your Indian wedding budget across all major expense categories including venue, catering, photography, jewelry, clothing, and more.',
-        url: '/wedding-budget-calculator/',
+        url: '/wedding-budget-calculator',
     });
 
     const faqSchema = generateFAQSchema(faqs);
     const breadcrumbSchema = generateBreadcrumbSchema([
         { name: 'Home', path: '/' },
-        { name: 'Wedding Budget Calculator', path: '/wedding-budget-calculator/' },
+        { name: 'Wedding Budget Calculator', path: '/wedding-budget-calculator' },
     ]);
 
     return (
@@ -316,14 +319,14 @@ export default function WeddingBudgetPage() {
                                 <section>
                                     <h2 className="text-3xl font-display font-semibold mb-6">Related Planning Tools</h2>
                                     <div className="grid md:grid-cols-2 gap-6">
-                                        <Link href="/wedding-guest-list-planner/" className="card-hover">
+                                        <Link href="/wedding-guest-list-planner" className="card-hover">
                                             <div className="text-3xl mb-3">👥</div>
                                             <h3 className="font-semibold text-lg mb-2">Wedding Guest List Planner</h3>
                                             <p className="text-neutral-600 text-sm">
                                                 Organize your guest list by categories and manage RSVPs efficiently
                                             </p>
                                         </Link>
-                                        <Link href="/wedding-savings-calculator/" className="card-hover">
+                                        <Link href="/wedding-savings-calculator" className="card-hover">
                                             <div className="text-3xl mb-3">🏦</div>
                                             <h3 className="font-semibold text-lg mb-2">Wedding Savings Calculator</h3>
                                             <p className="text-neutral-600 text-sm">

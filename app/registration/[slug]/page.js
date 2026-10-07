@@ -4,6 +4,11 @@ import { notFound } from 'next/navigation';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import Breadcrumbs from '@/components/layout/Breadcrumbs';
+import { generatePageMetadata } from '@/lib/seo';
+
+export const dynamic = 'force-static';
+export const dynamicParams = false;
+export const revalidate = 604800;
 
 export async function generateStaticParams() {
   return regionalGuides.map((guide) => ({
@@ -16,10 +21,18 @@ export async function generateMetadata({ params }) {
   const guide = regionalGuides.find((g) => g.slug === slug);
   if (!guide) return {};
 
-  return {
-    title: `Marriage Registration in ${guide.state} | Complete Guide`,
+  return generatePageMetadata({
+    title: `Marriage Registration in ${guide.state} - Complete Guide`,
     description: guide.description,
-  };
+    canonicalPath: `/registration/${guide.slug}`,
+    keywords: [
+      `marriage registration in ${guide.state.toLowerCase()}`,
+      `${guide.state.toLowerCase()} marriage certificate`,
+      `online marriage registration ${guide.state.toLowerCase()}`,
+      'sub registrar office marriage registration',
+      'marriage registration documents'
+    ],
+  });
 }
 
 export default async function RegionalRegistrationPage({ params }) {

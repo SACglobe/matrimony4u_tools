@@ -1,4 +1,3 @@
-import { Inter, Playfair_Display } from 'next/font/google';
 import './globals.css';
 import { SITE_CONFIG } from '@/lib/config';
 import { 
@@ -9,18 +8,7 @@ import {
   JsonLd 
 } from '@/lib/seo';
 
-// Fonts
-const inter = Inter({
-  subsets: ['latin'],
-  variable: '--font-sans',
-  display: 'swap',
-});
-
-const playfair = Playfair_Display({
-  subsets: ['latin'],
-  variable: '--font-display',
-  display: 'swap',
-});
+export const revalidate = 604800; // 7 days (weekly revalidation)
 
 // Root metadata
 export const metadata = generatePageMetadata({
@@ -41,7 +29,7 @@ export default function RootLayout({ children }) {
   const personSchema = generatePersonSchema();
 
   return (
-    <html lang="en-IN" className={`${inter.variable} ${playfair.variable}`}>
+    <html lang="en-IN">
       <head>
         <JsonLd data={websiteSchema} />
         <JsonLd data={organizationSchema} />

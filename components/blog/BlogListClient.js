@@ -2,6 +2,24 @@
 import { useState, useMemo } from 'react';
 import Link from 'next/link';
 
+function formatPublishDate(dateString) {
+    if (!dateString) return '';
+    const months = [
+        'January', 'February', 'March', 'April', 'May', 'June',
+        'July', 'August', 'September', 'October', 'November', 'December'
+    ];
+    const parts = dateString.split('-');
+    if (parts.length === 3) {
+        const year = parseInt(parts[0], 10);
+        const monthIndex = parseInt(parts[1], 10) - 1;
+        const day = parseInt(parts[2], 10);
+        if (!isNaN(year) && monthIndex >= 0 && monthIndex < 12 && !isNaN(day)) {
+            return `${months[monthIndex]} ${day}, ${year}`;
+        }
+    }
+    return dateString;
+}
+
 export default function BlogListClient({ posts, categories }) {
     const [selectedCategory, setSelectedCategory] = useState('all');
 
@@ -55,7 +73,7 @@ export default function BlogListClient({ posts, categories }) {
                 {filteredPosts.map(post => (
                     <Link
                         key={post.slug}
-                        href={`/blog/${post.slug}/`}
+                        href={`/blog/${post.slug}`}
                         className="group bg-white rounded-xl border-2 border-neutral-100 hover:border-primary-300 transition-all hover:shadow-lg overflow-hidden"
                     >
                         {/* Image placeholder */}
@@ -84,12 +102,8 @@ export default function BlogListClient({ posts, categories }) {
 
                             {/* Footer */}
                             <div className="flex items-center justify-between pt-4 border-t border-neutral-100">
-                                <span className="text-xs text-neutral-500">
-                                    {new Date(post.publishDate).toLocaleDateString('en-IN', {
-                                        year: 'numeric',
-                                        month: 'long',
-                                        day: 'numeric'
-                                    })}
+                                <span className="text-xs text-neutral-500" suppressHydrationWarning>
+                                    {formatPublishDate(post.publishDate)}
                                 </span>
                                 <span className="text-primary-600 text-sm font-semibold group-hover:gap-2 inline-flex items-center transition-all">
                                     Read More
