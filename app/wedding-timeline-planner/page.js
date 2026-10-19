@@ -9,6 +9,7 @@ import {
     JsonLd
 } from '@/lib/seo';
 import Link from 'next/link';
+import AdsterraBanner from '@/components/ads/AdsterraBanner';
 
 export const revalidate = 604800;
 export const dynamic = 'force-static';
@@ -488,7 +489,11 @@ export default function WeddingTimelinePlannerPage() {
                                 </div>
                             </div>
 
-                            {/* In-Depth Educational Planning Guide (>800 words for AdSense & SEO) */}
+                            {/* Strategic Adsterra Banner Placement */}
+                            <AdsterraBanner format="728x90" className="hidden md:flex" />
+                            <AdsterraBanner format="300x250" className="flex md:hidden" />
+
+                            {/* In-Depth Educational Planning Guide (>800 words for Monetization & SEO) */}
                             <div className="prose prose-lg max-w-none text-neutral-800">
                                 <section className="mb-12">
                                     <h2 className="text-3xl font-display font-semibold mb-6">

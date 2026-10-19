@@ -2,6 +2,7 @@ import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import Breadcrumbs from '@/components/layout/Breadcrumbs';
 import MarriageEligibilityGuide from '@/components/MarriageEligibilityGuide';
+import AdsterraBanner from '@/components/ads/AdsterraBanner';
 import { SITE_CONFIG } from '@/lib/config';
 import {
     generateToolMetadata,
@@ -279,6 +280,10 @@ export default function MarriageEligibilityPage() {
                                     </div>
                                 </div>
                             </div>
+
+                            {/* Strategic Adsterra Banner Placement */}
+                            <AdsterraBanner format="728x90" className="hidden md:flex" />
+                            <AdsterraBanner format="300x250" className="flex md:hidden" />
 
                             <MarriageEligibilityGuide />
 

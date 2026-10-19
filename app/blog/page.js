@@ -62,7 +62,7 @@ export default function BlogPage() {
                                 </form>
                             </div>
 
-                            {/* Rich Contextual Content to support AdSense requirements */}
+                            {/* Rich Contextual Content to support Monetization & SEO guidelines */}
                             <div className="mt-12 prose prose-neutral max-w-none border-t border-neutral-200 pt-8 text-neutral-700">
                                 <h2 className="text-2xl font-display font-bold text-neutral-900 mb-4">Indian Marriage & Wedding Planning Insights</h2>
                                 <p className="mb-4">

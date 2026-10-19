@@ -7,6 +7,8 @@ import {
   generatePersonSchema,
   JsonLd 
 } from '@/lib/seo';
+import AdsterraSocialBar from '@/components/ads/AdsterraSocialBar';
+import AdsterraPopunder from '@/components/ads/AdsterraPopunder';
 
 export const revalidate = 604800; // 7 days (weekly revalidation)
 
@@ -36,6 +38,8 @@ export default function RootLayout({ children }) {
         <JsonLd data={personSchema} />
       </head>
       <body className="min-h-screen antialiased">
+        <AdsterraSocialBar />
+        <AdsterraPopunder />
         {children}
       </body>
     </html>

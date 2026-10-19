@@ -123,7 +123,7 @@ export default function PrivacyPolicyPage() {
                                     <div className="border-l-4 border-neutral-300 pl-4">
                                         <h4 className="font-semibold text-neutral-900">Advertising Cookies (Third-Party)</h4>
                                         <p className="text-neutral-600 text-sm">
-                                            We may use Google AdSense to display ads. Google uses cookies to show relevant ads based on your interests.
+                                            We may use Adsterra and third-party advertising networks to display contextual advertisements. Adsterra and its partners use cookies and device identifiers to deliver relevant advertising.
                                         </p>
                                     </div>
                                 </div>
@@ -141,7 +141,7 @@ export default function PrivacyPolicyPage() {
                                 </p>
                                 <ul className="list-disc list-inside space-y-2 text-neutral-700">
                                     <li><strong>Google Analytics:</strong> For website analytics (data is anonymized)</li>
-                                    <li><strong>Google AdSense:</strong> For displaying advertisements (Google's Privacy Policy applies)</li>
+                                    <li><strong>Adsterra Advertising Network:</strong> For displaying advertisements (Adsterra&apos;s Privacy Policy applies)</li>
                                     <li><strong>Hosting Provider:</strong> For website hosting and infrastructure</li>
                                 </ul>
                                 <p className="text-neutral-700 leading-relaxed mt-4">
@@ -150,7 +150,7 @@ export default function PrivacyPolicyPage() {
                                 </p>
                                 <ul className="list-disc list-inside space-y-1 text-neutral-700 mt-2">
                                     <li><a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer" className="text-primary-600 hover:underline">Google Privacy Policy</a></li>
-                                    <li><a href="https://policies.google.com/technologies/ads" target="_blank" rel="noopener noreferrer" className="text-primary-600 hover:underline">Google AdSense Privacy & Terms</a></li>
+                                    <li><a href="https://adsterra.com/privacy-policy/" target="_blank" rel="noopener noreferrer" className="text-primary-600 hover:underline">Adsterra Privacy Policy &amp; Terms</a></li>
                                 </ul>
                             </section>
 

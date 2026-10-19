@@ -2,6 +2,7 @@ import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import Breadcrumbs from '@/components/layout/Breadcrumbs';
 import LegalAgeCalculator from '@/components/tools/LegalAgeCalculator';
+import AdsterraBanner from '@/components/ads/AdsterraBanner';
 import { SITE_CONFIG } from '@/lib/config';
 import {
     generateToolMetadata,
@@ -116,6 +117,10 @@ export default function LegalMarriageAgePage() {
 
                             {/* Calculator */}
                             <LegalAgeCalculator />
+
+                            {/* Strategic Adsterra Banner Placement */}
+                            <AdsterraBanner format="728x90" className="hidden md:flex" />
+                            <AdsterraBanner format="300x250" className="flex md:hidden" />
                         </div>
 
                         {/* Expert Article Block: Legal Frameworks & Procedures */}

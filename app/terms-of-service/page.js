@@ -177,7 +177,7 @@ export default function TermsOfServicePage() {
                             <section className="mb-12">
                                 <h2 className="text-2xl font-display font-semibold mb-4">Advertising</h2>
                                 <p className="text-neutral-700 leading-relaxed mb-4">
-                                    We may display third-party advertisements on our website through Google AdSense or other advertising
+                                    We may display third-party advertisements on our website through Adsterra or other advertising
                                     networks. These advertisers may use cookies and other technologies to collect information about your
                                     browsing activity.
                                 </p>

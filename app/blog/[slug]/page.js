@@ -2,6 +2,7 @@ import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import Breadcrumbs from '@/components/layout/Breadcrumbs';
 import Link from 'next/link';
+import AdsterraBanner from '@/components/ads/AdsterraBanner';
 import { notFound } from 'next/navigation';
 import { BLOG_POSTS, getBlogPost, getRelatedPosts, BLOG_CATEGORIES } from '@/lib/blog';
 import { generatePageMetadata, JsonLd } from '@/lib/seo';
@@ -175,6 +176,10 @@ export default async function BlogPostPage(props) {
                                     </div>
                                 )}
                             </div>
+
+                            {/* Strategic Adsterra Banner Placement */}
+                            <AdsterraBanner format="728x90" className="hidden md:flex" />
+                            <AdsterraBanner format="300x250" className="flex md:hidden" />
 
                             {/* Call to Action */}
                             <div className="mt-12 bg-primary-50 rounded-xl p-8 text-center border-2 border-primary-100">
