@@ -17,19 +17,26 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = join(__dirname, '..');
 
 // ── Load .env.local if present ──
-let GEMINI_API_KEY = process.env.GEMINI_API_KEY;
-if (!GEMINI_API_KEY && existsSync(join(ROOT, '.env.local'))) {
+let primaryKey = process.env.GEMINI_API_KEY;
+let backupKey = process.env.GEMINI_API_KEY_BACKUP;
+
+if (existsSync(join(ROOT, '.env.local'))) {
   const envContent = readFileSync(join(ROOT, '.env.local'), 'utf8');
   for (const line of envContent.split('\n')) {
     const trimmed = line.trim();
     if (trimmed.startsWith('GEMINI_API_KEY=')) {
-      GEMINI_API_KEY = trimmed.substring('GEMINI_API_KEY='.length).trim().replace(/^["']|["']$/g, '');
+      primaryKey = primaryKey || trimmed.substring('GEMINI_API_KEY='.length).trim().replace(/^["']|["']$/g, '');
+    }
+    if (trimmed.startsWith('GEMINI_API_KEY_BACKUP=')) {
+      backupKey = backupKey || trimmed.substring('GEMINI_API_KEY_BACKUP='.length).trim().replace(/^["']|["']$/g, '');
     }
   }
 }
 
-if (!GEMINI_API_KEY) {
-  console.error('❌ GEMINI_API_KEY is not set in environment or .env.local');
+const API_KEYS = [primaryKey, backupKey].filter(Boolean);
+
+if (API_KEYS.length === 0) {
+  console.error('❌ Neither GEMINI_API_KEY nor GEMINI_API_KEY_BACKUP is set.');
   process.exit(1);
 }
 
@@ -174,52 +181,60 @@ Formatting requirements:
 5. Do NOT include markdown wrappers like \`\`\`json. Return only raw JSON.`;
 
 async function callGemini(promptText) {
-  for (const model of GEMINI_MODELS) {
-    try {
-      console.log(`🤖 Requesting content from model: ${model}...`);
-      const url = `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${GEMINI_API_KEY}`;
-      const payload = {
-        contents: [
-          {
-            role: 'user',
-            parts: [
-              { text: SYSTEM_PROMPT },
-              { text: `Topic to write about:\nTopic: ${topic.topic}\nCategory: ${topic.category}\nSlug: ${topic.slug}` }
-            ]
+  for (const apiKey of API_KEYS) {
+    const maskedKey = apiKey.slice(0, 8) + '...' + apiKey.slice(-4);
+    for (const model of GEMINI_MODELS) {
+      try {
+        console.log(`🤖 Requesting from ${model} with key (${maskedKey})...`);
+        const url = `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${apiKey}`;
+        const payload = {
+          contents: [
+            {
+              role: 'user',
+              parts: [
+                { text: SYSTEM_PROMPT },
+                { text: `Topic to write about:\nTopic: ${topic.topic}\nCategory: ${topic.category}\nSlug: ${topic.slug}` }
+              ]
+            }
+          ],
+          generationConfig: {
+            temperature: 0.3,
+            maxOutputTokens: 8192,
+            responseMimeType: 'application/json'
           }
-        ],
-        generationConfig: {
-          temperature: 0.3,
-          maxOutputTokens: 8192,
-          responseMimeType: 'application/json'
+        };
+
+        const res = await fetch(url, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload)
+        });
+
+        if (!res.ok) {
+          const errorText = await res.text();
+          console.warn(`⚠️ Key ${maskedKey} / Model ${model} returned status ${res.status}: ${errorText.slice(0, 120)}...`);
+          // If quota exceeded (429), break immediately to next key
+          if (res.status === 429) {
+            console.warn(`⚠️ Rate limit / quota hit for key ${maskedKey}. Switching to next API key...`);
+            break;
+          }
+          continue;
         }
-      };
 
-      const res = await fetch(url, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(payload)
-      });
+        const data = await res.json();
+        const rawText = data?.candidates?.[0]?.content?.parts?.[0]?.text;
+        if (!rawText) {
+          console.warn(`⚠️ Model ${model} returned empty content.`);
+          continue;
+        }
 
-      if (!res.ok) {
-        const errorText = await res.text();
-        console.warn(`⚠️ Model ${model} returned status ${res.status}: ${errorText.slice(0, 150)}...`);
-        continue;
+        return rawText;
+      } catch (err) {
+        console.warn(`⚠️ Error calling ${model} with key ${maskedKey}: ${err.message}`);
       }
-
-      const data = await res.json();
-      const rawText = data?.candidates?.[0]?.content?.parts?.[0]?.text;
-      if (!rawText) {
-        console.warn(`⚠️ Model ${model} returned empty content.`);
-        continue;
-      }
-
-      return rawText;
-    } catch (err) {
-      console.warn(`⚠️ Error calling ${model}: ${err.message}`);
     }
   }
-  throw new Error('All Gemini models in fallback chain failed.');
+  throw new Error('All Gemini API keys and models in fallback chain failed.');
 }
 
 async function run() {
