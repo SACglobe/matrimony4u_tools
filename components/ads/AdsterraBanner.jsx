@@ -4,30 +4,35 @@ import React, { useEffect, useRef } from 'react';
 import { ADSTERRA_CONFIG } from '@/lib/adsterra';
 
 const FORMAT_MAP = {
-  '468x60': {
-    width: 468,
-    height: 60,
-    defaultKey: ADSTERRA_CONFIG.units.banner_468x60.key,
+  '160x300': {
+    width: 160,
+    height: 300,
+    defaultKey: ADSTERRA_CONFIG.units.banner_160x300.key,
+  },
+  '160x600': {
+    width: 160,
+    height: 600,
+    defaultKey: ADSTERRA_CONFIG.units.banner_160x600.key,
+  },
+  '300x250': {
+    width: 300,
+    height: 250,
+    defaultKey: ADSTERRA_CONFIG.units.banner_300x250.key,
   },
   '320x50': {
     width: 320,
     height: 50,
     defaultKey: ADSTERRA_CONFIG.units.mobile_320x50.key,
   },
-  '160x300': {
-    width: 160,
-    height: 300,
-    defaultKey: ADSTERRA_CONFIG.units.skyscraper_160x300.key,
-  },
-  '728x90': {
+  '468x60': {
     width: 468,
     height: 60,
     defaultKey: ADSTERRA_CONFIG.units.banner_468x60.key,
   },
-  '300x250': {
-    width: 320,
-    height: 50,
-    defaultKey: ADSTERRA_CONFIG.units.mobile_320x50.key,
+  '728x90': {
+    width: 728,
+    height: 90,
+    defaultKey: ADSTERRA_CONFIG.units.leaderboard_728x90.key,
   },
 };
 
@@ -69,22 +74,22 @@ export default function AdsterraBanner({
         <!DOCTYPE html>
         <html>
           <head>
-            <base target="_blank">
+            <meta charset="utf-8">
             <style>
-              body { margin: 0; padding: 0; display: flex; justify-content: center; align-items: center; background: transparent; overflow: hidden; }
+              body { margin: 0; padding: 0; display: flex; align-items: center; justify-content: center; overflow: hidden; background: transparent; }
             </style>
           </head>
           <body>
             <script type="text/javascript">
               atOptions = {
-                'key': '${activeKey}',
-                'format': 'iframe',
-                'height': ${info.height},
-                'width': ${info.width},
-                'params': {}
+                'key' : '${activeKey}',
+                'format' : 'iframe',
+                'height' : ${info.height},
+                'width' : ${info.width},
+                'params' : {}
               };
             </script>
-            <script type="text/javascript" src="//www.highperformanceformat.com/${activeKey}/invoke.js"></script>
+            <script type="text/javascript" src="https://bauval.org/22/${activeKey}"></script>
           </body>
         </html>
       `);
@@ -96,32 +101,17 @@ export default function AdsterraBanner({
         container.innerHTML = '';
       }
     };
-  }, [activeKey, info.height, info.width]);
+  }, [activeKey, info.width, info.height]);
 
-  // If in development/default key mode, render a subtle non-intrusive placeholder
-  const isPlaceholder = !ADSTERRA_CONFIG.enabled || !activeKey || activeKey.startsWith('default_');
+  if (!ADSTERRA_CONFIG.enabled) return null;
 
   return (
-    <div
-      className={`my-6 flex flex-col items-center justify-center overflow-hidden transition-all ${className}`}
-      style={{ minHeight: `${info.height}px` }}
-    >
-      <div
-        ref={containerRef}
-        style={{
-          width: '100%',
-          maxWidth: `${info.width}px`,
-          height: `${info.height}px`,
-        }}
-        className="flex items-center justify-center bg-neutral-50/50 rounded-lg overflow-hidden"
-      >
-        {isPlaceholder && (
-          <div className="flex flex-col items-center justify-center w-full h-full border border-dashed border-neutral-200 rounded-lg text-xs text-neutral-400 p-2 text-center">
-            <span className="font-semibold text-neutral-500 uppercase tracking-wider mb-1">Sponsored</span>
-            <span>Adsterra Banner ({info.width}x{info.height})</span>
-          </div>
-        )}
-      </div>
+    <div className={`my-6 flex flex-col items-center justify-center overflow-hidden ${className}`}>
+      <div 
+        ref={containerRef} 
+        style={{ width: `${info.width}px`, minHeight: `${info.height}px` }} 
+        className="flex items-center justify-center bg-neutral-50/50 rounded-lg border border-neutral-100/80 shadow-2xs"
+      />
       <span className="text-[10px] text-neutral-400 uppercase tracking-widest mt-1">Advertisement</span>
     </div>
   );
