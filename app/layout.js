@@ -33,6 +33,9 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en-IN">
       <head>
+        {/* Adsterra Domain Verification */}
+        <meta name="adsterra-verification" content="pgie78r3m" />
+        <meta name="verification" content="pgie78r3m" />
         <JsonLd data={websiteSchema} />
         <JsonLd data={organizationSchema} />
         <JsonLd data={personSchema} />
