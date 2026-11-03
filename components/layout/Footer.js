@@ -1,6 +1,14 @@
 import Link from 'next/link';
 import { SITE_CONFIG, TOOL_CATEGORIES } from '@/lib/config';
 
+// SAC GLOBE TECH network (this site is excluded)
+const NETWORK_SITES = [
+    { name: 'MyUtilityBox', url: 'https://www.myutilitybox.com/' },
+    { name: 'Karuvii', url: 'https://www.karuvii.com/' },
+    { name: 'Karuvigal', url: 'https://www.karuvigal.com/' },
+    { name: 'Kalyana Veedu', url: 'https://www.kalyanaveedu.in/' },
+];
+
 export default function Footer() {
     const currentYear = new Date().getFullYear();
 
@@ -105,6 +113,24 @@ export default function Footer() {
                                 </Link>
                             </li>
                         </ul>
+                    </div>
+                </div>
+
+                {/* Sister sites */}
+                <div className="border-t border-neutral-800 py-6 flex flex-col md:flex-row items-center justify-between gap-3 text-sm">
+                    <div className="flex flex-wrap items-center justify-center gap-x-5 gap-y-2">
+                        <span className="text-white font-semibold">Our Network:</span>
+                        {NETWORK_SITES.map((site) => (
+                            <a key={site.url} href={site.url} target="_blank" rel="noopener" className="hover:text-primary-400 transition-colors">
+                                {site.name}
+                            </a>
+                        ))}
+                    </div>
+                    <div className="text-neutral-400">
+                        Powered by{' '}
+                        <a href="https://tech.sacglobe.com/" target="_blank" rel="noopener" className="text-neutral-200 font-semibold hover:text-primary-400 transition-colors">
+                            SAC GLOBE TECH
+                        </a>
                     </div>
                 </div>
 
