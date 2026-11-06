@@ -10,6 +10,7 @@ import {
 import AdsterraSocialBar from '@/components/ads/AdsterraSocialBar';
 import AdsterraPopunder from '@/components/ads/AdsterraPopunder';
 import AdBlockDetector from '@/components/ads/AdBlockDetector';
+import Analytics from '@/components/analytics/Analytics';
 
 export const revalidate = 604800; // 7 days (weekly revalidation)
 
@@ -43,6 +44,7 @@ export default function RootLayout({ children }) {
       </head>
       <body className="min-h-screen antialiased">
         <AdBlockDetector />
+        <Analytics />
         <AdsterraSocialBar />
         <AdsterraPopunder />
         {children}

@@ -109,7 +109,7 @@ export default async function BlogPostPage({ params }) {
         dateModified: post.publishDate || new Date().toISOString(),
         mainEntityOfPage: {
             '@type': 'WebPage',
-            '@id': `https://matrimony4u.com/blog/${post.slug}`,
+            '@id': `https://www.matrimony4u.com/blog/${post.slug}`,
         },
         author: {
             '@type': 'Person',
@@ -119,10 +119,10 @@ export default async function BlogPostPage({ params }) {
         publisher: {
             '@type': 'Organization',
             name: 'MATRIMONY4U',
-            url: 'https://matrimony4u.com',
+            url: 'https://www.matrimony4u.com',
             logo: {
                 '@type': 'ImageObject',
-                url: 'https://matrimony4u.com/icons/icon-512x512.png',
+                url: 'https://www.matrimony4u.com/icons/icon-512x512.png',
             },
         },
     };
@@ -135,19 +135,19 @@ export default async function BlogPostPage({ params }) {
                 '@type': 'ListItem',
                 position: 1,
                 name: 'Home',
-                item: 'https://matrimony4u.com',
+                item: 'https://www.matrimony4u.com',
             },
             {
                 '@type': 'ListItem',
                 position: 2,
                 name: 'Blog',
-                item: 'https://matrimony4u.com/blog',
+                item: 'https://www.matrimony4u.com/blog',
             },
             {
                 '@type': 'ListItem',
                 position: 3,
                 name: post.title,
-                item: `https://matrimony4u.com/blog/${post.slug}`,
+                item: `https://www.matrimony4u.com/blog/${post.slug}`,
             },
         ],
     };

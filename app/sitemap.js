@@ -4,7 +4,7 @@ import { regionalGuides } from '@/lib/data/regionalGuides';
 export const revalidate = 604800; // 7 days (weekly revalidation)
 
 export default async function sitemap() {
-    const baseUrl = 'https://matrimony4u.com';
+    const baseUrl = 'https://www.matrimony4u.com';
 
     // Static pages (8)
     const staticPages = [

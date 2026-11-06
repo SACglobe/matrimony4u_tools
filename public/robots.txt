@@ -2,7 +2,7 @@ User-agent: *
 Allow: /
 
 # Sitemap location
-Sitemap: https://matrimony4u.com/sitemap.xml
+Sitemap: https://www.matrimony4u.com/sitemap.xml
 
 # Disallow admin and private directories (none currently)
 # Disallow: /admin/
