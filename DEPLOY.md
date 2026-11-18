@@ -29,6 +29,29 @@ Every push to `main` builds and deploys automatically.
 | `NEXT_PUBLIC_CLARITY_ID` | Microsoft Clarity project ID (optional). |
 | `NEXT_PUBLIC_DISABLE_ADS` | Set to `true` to hide the ad-block notice in a preview. |
 
+## Ads layout (Adsterra)
+
+Ads sit in fixed, labelled, lazy-loaded slots; nothing overlays content and there are no popunders or social bars.
+It applies to the 11 tool/calculator pages (budget, savings, expense split, guest list, timeline, marriage date,
+age difference, kundli matching, legal age, eligibility checker, registration documents). Guides, blog, legal and
+home pages carry no layout ads.
+
+| Slot | Where | Size |
+|---|---|---|
+| Sidebar (sticky) | right column on screens >= 1280px (`AdRailShell` wraps `<main>`) | 300x600 (300x250 until the unit below exists) |
+| Result ad | directly under the tool, before "Educational Content" (`ResultAd` in `AdPlacements.jsx`) | 728x90 on desktop, 300x250 on small screens |
+| Wide banner | end of the page content, below the related-tools block (`WideBanner`) | 728x90 on tablet/desktop, 320x50 on phones |
+
+**300x600 half-page unit:** create a 300x600 banner unit for this site in the Adsterra dashboard, then set
+`NEXT_PUBLIC_ADSTERRA_BANNER_300x600` to its key in Cloudflare Pages (Settings -> Variables and secrets) and rebuild
+(baked in at build time). Until it is set the sidebar shows the 300x250 unit.
+
+To add a new tool page: wrap `<main>` in `AdRailShell`, add `<ResultAd />` under the tool and `<WideBanner />` before
+`</main>`. Keep it to about three ads per desktop page.
+
+If the sidebar column does not appear in a local build, clear the cache (`rm -rf .next out`) - Tailwind v4 with
+webpack does not rescan newly added files from a stale cache. Cloudflare builds are always clean.
+
 ## Redirects and headers
 
 - `public/_redirects` — `/index`, `/index.html` → `/`; `/privacy` → `/privacy-policy`

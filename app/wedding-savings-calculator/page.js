@@ -10,6 +10,8 @@ import {
     JsonLd
 } from '@/lib/seo';
 import Link from 'next/link';
+import { ResultAd, WideBanner } from '@/components/ads/AdPlacements';
+import AdRailShell from '@/components/ads/AdRail';
 
 export const revalidate = 604800;
 export const dynamic = 'force-static';
@@ -72,6 +74,7 @@ export default function WeddingSavingsCalculatorPage() {
             <JsonLd data={faqSchema} />
             <JsonLd data={breadcrumbSchema} />
 
+            <AdRailShell>
             <main>
                 <div className="container">
                     <Breadcrumbs items={[{ name: 'Wedding Savings Calculator' }]} />
@@ -280,6 +283,8 @@ export default function WeddingSavingsCalculatorPage() {
                                     </div>
                                 </div>
                             </div>
+
+                            <ResultAd className="mb-10" />
 
                             {/* Comprehensive Educational Content (>650 words) */}
                             <div className="prose prose-lg max-w-none w-full">
@@ -544,7 +549,9 @@ export default function WeddingSavingsCalculatorPage() {
                         </div>
                     </div>
                 </div>
+                <WideBanner className="py-6" />
             </main>
+            </AdRailShell>
 
             {/* Client-Side Savings Calculator Script */}
             <script

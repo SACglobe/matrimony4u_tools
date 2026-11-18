@@ -10,6 +10,8 @@ import {
     JsonLd
 } from '@/lib/seo';
 import Link from 'next/link';
+import { ResultAd, WideBanner } from '@/components/ads/AdPlacements';
+import AdRailShell from '@/components/ads/AdRail';
 
 export const revalidate = 604800;
 export const dynamic = 'force-static';
@@ -112,6 +114,7 @@ export default function MarriageDateCalculatorPage() {
             <JsonLd data={faqSchema} />
             <JsonLd data={breadcrumbSchema} />
 
+            <AdRailShell>
             <main>
                 <div className="container">
                     <Breadcrumbs items={[{ name: 'Marriage Date Calculator' }]} />
@@ -317,6 +320,8 @@ export default function MarriageDateCalculatorPage() {
                                 </div>
                             </div>
 
+                            <ResultAd className="mb-10" />
+
                             {/* Educational Content */}
                             <div className="prose prose-lg max-w-none">
                                 <section className="mb-12">
@@ -480,7 +485,9 @@ export default function MarriageDateCalculatorPage() {
                         </div>
                     </div>
                 </div>
+                <WideBanner className="py-6" />
             </main>
+            </AdRailShell>
 
             {/* Client-Side Live Filter & Countdown Script */}
             <script

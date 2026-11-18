@@ -10,6 +10,8 @@ import {
     JsonLd
 } from '@/lib/seo';
 import Link from 'next/link';
+import { ResultAd, WideBanner } from '@/components/ads/AdPlacements';
+import AdRailShell from '@/components/ads/AdRail';
 
 export const revalidate = 604800;
 export const dynamic = 'force-static';
@@ -71,6 +73,7 @@ export default function WeddingExpenseSplitCalculatorPage() {
             <JsonLd data={faqSchema} />
             <JsonLd data={breadcrumbSchema} />
 
+            <AdRailShell>
             <main>
                 <div className="container">
                     <Breadcrumbs items={[{ name: 'Wedding Expense Split Calculator' }]} />
@@ -268,6 +271,8 @@ export default function WeddingExpenseSplitCalculatorPage() {
                                 </div>
                             </div>
 
+                            <ResultAd className="mb-10" />
+
                             {/* Educational Content */}
                             <div className="prose prose-lg max-w-none w-full">
                                 <section className="mb-12">
@@ -357,7 +362,9 @@ export default function WeddingExpenseSplitCalculatorPage() {
                         </div>
                     </div>
                 </div>
+                <WideBanner className="py-6" />
             </main>
+            </AdRailShell>
 
             {/* Client-Side Split Calculator Script */}
             <script
