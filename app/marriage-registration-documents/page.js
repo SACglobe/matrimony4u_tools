@@ -3,6 +3,7 @@ import Footer from '@/components/layout/Footer';
 import Breadcrumbs from '@/components/layout/Breadcrumbs';
 import DocumentsChecklist from '@/components/tools/DocumentsChecklist';
 import AdsterraBanner from '@/components/ads/AdsterraBanner';
+import AdRailShell from '@/components/ads/AdRail';
 import { SITE_CONFIG } from '@/lib/config';
 import {
     generateToolMetadata,
@@ -78,6 +79,7 @@ export default function MarriageDocumentsPage() {
             <JsonLd data={faqSchema} />
             <JsonLd data={breadcrumbSchema} />
 
+            <AdRailShell>
             <main>
                 <div className="container">
                     <Breadcrumbs items={[{ name: 'Marriage Registration Documents' }]} />
@@ -430,6 +432,7 @@ export default function MarriageDocumentsPage() {
                     </div>
                 </div>
             </main>
+            </AdRailShell>
 
             <Footer />
         </>

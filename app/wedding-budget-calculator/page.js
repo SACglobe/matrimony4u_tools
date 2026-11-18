@@ -4,6 +4,7 @@ import Breadcrumbs from '@/components/layout/Breadcrumbs';
 import WeddingBudgetCalculator from '@/components/tools/WeddingBudgetCalculator';
 import WeddingBudgetGuide from '@/components/WeddingBudgetGuide';
 import AdsterraBanner from '@/components/ads/AdsterraBanner';
+import AdRailShell from '@/components/ads/AdRail';
 import { SITE_CONFIG } from '@/lib/config';
 import {
     generateToolMetadata,
@@ -79,6 +80,7 @@ export default function WeddingBudgetPage() {
             <JsonLd data={faqSchema} />
             <JsonLd data={breadcrumbSchema} />
 
+            <AdRailShell>
             <main>
                 <div className="container">
                     <Breadcrumbs items={[{ name: 'Wedding Budget Calculator' }]} />
@@ -345,6 +347,7 @@ export default function WeddingBudgetPage() {
                     </div>
                 </div>
             </main>
+            </AdRailShell>
 
             <Footer />
         </>
