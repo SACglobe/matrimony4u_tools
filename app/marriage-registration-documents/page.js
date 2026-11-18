@@ -2,8 +2,8 @@ import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import Breadcrumbs from '@/components/layout/Breadcrumbs';
 import DocumentsChecklist from '@/components/tools/DocumentsChecklist';
-import AdsterraBanner from '@/components/ads/AdsterraBanner';
 import AdRailShell from '@/components/ads/AdRail';
+import { ResultAd, WideBanner } from '@/components/ads/AdPlacements';
 import { SITE_CONFIG } from '@/lib/config';
 import {
     generateToolMetadata,
@@ -101,8 +101,7 @@ export default function MarriageDocumentsPage() {
                             <DocumentsChecklist />
 
                             {/* Strategic Adsterra Banner Placement */}
-                            <AdsterraBanner format="728x90" className="hidden md:flex" />
-                            <AdsterraBanner format="300x250" className="flex md:hidden" />
+                            <ResultAd className="my-8" />
 
                             {/* Educational Content */}
                             <div className="mt-16 prose prose-lg max-w-none">
@@ -431,6 +430,7 @@ export default function MarriageDocumentsPage() {
                         </div>
                     </div>
                 </div>
+                <WideBanner className="py-6" />
             </main>
             </AdRailShell>
 

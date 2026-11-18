@@ -11,6 +11,8 @@ import {
     JsonLd
 } from '@/lib/seo';
 import Link from 'next/link';
+import { ResultAd, WideBanner } from '@/components/ads/AdPlacements';
+import AdRailShell from '@/components/ads/AdRail';
 
 export const revalidate = 604800;
 export const dynamic = 'force-static';
@@ -77,6 +79,7 @@ export default function KundliMatchingPage() {
             <JsonLd data={faqSchema} />
             <JsonLd data={breadcrumbSchema} />
 
+            <AdRailShell>
             <main>
                 <div className="container">
                     <Breadcrumbs items={[{ name: 'Kundli Matching' }]} />
@@ -96,6 +99,8 @@ export default function KundliMatchingPage() {
 
                             {/* Calculator */}
                             <KundliMatchingCalculator />
+
+                            <ResultAd className="mb-10" />
 
                             {/* Educational Content */}
                             <div className="mt-16 prose prose-lg max-w-none">
@@ -368,7 +373,9 @@ export default function KundliMatchingPage() {
                         </div>
                     </div>
                 </div>
+                <WideBanner className="py-6" />
             </main>
+            </AdRailShell>
 
             <Footer />
         </>

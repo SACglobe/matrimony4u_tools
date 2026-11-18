@@ -10,6 +10,8 @@ import {
     JsonLd
 } from '@/lib/seo';
 import Link from 'next/link';
+import { ResultAd, WideBanner } from '@/components/ads/AdPlacements';
+import AdRailShell from '@/components/ads/AdRail';
 
 export const revalidate = 604800;
 export const dynamic = 'force-static';
@@ -72,6 +74,7 @@ export default function WeddingGuestListPlannerPage() {
             <JsonLd data={faqSchema} />
             <JsonLd data={breadcrumbSchema} />
 
+            <AdRailShell>
             <main>
                 <div className="container">
                     <Breadcrumbs items={[{ name: 'Guest List Planner' }]} />
@@ -315,6 +318,8 @@ export default function WeddingGuestListPlannerPage() {
                                 </div>
                             </div>
 
+                            <ResultAd className="mb-10" />
+
                             {/* Educational Content */}
                             <div className="prose prose-lg max-w-none">
                                 <section className="mb-12">
@@ -428,7 +433,9 @@ export default function WeddingGuestListPlannerPage() {
                         </div>
                     </div>
                 </div>
+                <WideBanner className="py-6" />
             </main>
+            </AdRailShell>
 
             {/* Client-Side Guest List Calculator Script */}
             <script

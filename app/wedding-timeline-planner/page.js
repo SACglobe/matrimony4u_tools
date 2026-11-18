@@ -9,8 +9,8 @@ import {
     JsonLd
 } from '@/lib/seo';
 import Link from 'next/link';
-import AdsterraBanner from '@/components/ads/AdsterraBanner';
 import AdRailShell from '@/components/ads/AdRail';
+import { ResultAd, WideBanner } from '@/components/ads/AdPlacements';
 
 export const revalidate = 604800;
 export const dynamic = 'force-static';
@@ -492,8 +492,7 @@ export default function WeddingTimelinePlannerPage() {
                             </div>
 
                             {/* Strategic Adsterra Banner Placement */}
-                            <AdsterraBanner format="728x90" className="hidden md:flex" />
-                            <AdsterraBanner format="300x250" className="flex md:hidden" />
+                            <ResultAd className="my-8" />
 
                             {/* In-Depth Educational Planning Guide (>800 words for Monetization & SEO) */}
                             <div className="prose prose-lg max-w-none text-neutral-800">
@@ -673,6 +672,7 @@ export default function WeddingTimelinePlannerPage() {
                         </div>
                     </div>
                 </div>
+                <WideBanner className="py-6" />
             </main>
             </AdRailShell>
 

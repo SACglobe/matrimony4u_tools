@@ -19,6 +19,11 @@ const FORMAT_MAP = {
     height: 250,
     defaultKey: ADSTERRA_CONFIG.units.banner_300x250.key,
   },
+  '300x600': {
+    width: 300,
+    height: 600,
+    defaultKey: ADSTERRA_CONFIG.units.banner_300x600.key,
+  },
   '320x50': {
     width: 320,
     height: 50,
