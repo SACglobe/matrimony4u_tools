@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { ADSTERRA_CONFIG } from '@/lib/adsterra';
 
 const FORMAT_MAP = {
@@ -40,13 +40,26 @@ export default function AdsterraBanner({
   format = '300x250',
   adKey,
   className = '',
+  rail = false,
 }) {
   const containerRef = useRef(null);
+  // Lazy load: only start the ad when its slot is close to the viewport (keeps first paint fast)
+  const [near, setNear] = useState(false);
+  const slotRef = useRef(null);
+  useEffect(() => {
+    const el = slotRef.current;
+    if (!el || typeof IntersectionObserver === 'undefined') { setNear(true); return; }
+    const io = new IntersectionObserver((entries) => {
+      if (entries.some((e) => e.isIntersecting)) { setNear(true); io.disconnect(); }
+    }, { rootMargin: '400px' });
+    io.observe(el);
+    return () => io.disconnect();
+  }, []);
   const info = FORMAT_MAP[format] || FORMAT_MAP['300x250'];
   const activeKey = adKey || info.defaultKey;
 
   useEffect(() => {
-    if (!ADSTERRA_CONFIG.enabled || !activeKey || activeKey.startsWith('default_')) {
+    if (!near || !ADSTERRA_CONFIG.enabled || !activeKey || activeKey.startsWith('default_')) {
       return;
     }
 
@@ -101,12 +114,12 @@ export default function AdsterraBanner({
         container.innerHTML = '';
       }
     };
-  }, [activeKey, info.width, info.height]);
+  }, [activeKey, info.width, info.height, near]);
 
   if (!ADSTERRA_CONFIG.enabled) return null;
 
   return (
-    <div className={`my-6 flex flex-col items-center justify-center overflow-hidden ${className}`}>
+    <div ref={slotRef} className={`my-6 flex flex-col items-center justify-center overflow-hidden ${className}`}>
       <div 
         ref={containerRef} 
         style={{ width: `${info.width}px`, minHeight: `${info.height}px` }} 

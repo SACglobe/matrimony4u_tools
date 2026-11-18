@@ -10,6 +10,7 @@ import {
 } from '@/lib/seo';
 import Link from 'next/link';
 import AdsterraBanner from '@/components/ads/AdsterraBanner';
+import AdRailShell from '@/components/ads/AdRail';
 
 export const revalidate = 604800;
 export const dynamic = 'force-static';
@@ -74,6 +75,7 @@ export default function WeddingTimelinePlannerPage() {
             <JsonLd data={faqSchema} />
             <JsonLd data={breadcrumbSchema} />
 
+            <AdRailShell>
             <main>
                 <div className="container">
                     <Breadcrumbs
@@ -672,6 +674,7 @@ export default function WeddingTimelinePlannerPage() {
                     </div>
                 </div>
             </main>
+            </AdRailShell>
 
             {/* Interactive Timeline Script */}
             <script

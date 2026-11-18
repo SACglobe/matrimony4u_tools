@@ -7,8 +7,6 @@ import {
   generatePersonSchema,
   JsonLd 
 } from '@/lib/seo';
-import AdsterraSocialBar from '@/components/ads/AdsterraSocialBar';
-import AdsterraPopunder from '@/components/ads/AdsterraPopunder';
 import AdBlockDetector from '@/components/ads/AdBlockDetector';
 import Analytics from '@/components/analytics/Analytics';
 
@@ -45,8 +43,6 @@ export default function RootLayout({ children }) {
       <body className="min-h-screen antialiased">
         <AdBlockDetector />
         <Analytics />
-        <AdsterraSocialBar />
-        <AdsterraPopunder />
         {children}
       </body>
     </html>

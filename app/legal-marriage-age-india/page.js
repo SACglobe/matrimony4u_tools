@@ -3,6 +3,7 @@ import Footer from '@/components/layout/Footer';
 import Breadcrumbs from '@/components/layout/Breadcrumbs';
 import LegalAgeCalculator from '@/components/tools/LegalAgeCalculator';
 import AdsterraBanner from '@/components/ads/AdsterraBanner';
+import AdRailShell from '@/components/ads/AdRail';
 import { SITE_CONFIG } from '@/lib/config';
 import {
     generateToolMetadata,
@@ -98,6 +99,7 @@ export default function LegalMarriageAgePage() {
             <JsonLd data={articleFaqSchema} />
             <JsonLd data={breadcrumbSchema} />
 
+            <AdRailShell>
             <main>
                 <div className="container">
                     <Breadcrumbs items={[{ name: 'Legal Marriage Age Checker' }]} />
@@ -390,6 +392,7 @@ export default function LegalMarriageAgePage() {
                     </div>
                 </div>
             </main>
+            </AdRailShell>
 
             <Footer />
         </>

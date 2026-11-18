@@ -3,6 +3,7 @@ import Footer from '@/components/layout/Footer';
 import Breadcrumbs from '@/components/layout/Breadcrumbs';
 import MarriageEligibilityGuide from '@/components/MarriageEligibilityGuide';
 import AdsterraBanner from '@/components/ads/AdsterraBanner';
+import AdRailShell from '@/components/ads/AdRail';
 import { SITE_CONFIG } from '@/lib/config';
 import {
     generateToolMetadata,
@@ -73,6 +74,7 @@ export default function MarriageEligibilityPage() {
             <JsonLd data={faqSchema} />
             <JsonLd data={breadcrumbSchema} />
 
+            <AdRailShell>
             <main>
                 <div className="container">
                     <Breadcrumbs items={[{ name: 'Marriage Eligibility Checker' }]} />
@@ -369,6 +371,7 @@ export default function MarriageEligibilityPage() {
                     </div>
                 </div>
             </main>
+            </AdRailShell>
 
             {/* Client-Side Eligibility Checker Script */}
             <script
